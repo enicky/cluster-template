@@ -1,0 +1,66 @@
+fullnameOverride: ingress-nginx-external
+controller:
+    service:
+        annotations:
+            external-dns.alpha.kubernetes.io/hostname: external.gitlab.be
+            io.cilium/lb-ipam-ips: ""
+        externalTrafficPolicy: Cluster
+    ingressClassResource:
+        name: external
+        default: false
+        controllerValue: k8s.io/external
+    admissionWebhooks:
+        objectSelector:
+            matchExpressions:
+                - key: ingress-class
+                  operator: In
+                  values:
+                    - external
+    config:
+        client-body-buffer-size: 100M
+        client-body-timeout: 120
+        client-header-timeout: 120
+        enable-brotli: "true"
+        enable-real-ip: "true"
+        hsts-max-age: 31449600
+        keep-alive-requests: 10000
+        keep-alive: 120
+        log-format-escape-json: "true"
+        log-format-upstream: |
+            {"time": "$time_iso8601", "remote_addr": "$proxy_protocol_addr", "x_forwarded_for": "$proxy_add_x_forwarded_for", "request_id": "$req_id", "remote_user": "$remote_user", "bytes_sent": $bytes_sent, "request_time": $request_time, "status": $status, "vhost": "$host", "request_proto": "$server_protocol", "path": "$uri", "request_query": "$args", "request_length": $request_length, "duration": $request_time, "method": "$request_method", "http_referrer": "$http_referer", "http_user_agent": "$http_user_agent"}
+        proxy-body-size: 0
+        proxy-buffer-size: 16k
+        ssl-protocols: TLSv1.3 TLSv1.2
+    metrics:
+        enabled: true
+        serviceMonitor:
+            enabled: true
+            namespaceSelector:
+                any: true
+    extraArgs:
+        default-ssl-certificate: network/gitlab-be-staging-tls
+    resources:
+        requests:
+            cpu: 100m
+        limits:
+            memory: 500Mi
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBlbVdYSjZxZEYzVU53MnUx
+            ekhLSld2VWUrbG81bDhaVjRiTWpkalhMZkQ4CnBZc1kvV3hhN2JGbHJ6SnpXWUZm
+            NkVERUVZcmRwalF5ak81Zis2YitZTDgKLS0tIFAxVWJlbCtuZTBvLzhNS2x5MTlE
+            eGZPa0NIZVJDWDdvdk1DY3U2dGptdFEKSIICYfy0Nn4mYgg4kGcwhBBqj5zi1wy1
+            kxoFe7ng94Q4+/y97dwL31/HAUQ2jUFp2cBnvyRZ2mZwrKIIxbQ9Vg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-01-04T18:38:57Z"
+    mac: ENC[AES256_GCM,data:hKI/CMu5g9zbw1Sg0gnCKU1wibdH1712p0UQD5cC2LHvHqXuOSROd3gZRNy5KI4Ro9PPaB9gAyc3VmN46m5GC8spWOhsil5OQH4HdWktgurXT46vR3ssBLM1gzQd5I+lk9Zd1KOinT2Sm2yfOLKCcnei7tTQEVmHTGqLUeNsM0o=,iv:I9J1Uw0n2hjUOj56enNC55mXhf8rAdSG+kTqYcw6gzU=,tag:NAcf4G2Vlsx7BK3XXIJ7IA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.3

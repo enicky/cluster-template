@@ -1,0 +1,32 @@
+fullnameOverride: k8s-gateway
+domain: gitlab.be
+ttl: 1
+service:
+    type: LoadBalancer
+    port: 53
+    annotations:
+        io.cilium/lb-ipam-ips: 192.168.1.7
+    externalTrafficPolicy: Cluster
+watchedResources:
+    - Ingress
+    - Service
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBscEs2OXFzWkpMeTNrYUJ3
+            QmxabktUOU1uSjdBcERtRzIycjZXa0t3bGh3CjNBSDJjOVBIVzZYOEVFYjBiWkpo
+            VEhQSHZCa1dnYkNDRnVObW1vbEJudU0KLS0tIDNJRHc1OXl6WTdlQ2ZIelpUSVJQ
+            YkpYWC9HS3hpNVRidzZWTGU0L0M0R3MKwZOxbO4mNX2ZzW+hGvpPafzLQ4BcHTkq
+            4fMUbdYba5RKPRJu+Yc7iq5F8lr04hqXvQJ/yc/1UO+M8kdKMMBscQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-01-04T18:38:57Z"
+    mac: ENC[AES256_GCM,data:LzMjGh4CR1Eoel4GTqDiGre8SFTJVLzG/Y1ZCYQUJuLE7N+y3jRnmGFlMCACgoGYHEouHWUzBwTXAsxc7MZjDjP7EIibNvFGFapuE3TaWX6qatNNCSxVda9pN+XJRVwjt8QHd7FKJrl6LOcYmmSPLXXdXn9h2mEEx219JsYqqUY=,iv:oRC6AfJXXaL+uCjS2FkeJcP9Of46nedJu1L9rDaoTws=,tag:6ByJX2Uht0+OtRRQVvfcqA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.3

@@ -1,0 +1,33 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+    name: gitlab-be-staging
+spec:
+    secretName: gitlab-be-staging-tls
+    issuerRef:
+        name: letsencrypt-staging
+        kind: ClusterIssuer
+    commonName: gitlab.be
+    dnsNames:
+        - gitlab.be
+        - '*.gitlab.be'
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBVQU5QeVlkcUhpdVRmejRO
+            WXJ5aUJCcHRWTDVJM0xvK0pSK3FwRjlkeUdNCmtDYk5UWExuQkk5Z2RiK0t4K0M0
+            VDY1eTkyMXBNd1ZySzFyN2kxcmUxa2cKLS0tIDhTT0ljSzRrTUFlcjg5bkgvVVRE
+            Qm4zaFVzeGtBK3MvNXphRVE3REhyaGcKxrXz8FD4VcylLYser3BjddYRyJsf4ghA
+            wPh5j4fS5y+LxvOGgU2sxD6NE4xn6wQVb9fs6CQSnS3hs3mP06BcjQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-01-04T18:38:57Z"
+    mac: ENC[AES256_GCM,data:rXw2h66LAf0PNKNLQDjeHcCmLv3HKENqComuTXQBDPm8S78tAKH2qxbJSH5ZvjSmEyFBNkzC3Jf3fboQD8sbuGspcJviB0IqIsDPWQSls3tkT1OoDJ1axy4whSN4f5szk0RuSKyG2KAJ3PE2gnvNPjOJXvs6X37qYOjTGOzmH3g=,iv:aa7SD2gjBnloRBdEWXxADAerCLdcwF3/jGVvurL6BIw=,tag:lBJN9r2eAgIqN8UBIHS6bQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.3

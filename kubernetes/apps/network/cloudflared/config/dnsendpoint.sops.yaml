@@ -7,7 +7,7 @@ spec:
         - dnsName: external.gitlab.be
           recordType: CNAME
           targets:
-            - .cfargotunnel.com
+            - d1ae206c-f43b-4d43-9dc0-39c273c60b45.cfargotunnel.com
 sops:
     kms: []
     gcp_kms: []
@@ -17,14 +17,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSByTlJPcVNwalMyd2dXb1M3
-            VUQyMjg4SHZSK2JVNEJOcU43ZXRJYTk0b1ZvCnltTS9zYnVIZUtmM2FiK016VlNQ
-            dDh6UURiYmxGY2gyMzNWMlUzZVdwczAKLS0tIDA3TjZ3anA2THJvbnZ5RUNYTTlj
-            VWtDV3ZQT0w2cUlRRTd1SGhhVUphRDgKz9a60GW5xZxa7ejlFfooPEu4hi9q0pK3
-            carVQDpKAK7lkJx13HcLY5omgiqFpLvQY2EL6wz39c3jq+a2todNag==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBGV2pPdytROXAxOXhXTFQr
+            VXpHTmVGTEIvaVZJWkVSYnd4aUlxTEFGSURRCktERnU4VWxZZmpldHErR3AxQUVP
+            SGRGL3hWZG5ZK2s0dlZnWlJ5ak4xQ1EKLS0tIDVJRmJON0ZQekE1QnRyKzRoSThY
+            MDVPeGovZUNZVG42YTc3LzNtb1VFQXMKz+UyoWjJXJYC8mV5AIWePT4l8hEmyMF5
+            C9REu6/xCn5uWYFAuHAUiIAZ20pJHr/q5he/m0I99lluMjffk9uOAA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-05T08:03:25Z"
-    mac: ENC[AES256_GCM,data:Ds4egpbxTPpPn3X5P9GgEo09DRiZR1Wb7YM0MoY+5PNSPzdIJEdhtif0NUTAYvxe1hNzUJgu3uoP2ZCnXhfJxWY+ODhqvfvdjuug2U4H56crelOfw5bLXWmpHiA4yoCdrLRvDeoFtn5gZ3yE2BcTKh8kVq3IBCqD74vmg8zyVFg=,iv:jx7itTM6Nj3y3oQ5rfZMIR8qATAgeCXBF3L3azy2X0c=,tag:j4OHr5/XK4k162PWpKLKKA==,type:str]
+    lastmodified: "2025-01-05T13:30:52Z"
+    mac: ENC[AES256_GCM,data:3VajLWX3L8hh7yuNisGOcINNZceHzkWYIzn7u2bRwwQpRs6TWywLZcKGghGQTF8DzPQ2UuCpuBT2m3SjP7Y5jDR6fmZpEP61ipIzKPJY/NKB679O7dgfzFIKDaOOFmPJZnCKDbtxvnEDJ0PBewO7ttihXJIFAOuPDK89v6GIRBc=,iv:aXFqHo0ljnls0cdslgacXXvhRjzS9f9sY573L3MDdC4=,tag:7syjWEW/C7diE+h2/xhwWA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

@@ -89,7 +89,7 @@ serviceWeb:
         tailscale.com/hostname: pihole-ui
         # metallb.universe.tf/address-pool: network-services
         # metallb.universe.tf/allow-shared-ip: pihole-svc
-virtualHost: pihole.terence.cloud
+virtualHost: pihole-v2.gitlab.be
 # -- Configuration for the Ingress
 ingress:
     # -- Generate a Ingress resource
@@ -197,26 +197,27 @@ antiaff:
     strict: true
 doh:
     # -- set to true to enabled DNS over HTTPs via cloudflared
-    enabled: true
-    name: cloudflared
-    repository: crazymax/cloudflared
-    tag: latest
-    pullPolicy: IfNotPresent
+    enabled: false
+    #name: "cloudflared"
+    #repository: "crazymax/cloudflared"
+    #tag: latest
+    #pullPolicy: IfNotPresent
     # -- Here you can pass environment variables to the DoH container, for example:
-    envVars: {}
+    #envVars:
+    #  {}
     # TUNNEL_DNS_UPSTREAM: "https://1.1.1.2/dns-query,https://1.0.0.2/dns-query"
-    # -- Probes configuration
-    probes:
-        # -- Configure the healthcheck for the doh container
-        liveness:
-            # -- set to true to enable liveness probe
-            enabled: true
-            # -- defines the initial delay for the liveness probe
-            initialDelaySeconds: 60
-            # -- defines the failure threshold for the liveness probe
-            failureThreshold: 10
-            # -- defines the timeout in secondes for the liveness probe
-            timeoutSeconds: 5
+# -- Probes configuration
+#probes:
+# -- Configure the healthcheck for the doh container
+#  liveness:
+# -- set to true to enable liveness probe
+#    enabled: true
+# -- defines the initial delay for the liveness probe
+#    initialDelaySeconds: 60
+# -- defines the failure threshold for the liveness probe
+#    failureThreshold: 10
+# -- defines the timeout in secondes for the liveness probe
+#    timeoutSeconds: 5
 dnsmasq:
     # -- Add upstream dns servers. All lines will be added to the pihole dnsmasq configuration
     upstreamServers: []
@@ -329,14 +330,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBpN2lycW5GcHVkbnF4Qk1s
-            RW1NaXF0MGpJdUNFaGhjcTlodm5IWlNrekY4ClZaejVJRStneHl5a29tcTRlZTBE
-            and2V0xPREpzeGRGYWRqcUw1cEd6ZzQKLS0tIFRBaGlNb3pwZlc4YSsxNVExL1Zw
-            L01USklKK0RuMjZINTk5a3VLa3kvbWsKukIP2GyAsjt6DoBJmVz5CP6u6tEa7ue1
-            Z7FlNeyGkVclZFAYVExoQUf2608HPaHs7wm+KvYDMCipZeKy18wEeQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA2L1ZlQmMvQVMvczgwMGJs
+            cUJrUzhTRDBRM2pFSWRWODRZNHdRSjFNYzNjCkdEdkhvTkptOERkci83NkgzRGY5
+            WGNwdkFNQ0wvZUZrSjZiSUQrR216NlkKLS0tIEhDeEx4bGFGUC9WMEI3QjU1MTdY
+            SzByT2RGbndQeGhPZ0VTYlVKWk0wWUkK7OFpkPpAsqmFZ4OinQA2YJcAEo9EiKxj
+            UNfLhokFUz6SLYp0mpHf1QHmk0OGPdze4ngbBeXodYZ5YQ4YlvCQxA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-12T07:23:58Z"
-    mac: ENC[AES256_GCM,data:q9WacwHUU4r4n09a+BhM5n9OHBVUa5ZQ3Xu3TgOlk65O7Xoc/QfblVkeVI/VnQhY8nmSJB2lhkh7GbVZjtiWovb+8a4AyguebL2Zh9vSx8CTeBncrODbPnN0KHPvmTKEiLhECylTJ/yYLj4MiVnBiIoclzoT5nYQXGPO3hV0TYI=,iv:TZBjYd3NUxMvoV9ws0c4CviJmt6RFIY5ql27jEvpOoc=,tag:2ySfgPDSG6SrhE48567d4A==,type:str]
+    lastmodified: "2025-01-12T07:25:42Z"
+    mac: ENC[AES256_GCM,data:wSlgCO2ZMQ8Wz14iGq8bOXCzkJ25+GKBS0JUk9MeaEKWbjHxT+boRa6SuDRGekinyZQCgxyiXJAVrnnL9WNABnfXn7aZDCajtz4wJOPhiFSeaCinBVkfsIRu+cDQ60dZWdT/9RmRl5Nvr1xDD7a3CPj04EJqs+KQHwNAQa1dcmQ=,iv:XbVff1Q25dmS4RTcIrQiwNRZeEnS7jCGnQhEtZ4FuWA=,tag:xH88+ydHKT0qBdK+vz4i2Q==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

@@ -29,7 +29,7 @@ serviceDns:
     # -- deploys a mixed (TCP + UDP) Service instead of separate ones
     mixedService: true
     # -- `spec.type` for the DNS Service
-    type: ClusterIP
+    type: LoadBalancer
     # -- The port of the DNS service
     port: 53
     # -- Optional node port for the DNS service
@@ -37,7 +37,7 @@ serviceDns:
     # -- `spec.externalTrafficPolicy` for the DHCP Service
     externalTrafficPolicy: Local
     # -- A fixed `spec.loadBalancerIP` for the DNS Service
-    loadBalancerIP: 192.168.1.57
+    #loadBalancerIP: "192.168.1.57"
     # -- A fixed `spec.loadBalancerIP` for the IPv6 DNS Service
     #loadBalancerIPv6: ""
     # -- Annotations for the DNS service
@@ -76,7 +76,7 @@ serviceWeb:
         # -- The port of the web HTTPS service
         port: 443
     # -- `spec.type` for the web interface Service
-    type: ClusterIP
+    type: LoadBalancer
     # -- `spec.externalTrafficPolicy` for the web interface Service
     externalTrafficPolicy: Local
     # -- A fixed `spec.loadBalancerIP` for the web interface Service
@@ -96,6 +96,7 @@ ingress:
     enabled: true
     # -- Specify an ingressClassName
     ingressClassName: internal
+    pathType: Prefix
     #annotations:
     #  internal-dns.alpha.kubernetes.io/target: "internal.gitlab.be"
     # -- Annotations for the ingress
@@ -332,14 +333,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAzQllMMFg2R3B1OUNBUkR3
-            TWFFQ3kyQWlIdlF6Sm1KVnpPNlV6WUZsanhZCjR6TG9YT3IxQ1hWODkyM291SzV3
-            L2J0OWtNK215OWg1RDI4Y2VWU3B4QjgKLS0tIG9mVTFGUmdRZzFSK0NXQ0p4cnF0
-            OGpKSDZPYnhoZWhOUEt0ZUwxWjRDSU0Kcahnvh2fmBUYr/g+0wT+okFgHY81yqhg
-            hQJQ/AhdybtsXiFIEraoZY2/gRTKw2ot8VLhRaGBKrSFDYCCjAOp9w==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBDekxFUTBlN0dMaTdqQzdL
+            Z0RtaVJTaHRZM1FWWjBIVG93bk5zd0FEQlMwCmVlalUxc2p3d2tlU1puYnI4TDJG
+            ZTY4Unk2ak1ocHFtSVc5bGxSUHBEcVEKLS0tIE41TkFVRW5VYjBPa013U1FOVmlX
+            ZXY4ZXM4b3JKMzZtTHZmRFRtbGFZSGcKdX/QNvm0A4sKBt3KhE4IFaIZ6fQHEjRs
+            edb0Pa7gmFUkNb2TExKMmEjycF/MWDeZhltlRmNKDq0GXJ3OhBivyg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-12T08:20:51Z"
-    mac: ENC[AES256_GCM,data:4jIDUPeqPUX0N/NkkmCFUkt6umNMoIk862xbL7BS1XkSX/8w3ZoXWiYZnYnNUn5qos/wMtxX7tgA5Q5RX6O+mLYGJCz02HpaEUq89ziF0jFP6C0bFZWVl2YLsyBKuOOEBEmjEihYuE3YiDjozZk1FwEBjGDThgrMJtX7L3yzx/0=,iv:6lg7TNyZegMI7CwWKBZKnzj9MyqeXOS+5zPqIa7kyUo=,tag:qM4bTVtT0wBU5n7Hvadojg==,type:str]
+    lastmodified: "2025-01-12T09:35:34Z"
+    mac: ENC[AES256_GCM,data:qNlUPaT79FQ8T1OfTjgDfemYT4G7bgjds08Ygt/a4DbTXtZm6BO/wj67XqnDf2Mpa8yuO7/ocwfqCo/oyJBTOP9VqCnlPvie87/NCU1YTXOnsNAO3vKBO1gNIKxXX5VWEduY5e+4hwEXTwaAgPPdegP4S7A7s1pN5aadrkAZjtQ=,iv:mYPHHVkoycJeULaNJIuAWcJF5zA+irlbvYs0COEK9Q0=,tag:dUP4EcP8oB1sBWu1t4EI4g==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

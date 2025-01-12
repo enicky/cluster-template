@@ -35,7 +35,7 @@ serviceDns:
   # -- deploys a mixed (TCP + UDP) Service instead of separate ones
   mixedService: true
   # -- `spec.type` for the DNS Service
-  type: ClusterIP
+  type: LoadBalancer
   # -- The port of the DNS service
   port: 53
   # -- Optional node port for the DNS service
@@ -44,7 +44,7 @@ serviceDns:
   externalTrafficPolicy: Local
 
   # -- A fixed `spec.loadBalancerIP` for the DNS Service
-  loadBalancerIP: "192.168.1.57"
+  #loadBalancerIP: "192.168.1.57"
   # -- A fixed `spec.loadBalancerIP` for the IPv6 DNS Service
   #loadBalancerIPv6: ""
 
@@ -95,7 +95,7 @@ serviceWeb:
     port: 443
 
   # -- `spec.type` for the web interface Service
-  type: ClusterIP
+  type: LoadBalancer
 
   # -- `spec.externalTrafficPolicy` for the web interface Service
   externalTrafficPolicy: Local
@@ -121,7 +121,7 @@ ingress:
 
   # -- Specify an ingressClassName
   ingressClassName: internal
-
+  pathType: Prefix
   #annotations:
   #  internal-dns.alpha.kubernetes.io/target: "internal.#{ bootstrap_cloudflare.domain }#"
   # -- Annotations for the ingress

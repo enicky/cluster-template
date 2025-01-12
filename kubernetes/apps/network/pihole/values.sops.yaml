@@ -76,7 +76,7 @@ serviceWeb:
         # -- The port of the web HTTPS service
         port: 443
     # -- `spec.type` for the web interface Service
-    type: ClusterIP
+    type: LoadBalancer
     # -- `spec.externalTrafficPolicy` for the web interface Service
     externalTrafficPolicy: Local
     # -- A fixed `spec.loadBalancerIP` for the web interface Service
@@ -330,14 +330,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA2L1ZlQmMvQVMvczgwMGJs
-            cUJrUzhTRDBRM2pFSWRWODRZNHdRSjFNYzNjCkdEdkhvTkptOERkci83NkgzRGY5
-            WGNwdkFNQ0wvZUZrSjZiSUQrR216NlkKLS0tIEhDeEx4bGFGUC9WMEI3QjU1MTdY
-            SzByT2RGbndQeGhPZ0VTYlVKWk0wWUkK7OFpkPpAsqmFZ4OinQA2YJcAEo9EiKxj
-            UNfLhokFUz6SLYp0mpHf1QHmk0OGPdze4ngbBeXodYZ5YQ4YlvCQxA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBxeTd5QllPTm9DQjJQU0sv
+            MTh6T2FrTDhwNm84TnNSR1JGOXYxSVRkbUQwCnNTV1U2d3R4NlgwQTRxYURzMFpn
+            cmg2UzVYN2NVSnQ4ekh6b3JuaUNjclUKLS0tIDliMlVEaTV4d3VCNXRQRnZMRno2
+            ZmdTNUZzK3VGY2V4bllEVExpYzExWnMKhCxtYBfh7SuN51k4jN020o524Qo2WcU4
+            cLI4hzhwWvv5HwjIrK7+7bKLLQs92DpqEBE6lx27ZVQOmEgaOhAKBA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-12T07:25:42Z"
-    mac: ENC[AES256_GCM,data:wSlgCO2ZMQ8Wz14iGq8bOXCzkJ25+GKBS0JUk9MeaEKWbjHxT+boRa6SuDRGekinyZQCgxyiXJAVrnnL9WNABnfXn7aZDCajtz4wJOPhiFSeaCinBVkfsIRu+cDQ60dZWdT/9RmRl5Nvr1xDD7a3CPj04EJqs+KQHwNAQa1dcmQ=,iv:XbVff1Q25dmS4RTcIrQiwNRZeEnS7jCGnQhEtZ4FuWA=,tag:xH88+ydHKT0qBdK+vz4i2Q==,type:str]
+    lastmodified: "2025-01-12T07:38:31Z"
+    mac: ENC[AES256_GCM,data:kH0C+bzNejkFMukyg0+GqKsSO+4t9PohY5i8lY5/mZ47XgdBYlc3jPlf7esCTc/7XknB4qb9dgOefHEFmcHB4e/CMMVjC4++gqTT0TPxCmWo7tMkaMMrnTFMEWDAnD+aMrHGL6speQFQY6YKYUZQcTK7QebrCVjZ7/TMRcnkqWQ=,iv:16iTq3zOvqHdXLZjQLO2FgGi0iGYADfHL/cbdc8AZ7c=,tag:CAJGwp3gR31pIl4pOQUc/Q==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

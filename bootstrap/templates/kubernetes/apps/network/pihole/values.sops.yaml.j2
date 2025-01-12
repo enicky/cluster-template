@@ -112,7 +112,7 @@ serviceWeb:
     # metallb.universe.tf/address-pool: network-services
     # metallb.universe.tf/allow-shared-ip: pihole-svc
 
-virtualHost: pihole.terence.cloud
+virtualHost: pihole-v2.gitlab.be
 
 # -- Configuration for the Ingress
 ingress:
@@ -247,28 +247,28 @@ antiaff:
 
 doh:
   # -- set to true to enabled DNS over HTTPs via cloudflared
-  enabled: true
-  name: "cloudflared"
-  repository: "crazymax/cloudflared"
-  tag: latest
-  pullPolicy: IfNotPresent
+  enabled: false
+  #name: "cloudflared"
+  #repository: "crazymax/cloudflared"
+  #tag: latest
+  #pullPolicy: IfNotPresent
   # -- Here you can pass environment variables to the DoH container, for example:
-  envVars:
-    {}
+  #envVars:
+  #  {}
     # TUNNEL_DNS_UPSTREAM: "https://1.1.1.2/dns-query,https://1.0.0.2/dns-query"
 
   # -- Probes configuration
-  probes:
+  #probes:
     # -- Configure the healthcheck for the doh container
-    liveness:
+  #  liveness:
       # -- set to true to enable liveness probe
-      enabled: true
+  #    enabled: true
       # -- defines the initial delay for the liveness probe
-      initialDelaySeconds: 60
+  #    initialDelaySeconds: 60
       # -- defines the failure threshold for the liveness probe
-      failureThreshold: 10
+  #    failureThreshold: 10
       # -- defines the timeout in secondes for the liveness probe
-      timeoutSeconds: 5
+  #    timeoutSeconds: 5
 
 dnsmasq:
   # -- Add upstream dns servers. All lines will be added to the pihole dnsmasq configuration

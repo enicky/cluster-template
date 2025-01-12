@@ -95,21 +95,21 @@ ingress:
     # -- Generate a Ingress resource
     enabled: false
     # -- Specify an ingressClassName
-    ingressClassName: nginx
+    ingressClassName: internal
     # -- Annotations for the ingress
     annotations:
-        cert-manager.io/cluster-issuer: letsencrypt
+        cert-manager.io/cluster-issuer: letsencrypt-staging
         external-dns.alpha.kubernetes.io/target: home.terence.cloud
         nginx.ingress.kubernetes.io/auth-url: https://$host/oauth2/auth
         nginx.ingress.kubernetes.io/auth-signin: https://$host/oauth2/start?rd=$escaped_request_uri
     path: /
     hosts:
         # virtualHost (default value is pi.hole) will be appended to the hosts
-        - pihole.terence.cloud
+        - pihole-v2.gitlab.be
     tls:
         - secretName: pihole-tls
           hosts:
-            - pihole.terence.cloud
+            - pihole-v2.gitlab.be
 # -- Probes configuration
 probes:
     # -- probes.liveness -- Configure the healthcheck for the ingress controller
@@ -329,14 +329,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBZaG15MkVrcFZjZCtrM0Fy
-            cGlGSVpneStvVEIwY3poYW9kK2JhRUNobVFRCmkyVWl4YnRGY2xGajhhRS9Vc2t0
-            TGVEU2tzR1JaVHRtQWFTdENUZEQ1dGMKLS0tIHlaQVJRZWMvNlF3K2l1UmxZYU10
-            ckJneGJCTHRDa3diakdnYmUrYmx2czAK/LI7mtb1R1rmOaG9Da33DpoPAsZFvzx6
-            eQPrWqL4/xN0cKXira+rO0drJGAzRnHkJXJfDIuoRh9Yx6ikQpJKhA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA4NFA5Vi9uSGRBVCtRWERN
+            bkVkTlZNV1FDcjRJN3dYM0RzNUlSK25maWhBCjQzalE1WnY2Q0lTVytJS0pCMGdW
+            KzB4UjZSaU11TmpVWks2YzZ1aTlRWkEKLS0tIEFOUllmbllxbWMwWU5HRlJkT3c3
+            T3o1N1RuOUgvMkZpaHd2VytibHB4OFkKkxiIfrq7ywRizl4LYPMZBgeSOobRkuor
+            PKYgjrNdMchGYKNuERRYQ+cEVjq4qzC1tgoV3YwTwSTkOTIHkI82Jw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-12T06:58:10Z"
-    mac: ENC[AES256_GCM,data:lmXZoGcb8i8LZaTB8INwx4AUaynV3LNYnWp0sy/Xl7HKfyA5QD607CthHytXRkdYqTtWXZmX7z/3jhNLTrhUG0Sbku8pYNd4sKhRimUbDKnAPOp+Lbu2nYVjN6vlKTxTlCnO2nZ43vYHhkRDC6lZsNsa8m4c34dXeElNF5PPmyw=,iv:sTbBs7vqTi+tYg41Ns98yQf0ESP0fX4UI4QNUvm2C1o=,tag:2KiYd3UPis5iY4NjWHQC4g==,type:str]
+    lastmodified: "2025-01-12T07:09:54Z"
+    mac: ENC[AES256_GCM,data:yF/mTjZsGRIBQtCnhHeC3wLWTc8GddSdfqSR/diw8WKGTavEbSptNFFJj28Rls8hqD3XlW4Eh8CY1aWSsqFgzsKLiV+VKvrvbJ0XdcpEZIRA4uiNpAixU+dgmhsG0podRRXCNWS9ee7cvfrDr8Sz78QWLVIkhL6Qg/IFVWo4i9E=,iv:1plc5/+ljgiNvb5hC273alHZtHoILvL7iHnf80XmLkE=,tag:MdjjQsJf0AXvSoz/a7kZTA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

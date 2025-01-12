@@ -120,22 +120,22 @@ ingress:
   enabled: false
 
   # -- Specify an ingressClassName
-  ingressClassName: nginx
+  ingressClassName: internal
 
   # -- Annotations for the ingress
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt
+    cert-manager.io/cluster-issuer: letsencrypt-staging
     external-dns.alpha.kubernetes.io/target: home.terence.cloud
     nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
     nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
   path: /
   hosts:
     # virtualHost (default value is pi.hole) will be appended to the hosts
-    - pihole.terence.cloud
+    - pihole-v2.gitlab.be
   tls:
     - secretName: pihole-tls
       hosts:
-        - pihole.terence.cloud
+        - pihole-v2.gitlab.be
 
 # -- Probes configuration
 probes:

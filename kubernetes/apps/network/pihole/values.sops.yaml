@@ -96,8 +96,8 @@ ingress:
     enabled: true
     # -- Specify an ingressClassName
     ingressClassName: internal
-    annotations:
-        external-dns.alpha.kubernetes.io/target: internal.gitlab.be
+    #annotations:
+    #  internal-dns.alpha.kubernetes.io/target: "internal.gitlab.be"
     # -- Annotations for the ingress
     #annotations:
     #cert-manager.io/cluster-issuer: letsencrypt-staging
@@ -332,14 +332,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBScWlxUTRvZG90T3ZRSEE0
-            WVpDVXR1OFRJM1NHZGlNWlR4VFJYNGo1QTJZCkNyVTFRZXBwK1dLa3IvKzFyUS9H
-            YmtJbVdteVRnZGUwV2xGMDhHREVCajgKLS0tIG1HS05GbXdYWTlpZnlQQ1VNZ2FN
-            cmU1ZDlyb1l2L2RHUER4SUZSbDQrcW8KYZi9uMMDiZ59HRsFXRwVNjj8AEIbJRQM
-            +uXhxa5h0tZt01YFmOok2MGlBhREx0MyzPvByZ8jjdOcFGxqxtoazQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAzQllMMFg2R3B1OUNBUkR3
+            TWFFQ3kyQWlIdlF6Sm1KVnpPNlV6WUZsanhZCjR6TG9YT3IxQ1hWODkyM291SzV3
+            L2J0OWtNK215OWg1RDI4Y2VWU3B4QjgKLS0tIG9mVTFGUmdRZzFSK0NXQ0p4cnF0
+            OGpKSDZPYnhoZWhOUEt0ZUwxWjRDSU0Kcahnvh2fmBUYr/g+0wT+okFgHY81yqhg
+            hQJQ/AhdybtsXiFIEraoZY2/gRTKw2ot8VLhRaGBKrSFDYCCjAOp9w==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-12T08:18:13Z"
-    mac: ENC[AES256_GCM,data:R53JSl55FF6dxCNJaaFiXwpIoVOksI5KqogHOtAdWW6gSe+S5IyJ2bdFghyLBbQ94TCBmobXOS1PA2AVxUKt4XzqlyiDQDlIksZ+9QcI+V56ETRxKc8PeeMIXw7RzdYLZ5oZoSLHLC0efvuY2dPHUtCURB7/HslANtJ5gw21xFQ=,iv:Fdejv0fuDeLEl6oe+QdofGyJHX20UEIS9l9FkvXh38Y=,tag:lOrIbGQxlhm6TguQ1HSxQA==,type:str]
+    lastmodified: "2025-01-12T08:20:51Z"
+    mac: ENC[AES256_GCM,data:4jIDUPeqPUX0N/NkkmCFUkt6umNMoIk862xbL7BS1XkSX/8w3ZoXWiYZnYnNUn5qos/wMtxX7tgA5Q5RX6O+mLYGJCz02HpaEUq89ziF0jFP6C0bFZWVl2YLsyBKuOOEBEmjEihYuE3YiDjozZk1FwEBjGDThgrMJtX7L3yzx/0=,iv:6lg7TNyZegMI7CwWKBZKnzj9MyqeXOS+5zPqIa7kyUo=,tag:qM4bTVtT0wBU5n7Hvadojg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

@@ -122,8 +122,8 @@ ingress:
   # -- Specify an ingressClassName
   ingressClassName: internal
 
-  annotations:
-    external-dns.alpha.kubernetes.io/target: "internal.#{ bootstrap_cloudflare.domain }#"
+  #annotations:
+  #  internal-dns.alpha.kubernetes.io/target: "internal.#{ bootstrap_cloudflare.domain }#"
   # -- Annotations for the ingress
   #annotations:
     #cert-manager.io/cluster-issuer: letsencrypt-staging

@@ -52,14 +52,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBNNE5Bc0JTdmNQM283YXZE
-            eFdWYTJJQlJ5NFRscWN3WFpkY2tFTWkveEZJCkVtU1V0NWg5TGVrK0MrNDg3R2xQ
-            RUhEbmJ2WFFKOHdNRDBaYkhnMnpBa0EKLS0tIHJFWG1BbFl6WmE1OXV6UGZacnBO
-            NGQybDFSYkdOZC93VDVyRllTRU54MzQK6TTL5pGGVC/G2Gd4RKTSciVw+syz9j24
-            tUGXyWZaCgSJUY28tQWWxM9ORyolsRipTSxvZdmLLs7DAyqsT4Wn9w==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAyRGxQeVU3eFEwUW43RERN
+            TFdvWjNPd2V3Y1Vkd21yem1rV0ZLWnhGaGtNCkpLVkMzdE5UaVlXRE5La2tVS3Q4
+            RFMxczlTTTZSN3FLMldzbVBMRGR4dVEKLS0tIERLYVl6OTFEQ2hCbjRBbjZrWVJR
+            Q3FnZkxkcDQ5cTdsWlJtM1ZqN0srYzAK6LBjIuFjrEK+WQsojOt/Dvd9++opk9/W
+            inrac2O6XjKQXiJYDmN/H3HfF/ZHIbaPNjqe78kz2ruURz9NEMi3jw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-12T08:05:18Z"
-    mac: ENC[AES256_GCM,data:Sv6Wa7C3ij/CqtIX+GGwpCZ1DrySqP49ub5IIJ9llZZu3WMDSq5rX8wGtdXe/ktabMvVxxdxFfPveS7lhROqlvZHTZdQJNHjAGcY+bYdAcclK254j+j1NGqPaeJBih22Uc6OePyBqcU8BDrKX6k4O1LaL39t0CgOJEd+fN8i4S0=,iv:VEXXXbPO/wFkg6aciWSVupAsCdbv5GSZQWUCMKWQ9fQ=,tag:TTRLSkMN0MQbzK9dQRD4UA==,type:str]
+    lastmodified: "2025-01-12T08:07:53Z"
+    mac: ENC[AES256_GCM,data:fbegDBnwFsmY/cpBAfLVXEUh6USBDfr2ixpodxMMhlvMO5RP4TEavKEd+CXdn3l4zPcjJ39BfGmUU17fJQdzT7w5dSZx+SO9ZFqlYETCLrSE8SPeUtwEcaoIqEVxAvTI68F1ed6OTZWu+TZJf8aoW2JvzrHyBcFwJuKKQsRIjfA=,iv:0Z61t0NHLHj9hpcUzyMe8XjOrsjhqUkRkr0x8fogUgE=,tag:dUncLMT27yfuua45BMRjxQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

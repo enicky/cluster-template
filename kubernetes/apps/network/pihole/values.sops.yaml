@@ -96,6 +96,8 @@ ingress:
     enabled: true
     # -- Specify an ingressClassName
     ingressClassName: external
+    annotations:
+        external-dns.alpha.kubernetes.io/target: external.gitlab.be
     # -- Annotations for the ingress
     #annotations:
     #cert-manager.io/cluster-issuer: letsencrypt-staging
@@ -330,14 +332,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBqZE10Zk1KMHp0UzdLYWRW
-            TG9yRHVNZk91anFwcDVKQ29qNUlZZW1jTW5nCkFvYk8zWG92RTlMM29jakFUL0J6
-            dmVlS3VkaGhZcHQ4SVNBVy9YZnBEYmMKLS0tIGNLRlZqS2loenBuTlZIakt4YzlR
-            ZlQ4djFsaERqakcvcXBkZ2ZXQkNRVWcKjcsR2ct3hJdMVgJvVj6sfY29vFUM1Lde
-            5DHSMz3nmQ2PxSp3z/FTGFMo8BjfLflj6QTISAf2lJOYR+IWJ8u8yg==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4aW9TZWxzY1pyanp6SWRR
+            YVlReGN6ZjVTbzl3TUNtR2NqSzNFdUtsU3pRCjZqVjFBZzkwaHJkM3FTRWc2bDkw
+            OHBxZ0JIQUZxYzdlK1FlNmpNVGsyNGcKLS0tIFl3NHNVcmppWWhxOVY1SmZyUUNk
+            OUs5cFg4c1NTd2QyMjVTRUpPK3EyVFUKjeoQFOf3mzjIKCs4RAZRHTpDIY6ZdMM6
+            NOLnMlEDPc12L8L1Pqr2Mxqxm89rKzvu7a1xVtIN16c5KVELoFY1WA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-12T08:05:18Z"
-    mac: ENC[AES256_GCM,data:vGpiBQE7gYaOhrD/3ym8K3t6OQJtoRbE7+c5qxvnu6IAkjC8n9kou0/4Nj5aClknBWJ/NU1C/5iT2kbboL4iHxOnipZzDkclTeU20E9T9lZ3YUaiEyq2wP1mPegAVDKCfktNkjsXBhTINfk7aWUEPeOPsZEJq4h5K4xKG8V4hhU=,iv:qU+conuPARURjDn1WH93fKjZhRrBR9ZF+TUn7ADO7ZY=,tag:STikK6qLs3rqDt08la2QrA==,type:str]
+    lastmodified: "2025-01-12T08:07:53Z"
+    mac: ENC[AES256_GCM,data:nVYXqMV/MZ7Dgt9+gZJYXG1uXAlcEtqpAm42WiCie9sks8W8oUmzWcec7XGCvfKlZSkPsTL1sNJBW9hqaudvctggjoN9/3VTwrbofG8QACzv5eqNLYtrxL0tTHSQfNm8o+ppJ0bMarRB5u/B+tYXQoJfdSlB2qbN2F4vSKMeepc=,iv:SVUUX+MMAQWT68DxKsJHwiQvuUi98rF84kFOWbRfumI=,tag:sapbgMWQ31WsMpd6nx/ZIQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

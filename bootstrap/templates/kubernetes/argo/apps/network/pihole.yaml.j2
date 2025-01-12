@@ -18,7 +18,7 @@ spec:
       chart: pihole
       helm:
         releaseName: pihole
-        values:
+        valueFiles:
           - $repo/kubernetes/apps/network/pihole/values.sops.yaml
   destination:
     name: in-cluster

@@ -15,9 +15,10 @@ spec:
       ref: repo
     - repoURL: https://mojo2600.github.io/pihole-kubernetes
       targetRevision: 2.27.0
+      chart: pihole
       helm:
         releaseName: pihole
-        values:
+        valueFiles:
           - $repo/kubernetes/apps/network/pihole/values.sops.yaml
   destination:
     name: in-cluster

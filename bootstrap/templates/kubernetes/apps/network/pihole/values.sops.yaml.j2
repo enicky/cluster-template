@@ -95,7 +95,7 @@ serviceWeb:
     port: 443
 
   # -- `spec.type` for the web interface Service
-  type: LoadBalancer
+  type: ClusterIP
 
   # -- `spec.externalTrafficPolicy` for the web interface Service
   externalTrafficPolicy: Local
@@ -120,7 +120,7 @@ ingress:
   enabled: true
 
   # -- Specify an ingressClassName
-  ingressClassName: internal
+  ingressClassName: external
 
   # -- Annotations for the ingress
   #annotations:

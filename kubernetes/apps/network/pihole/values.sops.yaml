@@ -76,7 +76,7 @@ serviceWeb:
         # -- The port of the web HTTPS service
         port: 443
     # -- `spec.type` for the web interface Service
-    type: LoadBalancer
+    type: ClusterIP
     # -- `spec.externalTrafficPolicy` for the web interface Service
     externalTrafficPolicy: Local
     # -- A fixed `spec.loadBalancerIP` for the web interface Service
@@ -95,7 +95,7 @@ ingress:
     # -- Generate a Ingress resource
     enabled: true
     # -- Specify an ingressClassName
-    ingressClassName: internal
+    ingressClassName: external
     # -- Annotations for the ingress
     #annotations:
     #cert-manager.io/cluster-issuer: letsencrypt-staging
@@ -330,14 +330,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBxeTd5QllPTm9DQjJQU0sv
-            MTh6T2FrTDhwNm84TnNSR1JGOXYxSVRkbUQwCnNTV1U2d3R4NlgwQTRxYURzMFpn
-            cmg2UzVYN2NVSnQ4ekh6b3JuaUNjclUKLS0tIDliMlVEaTV4d3VCNXRQRnZMRno2
-            ZmdTNUZzK3VGY2V4bllEVExpYzExWnMKhCxtYBfh7SuN51k4jN020o524Qo2WcU4
-            cLI4hzhwWvv5HwjIrK7+7bKLLQs92DpqEBE6lx27ZVQOmEgaOhAKBA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBqZE10Zk1KMHp0UzdLYWRW
+            TG9yRHVNZk91anFwcDVKQ29qNUlZZW1jTW5nCkFvYk8zWG92RTlMM29jakFUL0J6
+            dmVlS3VkaGhZcHQ4SVNBVy9YZnBEYmMKLS0tIGNLRlZqS2loenBuTlZIakt4YzlR
+            ZlQ4djFsaERqakcvcXBkZ2ZXQkNRVWcKjcsR2ct3hJdMVgJvVj6sfY29vFUM1Lde
+            5DHSMz3nmQ2PxSp3z/FTGFMo8BjfLflj6QTISAf2lJOYR+IWJ8u8yg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-12T07:38:31Z"
-    mac: ENC[AES256_GCM,data:kH0C+bzNejkFMukyg0+GqKsSO+4t9PohY5i8lY5/mZ47XgdBYlc3jPlf7esCTc/7XknB4qb9dgOefHEFmcHB4e/CMMVjC4++gqTT0TPxCmWo7tMkaMMrnTFMEWDAnD+aMrHGL6speQFQY6YKYUZQcTK7QebrCVjZ7/TMRcnkqWQ=,iv:16iTq3zOvqHdXLZjQLO2FgGi0iGYADfHL/cbdc8AZ7c=,tag:CAJGwp3gR31pIl4pOQUc/Q==,type:str]
+    lastmodified: "2025-01-12T08:05:18Z"
+    mac: ENC[AES256_GCM,data:vGpiBQE7gYaOhrD/3ym8K3t6OQJtoRbE7+c5qxvnu6IAkjC8n9kou0/4Nj5aClknBWJ/NU1C/5iT2kbboL4iHxOnipZzDkclTeU20E9T9lZ3YUaiEyq2wP1mPegAVDKCfktNkjsXBhTINfk7aWUEPeOPsZEJq4h5K4xKG8V4hhU=,iv:qU+conuPARURjDn1WH93fKjZhRrBR9ZF+TUn7ADO7ZY=,tag:STikK6qLs3rqDt08la2QrA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

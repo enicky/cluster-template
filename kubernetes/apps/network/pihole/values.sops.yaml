@@ -29,7 +29,7 @@ serviceDns:
     # -- deploys a mixed (TCP + UDP) Service instead of separate ones
     mixedService: true
     # -- `spec.type` for the DNS Service
-    type: LoadBalancer
+    type: ClusterIP
     # -- The port of the DNS service
     port: 53
     # -- Optional node port for the DNS service
@@ -76,9 +76,9 @@ serviceWeb:
         # -- The port of the web HTTPS service
         port: 443
     # -- `spec.type` for the web interface Service
-    type: LoadBalancer
+    type: ClusterIP
     # -- `spec.externalTrafficPolicy` for the web interface Service
-    externalTrafficPolicy: Local
+    #externalTrafficPolicy: Local
     # -- A fixed `spec.loadBalancerIP` for the web interface Service
     loadBalancerIP: ""
     # -- A fixed `spec.loadBalancerIP` for the IPv6 web interface Service
@@ -333,14 +333,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBDekxFUTBlN0dMaTdqQzdL
-            Z0RtaVJTaHRZM1FWWjBIVG93bk5zd0FEQlMwCmVlalUxc2p3d2tlU1puYnI4TDJG
-            ZTY4Unk2ak1ocHFtSVc5bGxSUHBEcVEKLS0tIE41TkFVRW5VYjBPa013U1FOVmlX
-            ZXY4ZXM4b3JKMzZtTHZmRFRtbGFZSGcKdX/QNvm0A4sKBt3KhE4IFaIZ6fQHEjRs
-            edb0Pa7gmFUkNb2TExKMmEjycF/MWDeZhltlRmNKDq0GXJ3OhBivyg==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBWcEJYdVFhQXUrU20veStN
+            NGJwaFpZWS9WNXRwM0lua2hMU3NZZkhib3k4Cm1SY3Y0cWRHV0kxSThISDhTWkIw
+            OE1rNFFjRE1FYnhMNmJUc1JkSnVGNTQKLS0tIEpiSXpSbm1RaDBFd01uYnZaY2pR
+            dmNqRHpGUndkYm5ob3M4aFAzS3M2Tm8KTGjEL+WehR+esmICb+OD9ZWIP/74h2WR
+            DhbiaiGgSiA4diS6CaIBntdGPxxuihsPC13Bq6uHvkf3PWHLxJUttA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-12T09:35:34Z"
-    mac: ENC[AES256_GCM,data:qNlUPaT79FQ8T1OfTjgDfemYT4G7bgjds08Ygt/a4DbTXtZm6BO/wj67XqnDf2Mpa8yuO7/ocwfqCo/oyJBTOP9VqCnlPvie87/NCU1YTXOnsNAO3vKBO1gNIKxXX5VWEduY5e+4hwEXTwaAgPPdegP4S7A7s1pN5aadrkAZjtQ=,iv:mYPHHVkoycJeULaNJIuAWcJF5zA+irlbvYs0COEK9Q0=,tag:dUP4EcP8oB1sBWu1t4EI4g==,type:str]
+    lastmodified: "2025-01-12T09:40:19Z"
+    mac: ENC[AES256_GCM,data:LFsVpUBiWDlV7pVTcnNZFV2aLhWret8zmvand0S6qphF5fXvXN9nmHBS0crNSImCugoKgtppTEAWD097GmeUAx7q1Z8CyZkZcmHOZJR6Lj0yUI7H2YisRJip9drE1z08TXYh3pS9BNE3lcD9BJMFDuBTE9bE7GgDZyz5SkU2SoQ=,iv:WHGSsgyPjtDRDZL7Is/g+r9dT0pcNXlMgBgOE5idEqw=,tag:y5tBOVfgUv7IODX1+eT2Gw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

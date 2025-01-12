@@ -35,7 +35,7 @@ serviceDns:
   # -- deploys a mixed (TCP + UDP) Service instead of separate ones
   mixedService: true
   # -- `spec.type` for the DNS Service
-  type: LoadBalancer
+  type: ClusterIP
   # -- The port of the DNS service
   port: 53
   # -- Optional node port for the DNS service
@@ -95,10 +95,10 @@ serviceWeb:
     port: 443
 
   # -- `spec.type` for the web interface Service
-  type: LoadBalancer
+  type: ClusterIP
 
   # -- `spec.externalTrafficPolicy` for the web interface Service
-  externalTrafficPolicy: Local
+  #externalTrafficPolicy: Local
 
   # -- A fixed `spec.loadBalancerIP` for the web interface Service
   loadBalancerIP: ""

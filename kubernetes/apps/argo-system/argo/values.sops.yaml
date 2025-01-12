@@ -18,7 +18,7 @@ configs:
                 - "*"
     secret:
         argocdServerAdminPassword: null
-        argocdServerAdminPasswordMtime: 2025-01-12T10:35:33
+        argocdServerAdminPasswordMtime: 2025-01-12T10:40:18
         githubSecret: 0c93354bf836b2597298412f0f04e3ca
 controller:
     replicas: 2
@@ -154,14 +154,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBnZlhXNWJScDZtYko2ZTdL
-            YmRIb3Z3RWVjL0FvN2xrUjdqaHZBdFo1R0M0CmNGa0d2SkdZYVI3Ymk4bmxuZkpl
-            d0c5aVppTWdpZGE0TW1jMEJscGRPbU0KLS0tIC9uTldGcWRqSFBOcndWKzU3azBj
-            Z3pGNjh3Vi8rR0d6Qk04blFzNElDRU0KfX2mYjZ52rbBve1nQfWPVoROeT63WvBC
-            3oat2ufZjMFgabjepSM1FogsCK1umAKpepSkl/PxUYmXOShThzaczQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA3ZWFqQ0VKTG80aDVMbFl0
+            eUd6YmNkejRWcjNGVHBKZU5oY1Fuci9VVnhBCkZ4STVYditzZjQ0aTYrZUxxVkpn
+            dVBWK25QOHNpcTFwQ2VaYlNlOGNJaTAKLS0tIEhoVUhvbU0wbW1EN0RsOHRXRkpp
+            cnkzMExLL1ZoR0xnd2JaTnZ1SzZMTTAKfoMa0m4VRLptnQkIDhmEbSGjyCk8Lkib
+            rKIqtQbUquTSzRrXwiGkKl4PtqH9unbLHbY/X/D6azckyBmGRl6Ucw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-12T09:35:34Z"
-    mac: ENC[AES256_GCM,data:oYcYI68d56Anmzi15Rfa1UUGS09CUpJeAIOKV2uybBhXMgYlK1nTR8Mx56WXCTCJ3dejPOHNze8p0+QBXZwNah+qlr5FDQAwmBqo9xbaeEsj/P61j5ybLXwBLZXm2TiZXNC/LsVd51QGULabsvnQGeXNe6Ip7jwx58FfnoiiKhM=,iv:bi0SmzL09zIJDwp7RtSipiyz3EYpmFXsJMvixoYboik=,tag:AMDyTKsdpnaqwLh+r4ZxEw==,type:str]
+    lastmodified: "2025-01-12T09:40:19Z"
+    mac: ENC[AES256_GCM,data:VbgqmH3KZER9vRQKBxkz5uCa4FvxG9Hgff+m9B+hxIFQY/lZHCwWEjoVZvDqHRg4b32Nn+3rZq1mlXeax/pPlKn23ukPENb3v8wn959J9xEc1o+ELpylhVI07lEGsSLXfu9TITKhQ0GiY2bQYomnY/H2OsE6eg7tTmQ+fUe4l10=,iv:FiBhuUO47iXpZZG81b+c37wj0/nqerZH4oFeYXfqXvI=,tag:dwgB/oUttJPaWQdKUYTM7A==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

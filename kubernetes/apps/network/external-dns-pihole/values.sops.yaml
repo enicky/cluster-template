@@ -1,0 +1,45 @@
+fullnameOverride: internal-dns
+provider: pihole
+extraArgs:
+    - --events
+    - --ignore-ingress-tls-spec
+    - --ingress-class=internal
+    - --source=service
+    - --source=ingress
+    - --registry=noop
+    # IMPORTANT: If you have records that you manage manually in Pi-hole, set
+    # the policy to upsert-only so they do not get deleted.
+    #- --policy=upsert-only
+    - --pihole-server=http://192.168.1.56
+policy: upsert-only
+sources:
+    - crd
+    - ingress
+txtPrefix: k8s.
+txtOwnerId: default
+domainFilters:
+    - gitlab.be
+serviceMonitor:
+    enabled: true
+podAnnotations:
+    secret.reloader.stakater.com/reload: internal-dns-secret
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBqUXhFRFBkbWlWajZMMG9X
+            QktQNW0wL2lZM2FHcnlXaWwxY3NPeDFKQjE4CkxXZ29TRlh5V0VZWjRlcUVkVFpx
+            aW5YU243UEtxanpvUjBQK0dCcWR1eDAKLS0tIDVld2l6aW5GMXhrWjByNXhqRTZN
+            bnZtUU4rdG92RHBvbXlVck9kSXFUVjQKRcNzVlA54oOfyKQ87iga1G/TgY7KbSTU
+            qZ/A+dsg+Ug/taj8Op3hjtED9PxNcrfG0MYEYO6JAFyVUsMyvPzpGQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-01-18T13:39:42Z"
+    mac: ENC[AES256_GCM,data:7Jpg3LQYONn2V8tlLME+18f9VsABvLaSSu1ZWM2inQ+bm+u9tPAzKheFKAGoMfBffFzG25GsOLUBjsZ+LQgwx6H5ZJM/RbXv0W03Ek7nVTBRuj5MWhwbGlrNLQk1oGYpCSKmdRpONvzGsHVM5BZwawbj7ugAkArgwr4EdGBB9bE=,iv:4Fmn2+nH4wuaw3QSQUPTj+dP4J4+q30VHZmMQTHUibo=,tag:cjqO8RnZP97PZmczMIk6Eg==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.3

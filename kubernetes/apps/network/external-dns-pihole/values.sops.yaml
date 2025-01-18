@@ -12,7 +12,7 @@ extraArgs:
     # the policy to upsert-only so they do not get deleted.
     #- --policy=upsert-only
     - --pihole-server=http://192.168.1.56
-    - --pihole-password Aveve2008
+    - --pihole-password=Aveve2008
 policy: upsert-only
 sources:
     - crd
@@ -34,14 +34,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB0eGNWQmQwWENnOUlPWHVR
-            aGp2VmgxUmdCUXQyLzZ6ZFZLenYvQ21YN0JVCjF6TW0xOTh3YWtJK1FoV3Fjc1Ar
-            SWxWckRGSzlKd2EzUlJSclRaWWQ2ckEKLS0tIHlEcmJvazFGenByenNFcmNhU2tC
-            bndHckswcmNEMlRZTi9LVnpLdmV0L3cKLi8aB9qTGQmWpJZKm4iWMbG89pYr0Znf
-            h8nhZPMjecLMQ9WXcLoIvRWGDiubS0Kkkv5ZNYa5rRDwlIGiEsjMfg==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBDNzQwVERhL1B2Zmd2c09G
+            RmhXVWR0TGxSTnhjbEtKSzgxcUp1dW85QkVJClBoYlRoMDg1V0tFajBXTjFkdVgv
+            ZnBsS0pSUWl4SGNLbGZyRmdkaVp5MW8KLS0tIHhFZ1ZacWQ3UHNYOVFDUHlSaTBW
+            VVg0SHdidHZZOFZZOEx2V2lrVnJwTGcK9DHwInhpIawGq6Y7s3h6dyEN3l6viXBf
+            qVxAwtQhiea5KPhfA6edE7nuXdCJrl0w7mef3JddcZUnzSTUQLZAsQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-18T21:49:45Z"
-    mac: ENC[AES256_GCM,data:TksUUMaBQW0kIliaENTli4QCHhg3UjM4+M8UVtKoR5VFND5YHbR6wi93BLO+HKYEwVUsPeliwehpfO0IGE5fb57t1PYS3nR0u/ewMk0hiubcw4BgC4LuQHvzp1uFfqu+BVLwHpfGosuosv+MebdHE+LKRyXJp9ipHZebeWldv6o=,iv:MiJk0Jtq/DZOS/wfvDbHh+xCljsHmloi7cYOtFVq8F4=,tag:TqvetB3imwTFs6bTiAl45g==,type:str]
+    lastmodified: "2025-01-18T21:51:45Z"
+    mac: ENC[AES256_GCM,data:fcIg7I7nO+06IV7rnXWpBYosvQbm7OwhcfQ0LTHrhjoxF5DlwzbXTlr4eochrlfHGW6JS5LP/ReA9viYo+6vWTXqSUkMn0YzfU/FJclji4FmeaVzrh00FUOl8jtCIn7FqRrP69+wsAA8OhCFwWFT5gZC+mojQc/Yc1gDV9/PpIs=,iv:td3s0L5gbPCENzIWVF7dOZbosfxqVgN82vP8pNoxdLQ=,tag:rCdxwSX/zsgNxpCEsJ14qg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

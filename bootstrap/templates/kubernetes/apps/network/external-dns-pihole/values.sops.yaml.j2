@@ -13,7 +13,7 @@ extraArgs:
   # the policy to upsert-only so they do not get deleted.
   #- --policy=upsert-only
   - --pihole-server=http://192.168.1.56
-  - --pihole-password #{ bootstrap_pihole.admin_secret }#
+  - --pihole-password=#{ bootstrap_pihole.admin_secret }#
 policy: upsert-only
 sources: ["crd", "ingress"]
 txtPrefix: k8s.

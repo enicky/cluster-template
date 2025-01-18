@@ -1,13 +1,14 @@
 ---
 fullnameOverride: internal-dns
 provider: pihole
+registry: noop
 extraArgs:
   - --events
   - --ignore-ingress-tls-spec
   - --ingress-class=internal
   - --source=service
   - --source=ingress
-  - --registry=noop
+  #- --registry=noop
   # IMPORTANT: If you have records that you manage manually in Pi-hole, set
   # the policy to upsert-only so they do not get deleted.
   #- --policy=upsert-only

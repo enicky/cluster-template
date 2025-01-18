@@ -1,0 +1,24 @@
+---
+fullnameOverride: internal-dns
+provider: pihole
+extraArgs:
+  - --events
+  - --ignore-ingress-tls-spec
+  - --ingress-class=internal
+  - --source=service
+  - --source=ingress
+  - --registry=noop
+  # IMPORTANT: If you have records that you manage manually in Pi-hole, set
+  # the policy to upsert-only so they do not get deleted.
+  #- --policy=upsert-only
+  - --pihole-server=http://192.168.1.56
+policy: upsert-only
+sources: ["crd", "ingress"]
+txtPrefix: k8s.
+txtOwnerId: default
+domainFilters: ["#{ bootstrap_cloudflare.domain }#"]
+serviceMonitor:
+  enabled: true
+podAnnotations:
+  secret.reloader.stakater.com/reload: internal-dns-secret
+

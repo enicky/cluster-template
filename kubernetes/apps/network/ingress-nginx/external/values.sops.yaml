@@ -3,7 +3,7 @@ controller:
     service:
         annotations:
             external-dns.alpha.kubernetes.io/hostname: external.gitlab.be
-            io.cilium/lb-ipam-ips: 192.168.1.6
+            io.cilium/lb-ipam-ips: 192.168.1.43
         externalTrafficPolicy: Cluster
     ingressClassResource:
         name: external
@@ -53,14 +53,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA0MjJvMlJlQ2Z4T2VNYWR4
-            ZGw0Vmw4UXoza1VBbUFseVZpa3d1YmlEOUZJCkRRUSs0Qk1wQy9icE9ZZXV2WlJV
-            eFNTenBKNitPK0QyR3duY21wYmF3WWMKLS0tIDRwd0VndnJHRkRlSTVQM2JsT0dL
-            dmdZWWtyYnpJamVwV0VrQ1IzSFM4MTAKnXcMSYTk31d035FNzUtOloi9XwG+YVGL
-            M1qbiI6Wu7EFc/E5GdsaC+l708gKNEheBatgZZWZzQp1v46wtAa3Og==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBjckx0MDRXRzdMWTNndldG
+            N0YyVkIyNUJPaDU5ZGdKV21oWmdnMnlkcXpRCjYxZnd5YlJnMkh2Q2djK1dka2gx
+            M2xkQ09KQjVwK0QxcjZNTWVaYnA1VG8KLS0tIFczSDZ3M0ZkOVFENVRMRU4xSVRE
+            M1hobktIeDhLUHFIQktOMTVjNVNNMm8KdkF1iwt1FYhN8fsUwryVBhc/3bTFilZO
+            KD/TCsR3xCz8BdtFvxsKs0YiVVRNVhb0m64hd9xbceFeKa2ypgJqyA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-19T06:40:08Z"
-    mac: ENC[AES256_GCM,data:XU/UNYE8VlaZMt9lM2TWs3NpuO2DJfYB3ZY/nw2Z6svXG/fUyJKmjOzogGIvZT7YFvZPXubID9kyNaMc8kub3WNxucC0fVe0UKYJHdaAuDcBZ0dwwwzdJIsagnU6IRcVTE08pDnoyTKJj8AXmb8mpUnrIgveFkLcGvXbhRRBXfs=,iv:9coTWqYah5SS7Iaed6QuLPqmhZkKKfSbMBU8DH45QgA=,tag:rDTLBsbZi5ki9l+OTiP0dw==,type:str]
+    lastmodified: "2025-01-19T06:56:50Z"
+    mac: ENC[AES256_GCM,data:WfB+gbDGoI1G/QlUVPuEz5R08v1+KarvKI+KIHV+U70jevmdju7lXh3RTNvmpNa/gaX77+G+nf3lzCvbKNUNY6AKBmzHxdqE9a0kWIgsH0F0j9IoTTzW6HZtQ2i1hzpiMDm5EDpp6kuZspre+dadJIk5Lt5EkWtnHfcDqBQCcjg=,iv:FsZdsNk1d8PGwQHjTIGqNoob/iphiDz+LnWMlbDBkcU=,tag:+gThu9J80zwmo8LPBHSfsg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

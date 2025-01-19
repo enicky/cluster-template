@@ -5,9 +5,6 @@ extraArgs:
     - --events
     - --ignore-ingress-tls-spec
     - --ingress-class=internal
-    - --source=service
-    - --source=ingress
-    #- --registry=noop
     # IMPORTANT: If you have records that you manage manually in Pi-hole, set
     # the policy to upsert-only so they do not get deleted.
     #- --policy=upsert-only
@@ -34,14 +31,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBDNzQwVERhL1B2Zmd2c09G
-            RmhXVWR0TGxSTnhjbEtKSzgxcUp1dW85QkVJClBoYlRoMDg1V0tFajBXTjFkdVgv
-            ZnBsS0pSUWl4SGNLbGZyRmdkaVp5MW8KLS0tIHhFZ1ZacWQ3UHNYOVFDUHlSaTBW
-            VVg0SHdidHZZOFZZOEx2V2lrVnJwTGcK9DHwInhpIawGq6Y7s3h6dyEN3l6viXBf
-            qVxAwtQhiea5KPhfA6edE7nuXdCJrl0w7mef3JddcZUnzSTUQLZAsQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB3Ni9KY3NTL2psaFVlK0lF
+            UVFvYWlOd2wxb2FUZDN2S2tZRFhpVFNvd21rCjFxU2F0c2RaTThjdWh3M05pSlNR
+            MmNkbktmU01HRDVEREp3emprbGVaTGMKLS0tIEtmTkUzNUtKQm4vNUVLWkhZcEN1
+            cjAvWlFPMk5pSlhlb0hhc1l2Rm5XUDgKdixUAa7YSOQ+mPT6lVDr5myp7eq0n2Nd
+            SNvMmQD+OoVrOGxAqSTmLYyQab/DC0mjBwJOBZFY6+bS8WDDpxmHgw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-18T21:51:45Z"
-    mac: ENC[AES256_GCM,data:fcIg7I7nO+06IV7rnXWpBYosvQbm7OwhcfQ0LTHrhjoxF5DlwzbXTlr4eochrlfHGW6JS5LP/ReA9viYo+6vWTXqSUkMn0YzfU/FJclji4FmeaVzrh00FUOl8jtCIn7FqRrP69+wsAA8OhCFwWFT5gZC+mojQc/Yc1gDV9/PpIs=,iv:td3s0L5gbPCENzIWVF7dOZbosfxqVgN82vP8pNoxdLQ=,tag:rCdxwSX/zsgNxpCEsJ14qg==,type:str]
+    lastmodified: "2025-01-19T06:40:08Z"
+    mac: ENC[AES256_GCM,data:Vg2y8aNRimOIKs0XNPOTzNITfAfSao/Asi0P9HLkuY5w2GuCOjCuTfBQN0iaMqBscOLTma14NxCa+dZt/XxdfjGolZBgw5LZV5JBS9Vpt851wSxcAl+cOGtG1bwxLmy5ZoxRvUID+Es3f5E9dEl2nFKRBlHsIzl3OQBZEy8nhz0=,iv:vN46yczC12Zf6pJOdN2m3WIPf+gvkY8oPIbU7d4rI8M=,tag:5ITAvHAEyybSowhfTvV6hg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

@@ -35,7 +35,7 @@ kubeProxyReplacement: true
 kubeProxyReplacementHealthzBindAddr: 0.0.0.0:10256
 externalIP:
   enabled: true
-devices: "end+"
+devices: "end0"
 l2announcements:
   #% if ((bootstrap_bgp.enabled) or (bootstrap_feature_gates.dual_stack_ipv4_first)) %#
   enabled: false # https://github.com/cilium/cilium/issues/28985
@@ -68,6 +68,7 @@ securityContext:
       - SYS_RESOURCE
 socketLB:
   hostNamespaceOnly: true
+
 #% if bootstrap_cloudflare.enabled %#
 hubble:
   enabled: true

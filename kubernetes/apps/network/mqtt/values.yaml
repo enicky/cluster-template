@@ -39,12 +39,12 @@ podLabels: {
   app: mqtt
 }
 
-podSecurityContext: {
+podSecurityContext:
   runAsNonRoot: true
   fsGroup: 1883
   runAsGroup: 1883
   runAsUser: 1833
-}
+
   # fsGroup: 2000
 
 securityContext: {

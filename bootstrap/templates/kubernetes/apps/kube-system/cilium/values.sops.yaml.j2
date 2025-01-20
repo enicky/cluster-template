@@ -68,7 +68,8 @@ securityContext:
       - SYS_RESOURCE
 socketLB:
   hostNamespaceOnly: true
-
+k8sClientRateLimit:
+  qps: 32
 #% if bootstrap_cloudflare.enabled %#
 hubble:
   enabled: true

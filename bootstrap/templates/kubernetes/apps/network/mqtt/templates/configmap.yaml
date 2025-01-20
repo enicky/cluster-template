@@ -10,7 +10,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cm-mosquitto-conf
-  namespace: mqtt
+  namespace: network
   labels:
     app: mqtt
 data:

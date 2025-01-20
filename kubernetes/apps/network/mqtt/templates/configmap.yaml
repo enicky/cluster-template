@@ -1,8 +1,18 @@
----
+# to generate a new password:
+#    mkdir ~/mosquitto
+#    sudo chown -R 1883:1883 ~/mosquitto
+#    docker run -it -p 1883:1883 --name mosquitto --restart always -v ~/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf -v ~/mosquitto/mosquitto.passwd:/mosquitto/config/mosquitto.passwd eclipse-mosquitto
+#    docker exec -it mosquitto /bin/sh
+#    cd mosquitto/config/
+#    mosquitto_passwd -c mosquitto.conf mqtt_user
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: mqtt-configmap
+  name: cm-mosquitto-conf
+  namespace: mqtt
+  labels:
+    app: mqtt
 data:
   mosquitto.conf: |
     listener 1883
@@ -23,4 +33,3 @@ data:
     kubernetes:$7$101$5sC2xl2xBIgop411$zHVODR9rifgBUI5vX4lF0hd6wyiXg7xXdGR0iz7zdPpU6A48knHpu8fDQfHxB3mBChsxYHduNhCnh37C41Lk+w==
     p1meter:$7$101$Qf2dLmAl1pKJJI+I$JyUXOAIIyxGL4k4J7Bg0Bn0TK+6pe+Kn01Ws8m4qoKweoHG7+DU4/iiIckT6Fe/ChlqlEFS1+623Uv/4K1d+hw==
     tasmota:$7$101$KEiixsow3ZcmIbkB$eZxqJIJwaCrDpuZXLUpRhsmpENxMCn+vMCtZ8AIMEY9KhVrozkXwu8rASKbrpjjm2QYbUMvdA/mgbAQHoirqBA==
-

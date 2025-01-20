@@ -3,23 +3,17 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: mosquitto
-  namespace: mosquitto
+  namespace: mqtt
   annotations:
     argocd.argoproj.io/sync-wave: '0'
 spec:
   project: home-kubernetes
   sources:
     - repoURL: #{ bootstrap_github_address }#
-      path: kubernetes/apps/network/mqtt-mosquitto
+      path: kubernetes/apps/network/mqtt
       targetRevision: #{ bootstrap_github_branch|default('main', true) }#
       ref: repo
-    - repoURL: https://charts.truecharts.org/
-      chart: truecharts/mosquitto
-      targetRevision: 5.0.20
-      helm:
-        releaseName: mqtt
-        valueFiles:
-          - $repo/kubernetes/apps/network/mqtt-mosquitto/values.sops.yaml
+
 
   destination:
     name: in-cluster

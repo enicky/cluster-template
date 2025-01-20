@@ -55,8 +55,6 @@ securityContext:
             - SYS_RESOURCE
 socketLB:
     hostNamespaceOnly: true
-k8sClientRateLimit:
-    qps: 32
 hubble:
     enabled: true
     metrics:
@@ -117,14 +115,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBCSG4wYjFTVlFIaERYMnJN
-            OElJOVQ5b21qZncrUndTQ2ZaS2xpb2s0S1c4CmFUditudXo2MDhSOTdTT1Z1cnB1
-            a3dqOGZJZjNNak9jZCtzZndqcStmTGsKLS0tIFV2ajNoZFkwbHp4bmRZK1VGVDla
-            UW9UY1RIaVE2Z2VQQmhFdVpkL25leWcKRbcS1Ve8oCe8D8IKk00D/sWdIrnHm29U
-            mw+eLLxwozk8yNr8ccBTeOyHrKdQ3rIthepKd/hnMx7F3iVtmDShqQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBQc2Zna0tuTnZneGxRSVYx
+            ZzV3ZjRjVXR2eHBLY3lBbE5yck9ZNnBORmdrCk5CMEtXWlZ4eTd4L1BkNU5wNWd5
+            Uk4vU0NmMCtXWUhua1BJaEZSaUltcDQKLS0tIHFORzFhbEFlYXo5NFIvS3N2Q1B3
+            bDZaTUdjenp4Z0JvWDNraVdKTTRLTk0KayApmM2REf6eGR+6iOMB9Uo2DlSbRDb4
+            Kib4UE9s300uC2qXjzVM/IqquCQqspgWGIUFidP+upKF6fXecJBpVg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-20T22:25:58Z"
-    mac: ENC[AES256_GCM,data:ixy7bwQYw7ixtqM00/k34xQItN5L1PIIG5l87S5TCJJOsN4xOCX5IKTqFNPKKA6YwiHOx8WJvuXSk3iqaFPIq0rH21p6EUO55VHLezKtVs0sDV0FfeGg1uiG40sAtMNEzzPVP8w1M+VKmB6ErUK+Ix9GYNaSP53RgcZRhXSMZCg=,iv:TzCmnCjPOa2ycWlofGhtq0j7TUPIv2RZiQX3MkJxnXk=,tag:z2SkZy9NPTkxOUSKE1gnqQ==,type:str]
+    lastmodified: "2025-01-20T22:28:29Z"
+    mac: ENC[AES256_GCM,data:2R1DC7DHaBFpVru3whHQSmFhhwtPSzKSd3UmHG0Cxv7MAAM3D1xSajC53R2mzJObwAKB1rC2fmou9okoS4J9C56j3p20uKMnBoAxiMRMYAthu0wdLnjIiSARyqik4GMTyYaq44vztDWy8Mr+N7t1I/BhXqcWZHpt/k5fgSejDRc=,iv:HLjNtQDfjg6LEoBw8KYwffxSZNKdKdUqCdhovXMiVbY=,tag:8aGNV9rXiK1hpFkzIoSJBw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

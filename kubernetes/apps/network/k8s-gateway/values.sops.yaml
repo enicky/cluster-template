@@ -19,14 +19,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBacVFCOEZqRUJqdzVBQlF1
-            VE1GNm42WlFJRDNuU0NOK0pkdHAva0JYM2hvCjVKNnVUN2d6MTRCTVovSkZxYUhN
-            Mzl3R0JWYlkrVUVTVWNoL2NCVEFGMGMKLS0tIG9DRlRaK3dRUUhrWCtLYkcvc2pX
-            MVRkdlYxUC93Y3R1V1R4NytXM00yeWMKH2dxDSe6xUn2IrYncb+ROdm4pqW2mzC2
-            r5caM0QzLwZijVw68yNM9LJ+nw/Gn8NKtQDz0ERuqQmNSor23p7Wbw==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBXNmt0LzR4d0NMYXUrM0Vn
+            YW9sRDRXUHFXQUFOcCtLUDhKWWx5S3dlRmk4ClpZanFjUmFFOThOYUYySWpkMldu
+            dlhYTUZoMzZQTWdUWitoZWV2dndBdEkKLS0tIFhtcHZ6RklhV0FGcER0U0gxMXhh
+            Mkg4L0dFdDhqdi93aFBrNStHcDUxRDgKFoVfCTA9EgYP2US37BlILGylijuMo6v5
+            o1anGkxc7NYlo4Pb1lPiqab2Pyna/KFrxPYgtKEn/IfJHbG5GYf/Rw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-20T13:50:17Z"
-    mac: ENC[AES256_GCM,data:LkQiW3AGlG2V+BL6ocZ+HNCtVt52Ed7l8VkVCYVCGoXWbCXgOmGHX2RDreacw9zISGzRcjJtJ0o1n5r40oUGiKlkMyRWQXDZZ0HbJjzPDs6YQ9sF/NMtwP0YEPY/Qda9N6+fNfM2bijcYFPQA2HQzF0O7s9MiNc8RH+dJZiNnyI=,iv:NjTJFF2sCazc7QRn8XY/J4ZcpA+ftGToAhKh0IkBs+s=,tag:s8rD6PKYrsZArqr7vO6CoQ==,type:str]
+    lastmodified: "2025-01-20T13:51:58Z"
+    mac: ENC[AES256_GCM,data:HOVxQySnIAwxkj0PBux0gu1xoFz0AYko6N3q26JzgDkwYWgipxWV/oAKZcdfvnT9He2qIC3RDky0AmClF9X3n5XMcooleLreDLgFuvwOlR0UmFQYhe1tuJMXa7F+OppQzBkeG1TzcGyIj3jQ7DeWvsqgQgZILq/B/vk+tkTVIMU=,iv:7/EgjgLcmTh3D2uTXfLyCKTej0/oWO2jefEb6sjqmoA=,tag:/C+mW8wrNMszkpy/H3U8yA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

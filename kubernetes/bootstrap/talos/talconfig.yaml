@@ -6,7 +6,7 @@ talosVersion: v1.9.1
 kubernetesVersion: v1.32.0
 
 clusterName: "homelab"
-endpoint: https://192.168.4.40:6443
+endpoint: https://192.168.1.74:6443
 
 clusterPodNets:
   - "10.69.0.0/16"
@@ -14,7 +14,7 @@ clusterSvcNets:
   - "10.96.0.0/16"
 
 additionalApiServerCertSans: &sans
-  - "192.168.4.40"
+  - "192.168.1.74"
   - "127.0.0.1"
 additionalMachineCertSans: *sans
 
@@ -24,36 +24,51 @@ cniConfig:
 
 nodes:
   - hostname: "controller-1"
-    ipAddress: "192.168.4.10"
-    installDisk: "/dev/nvme0n1"
-    talosImageURL: factory.talos.dev/installer/a7e9f1b1ba70ee76b146aa3c4993fe5f370f06483c3de9d86f89a9c4089754f2
+    ipAddress: "192.168.1.204"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/613e1592b2da41ae5e265e8789429f22e121aab91cb4deb6bc3c0b6262961245
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "e2:0d:fb:e0:ec:1f"
+          hardwareAddr: "08:00:27:e0:b6:99"
         dhcp: false
         addresses:
-          - "192.168.4.10/23"
+          - "192.168.1.204/24"
         routes:
           - network: 0.0.0.0/0
-            gateway: "192.168.4.1"
+            gateway: "192.168.1.1"
         mtu: 1500
         vip:
-          ip: "192.168.4.40"
+          ip: "192.168.1.74"
   - hostname: "controller-2"
-    ipAddress: "192.168.4.11"
-    installDisk: "/dev/nvme0n1"
-    talosImageURL: factory.talos.dev/installer/a7e9f1b1ba70ee76b146aa3c4993fe5f370f06483c3de9d86f89a9c4089754f2
+    ipAddress: "192.168.1.205"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/613e1592b2da41ae5e265e8789429f22e121aab91cb4deb6bc3c0b6262961245
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "b2:2a:c2:35:73:a9"
+          hardwareAddr: "08:00:27:50:ce:a6"
         dhcp: false
         addresses:
-          - "192.168.4.11/23"
+          - "192.168.1.205/24"
         routes:
           - network: 0.0.0.0/0
-            gateway: "192.168.4.1"
+            gateway: "192.168.1.1"
+        mtu: 1500
+  - hostname: "controller-3"
+    ipAddress: "192.168.1.193"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/613e1592b2da41ae5e265e8789429f22e121aab91cb4deb6bc3c0b6262961245
+    controlPlane: false
+    networkInterfaces:
+      - deviceSelector:
+          hardwareAddr: "08:00:27:f5:8b:af"
+        dhcp: false
+        addresses:
+          - "192.168.1.193/24"
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "192.168.1.1"
         mtu: 1500
 
 # Global patches

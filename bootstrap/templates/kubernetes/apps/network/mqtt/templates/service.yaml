@@ -6,9 +6,10 @@ metadata:
   labels:
     {{- include "mqtt.labels" . | nindent 4 }}
   annotations:
-    "lbipam.cilium.io/ips": "192.168.4.80"
+  {{ toYaml .Values.podAnnotations | indent 4 }}
+
 spec:
-  type: LoadBalancer
+  type: {{ .Values.service.type}}
   externalTrafficPolicy: Cluster
   ports:
   - name: port1883

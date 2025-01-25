@@ -6,7 +6,7 @@ metadata:
 spec:
   ports:
   - name: hassio-internal-ip
-    port: 80
+    port: 8123
     protocol: TCP
     targetPort: 8123
   externalName: 192.168.1.184

@@ -12,7 +12,7 @@ spec:
       path: kubernetes/apps/longhorn-system/longhorn
       targetRevision: main
       ref: repo
-    - repoURL: https://github.com/longhorn/charts
+    - repoURL: https://github.com/longhorn/charts.git
       chart: longhorn
       targetRevision: v1.8.0
       helm:

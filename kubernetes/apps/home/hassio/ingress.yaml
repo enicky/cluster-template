@@ -11,8 +11,12 @@ spec:
   - host: hassio.gitlab.be
     http:
       paths:
-      - backend:
-          serviceName: hassio-internal-ip
-          servicePort: 80
-        path: /
-        pathType: ImplementationSpecific
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hassio-internal-ip
+            port:
+              number: 80
+
+

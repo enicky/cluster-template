@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: external
   rules:
-  - host: hassio.#{ bootstrap_cloudflare.domain }#"
+  - host: hassio.#{ bootstrap_cloudflare.domain }#
     http:
       paths:
       - backend:

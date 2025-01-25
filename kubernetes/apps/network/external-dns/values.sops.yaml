@@ -14,6 +14,7 @@ extraArgs:
     - --events
     - --ignore-ingress-tls-spec
     - --ingress-class=external
+    - --v=5
 policy: sync
 sources:
     - crd
@@ -35,14 +36,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBuS2FoT1plQWlFTjFCaFpr
-            bG9zR2Z6cGp0Q0dNWVg1SnB4WXJmRVp0bFVjCkVnRWdBTGRrMm1WV2s3N0Q5N3la
-            YWN2TFJKdEgrb01kTU5hVDRkR2FmUlUKLS0tIDJlTE1ZUHdLMnRtZXNaa2ZuVGxK
-            S2d5VEoyWW16WjdYZFhNZVdNZlY1T28Ky06ploOOJQhzmBSDBga6U4ss1c8pIxlC
-            B14mkVC+74c23WC7q8nMu90Z5m4uiBMmHREnoSkkMTxb+C7k16N8Vw==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBIdW55R1NOdVMyMFNwMHow
+            UGhZbmhUYWs3MmVsOWM2L21OZGRndFlaVlNFCnBzTTJmNyt1dU9BOXVMenQ4NE5r
+            REdSSkpIWGJEd2VuWnEzMUluVS9KMDAKLS0tIHAwbWxPbmtWUFlWL1RuL2RNbTNw
+            QVBFN2ZRNUFFTmoyTUp2ZVE3U0MvNG8KBrLeuRlXbxjLWc3YpzCO6748/Drl9I/R
+            l68aV51nIB5De/oTccEHk/yXqFq8C+U2FZGT/OcGK9+EC8QrUJ9NRQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-25T18:37:04Z"
-    mac: ENC[AES256_GCM,data:TnjaX8LdxoMXdHVfDmJbCh754zWyGb9/rU9imAyd4LxA01Qjo3Q4UYdE8QP2/+Ph2CiXN6mNNntXq+3jNDKY6LrB9k+mH1G2fi4jA51/HEMUeWB3p4b8PFayhEHCeJbP8CSQnMwP/u2TdPlozTVeESyPC0X7XGnPcsOd06KH6nA=,iv:qoMU1NWmWr6iE//ChmQqsiMDoysvZ8D8WHJmvyrNGoM=,tag:NWYclzV1Um97db7lesVZRg==,type:str]
+    lastmodified: "2025-01-25T18:42:15Z"
+    mac: ENC[AES256_GCM,data:CwZ71zqVtlZxsDdtX6LvvQMp3hUnlvRWD0zJI4j/QV6r0CgQp9Dml5DX5KCkm/5vUHBahMeHhVUXtg1yV3Fu9Ds9n+7ySO4V/e7aiQ+yCZaeNIz4zP2MlPQJLSoiTVlbhXO8Dd6yn/Ca631TNSCAhnACOUOFwGSuASh6XJPL4uw=,iv:DJDZ2ynESZRgwUm+bPZDpcO5AJ+Q+cMBCJGmu9Kj444=,tag:/bms1dn9/gjtT3LHuSXFyA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

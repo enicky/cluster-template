@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hassio-internal-ip
+  namespace: home
+spec:
+  rules:
+  - host: hassio.gitlab.be
+    http:
+      paths:
+      - backend:
+          serviceName: hassio-internal-ip
+          servicePort: 80
+        path: /

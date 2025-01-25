@@ -1,5 +1,6 @@
 ingress:
     enabled: true
+    host: longhorn2.gitlab.be
     ingressClassName: internal
 service:
     ui:
@@ -15,14 +16,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzYXFzaHg0ZStZQW1SdnJy
-            bnhNVFUycWEvSkdlK2Z5UEF0VVBSNzhoT21zCkVta0hBbVBCNVlwbm9TOHdRZlpx
-            angwWkc3NEhKQjZxbnl5R2lOQmYxS2MKLS0tIHZhS2dtN3M2QkRIVnhYc0VDOUVt
-            SVNBYXhVejVvMWhRK0kzM010Q1RQVXMKYYTMu7h1j7gpar/g+dfNabuwtee5I6wG
-            6Z261xVeIWj8FDipunkKGIoQ9/vg7EemJGqmp8HKa6sHxEvkq0/gGQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBwSm9FelJMQ3pRM3phd3Vx
+            ZG5ETzhSeWpyd2VoV0dBUFZycWlIL1dLZzBJCm1wVDUvQkV0UjFOemJEQThTTGpX
+            UmVxdElibXkvaEpiS29Ib1FKOFU4bkkKLS0tIE82Uk83QWQrSVhuL3VKd1kzMlZ4
+            Tno1L21SYTNDUFZHZGd6YTRsTjQ5b1UK5K367jO273vTY8ZGePOT6R0l0P9LVif5
+            GfS/XPPXH5HZmVXTad0z2dHcLCBG+KZ3u64EIvH07X7LfskWP9gwzQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-25T06:26:08Z"
-    mac: ENC[AES256_GCM,data:EBLzPV+/yJNQSgnK+vZPTpwUCjOTpCxSy4bUGUwj6tdX7fZx8dyFikZF9dAGlWfbhyR7Xdpl2FnmHMr0txDWEgJ1o7ZWrwCx84t8pChBlDXhzPrXt9ChKWqiHIAWZ+eXH0iaS3gy8umnp1Rc2xlxKUyDlbID6t2LB14LQYn2UgQ=,iv:uwVISmOpAe6wg5WXQY6eKsFICMh1iKs+L8GoGYrxdv0=,tag:B5pVL87e3lUzDuu2XM0E1Q==,type:str]
+    lastmodified: "2025-01-25T14:44:19Z"
+    mac: ENC[AES256_GCM,data:KPvD40Gimdp9dY4GgAZqKqSdfoGduQ5PuR65Uc3QQPKZjwHRnyVv4liD2IXd1ym+7ySkOc7ZYrnAvif0Cbs2LQSXcSZXJFTYi+kMZU4Svbp4adRQB3A2wyx6F8C2AwCbeiwWVwe6O35M4lRHVmCUWtp3DFfQn+wOCj6dHJTZwkU=,iv:rdTAyNRi3P5jz3QCjeSGmGK5M2dU3O5OI7mJjMtgV68=,tag:JCZtJcM7fl5EnYb01/W8MQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

@@ -10,9 +10,8 @@ spec:
   project: home-kubernetes
   sources:
     - repoURL: https://github.com/enicky/cluster-template.git
-      path: kubernetes/apps/hoe/hassio
+      path: kubernetes/apps/home/hassio
       targetRevision: main
-      ref: repo
   destination:
     name: in-cluster
     namespace: network

@@ -10,9 +10,8 @@ spec:
   project: home-kubernetes
   sources:
     - repoURL: #{ bootstrap_github_address }#
-      path: kubernetes/apps/hoe/hassio
+      path: kubernetes/apps/home/hassio
       targetRevision: #{ bootstrap_github_branch|default('main', true) }#
-      ref: repo
   destination:
     name: in-cluster
     namespace: network

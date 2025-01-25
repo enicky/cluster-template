@@ -12,6 +12,13 @@ spec:
       path: kubernetes/apps/longhorn-system/longhorn
       targetRevision: main
       ref: repo
+    - repoURL: https://github.com/longhorn/charts
+      chart: longhorn
+      targetRevision: v1.8.0
+      helm:
+        releaseName: longhorn
+        valueFiles:
+          - $repo/kubernetes/apps/longhorn-system/longhorn/values.sops.yaml
   destination:
     name: in-cluster
     namespace: longhorn-system

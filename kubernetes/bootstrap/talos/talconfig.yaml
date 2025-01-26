@@ -23,7 +23,7 @@ cniConfig:
   name: none
 
 nodes:
-  - hostname: "controller-1"
+  - hostname: "controller-3"
     ipAddress: "192.168.1.12"
     installDisk: "/dev/nvme0n1"
     talosImageURL: factory.talos.dev/installer/10e266ceff7e9bf72d8447eea75719052c2207522756eb49f3d7b2611f4a335f
@@ -40,7 +40,7 @@ nodes:
         mtu: 1500
         vip:
           ip: "192.168.1.20"
-  - hostname: "controller-2"
+  - hostname: "controller-4"
     ipAddress: "192.168.1.13"
     installDisk: "/dev/nvme0n1"
     talosImageURL: factory.talos.dev/installer/10e266ceff7e9bf72d8447eea75719052c2207522756eb49f3d7b2611f4a335f
@@ -55,7 +55,7 @@ nodes:
           - network: 0.0.0.0/0
             gateway: "192.168.1.1"
         mtu: 1500
-  - hostname: "controller-3"
+  - hostname: "controller-1"
     ipAddress: "192.168.1.10"
     installDisk: "/dev/nvme0n1"
     talosImageURL: factory.talos.dev/installer/b8c35df6594a5e6b955b2b920bdae208731bd7edf018d6d009283bc0cc104008

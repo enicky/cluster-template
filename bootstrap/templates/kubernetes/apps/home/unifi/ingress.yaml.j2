@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: unifi-service-ingress
+  namespace: home
+  annotations:
+    external-dns.alpha.kubernetes.io/target: "external.#{ bootstrap_cloudflare.domain }#"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: external
+  rules:
+  - host: unifi.#{ bootstrap_cloudflare.domain }#
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: unifi-service
+            port:
+              name: http
+
+

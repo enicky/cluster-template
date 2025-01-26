@@ -6,7 +6,7 @@ talosVersion: v1.9.1
 kubernetesVersion: v1.32.0
 
 clusterName: "homelab"
-endpoint: https://192.168.1.74:6443
+endpoint: https://192.168.1.20:6443
 
 clusterPodNets:
   - "10.69.0.0/16"
@@ -14,7 +14,7 @@ clusterSvcNets:
   - "10.96.0.0/16"
 
 additionalApiServerCertSans: &sans
-  - "192.168.1.74"
+  - "192.168.1.20"
   - "127.0.0.1"
 additionalMachineCertSans: *sans
 
@@ -39,11 +39,11 @@ nodes:
             gateway: "192.168.1.1"
         mtu: 1500
         vip:
-          ip: "192.168.1.74"
+          ip: "192.168.1.20"
   - hostname: "controller-2"
     ipAddress: "192.168.1.13"
     installDisk: "/dev/nvme0n1"
-    talosImageURL: factory.talos.dev/installer/c0199a24ed9a10634bf90f7b05476b678b9372aac3216538c165b4f003216618
+    talosImageURL: factory.talos.dev/installer/10e266ceff7e9bf72d8447eea75719052c2207522756eb49f3d7b2611f4a335f
     controlPlane: false
     networkInterfaces:
       - deviceSelector:

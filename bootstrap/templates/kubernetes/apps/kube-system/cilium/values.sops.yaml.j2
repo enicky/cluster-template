@@ -5,7 +5,7 @@ bgpControlPlane:
   enabled: true
 #% endif %#
 bpf:
-  masquerade: false # Required for Talos `.machine.features.hostDNS.forwardKubeDNSToHost`
+  masquerade: true # Required for Talos `.machine.features.hostDNS.forwardKubeDNSToHost`
 cgroup:
   automount:
     enabled: false
@@ -17,11 +17,20 @@ cni:
   exclusive: false
 # NOTE: devices might need to be set if you have more than one active NIC on your hosts
 devices: end+ #eth+
-#direct-routing-device: end+
+direct-routing-device: end+
+externalIPs:
+  enable: true
 endpointRoutes:
   enabled: true
 envoy:
+  enabled: true
+
+ipv4:
+  enabled: true
+ipv6:
   enabled: false
+
+enableIPv6Masquerade: false
 ipam:
   mode: kubernetes
 ipv4NativeRoutingCIDR: "#{ bootstrap_pod_network.split(',')[0] }#"
@@ -46,9 +55,14 @@ l2announcements:
   #% else %#
   enabled: true
   #% endif %#
+#loadBalancer:
+#  algorithm: maglev
+#  mode: snat
 loadBalancer:
-  algorithm: maglev
-  mode: snat
+  mode: dsr
+  dsrDispatch: geneve
+  acceleration: native
+tunnelProtocol: geneve
 localRedirectPolicy: true
 rollOutCiliumPods: true
 routingMode: native

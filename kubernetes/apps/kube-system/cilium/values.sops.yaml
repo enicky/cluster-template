@@ -1,7 +1,7 @@
 autoDirectNodeRoutes: true
 bpf:
     # Required for Talos `.machine.features.hostDNS.forwardKubeDNSToHost`
-    masquerade: false
+    masquerade: true
 cgroup:
     automount:
         enabled: false
@@ -14,11 +14,18 @@ cni:
 # NOTE: devices might need to be set if you have more than one active NIC on your hosts
 #eth+
 devices: end+
-#direct-routing-device: end+
+direct-routing-device: end+
+externalIPs:
+    enable: true
 endpointRoutes:
     enabled: true
 envoy:
+    enabled: true
+ipv4:
+    enabled: true
+ipv6:
     enabled: false
+enableIPv6Masquerade: false
 ipam:
     mode: kubernetes
 ipv4NativeRoutingCIDR: 10.69.0.0/16
@@ -34,9 +41,14 @@ l2podAnnouncements:
     interface: end0
 l2announcements:
     enabled: true
+#loadBalancer:
+#  algorithm: maglev
+#  mode: snat
 loadBalancer:
-    algorithm: maglev
-    mode: snat
+    mode: dsr
+    dsrDispatch: geneve
+    acceleration: native
+tunnelProtocol: geneve
 localRedirectPolicy: true
 rollOutCiliumPods: true
 routingMode: native
@@ -120,14 +132,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBna05CdVlTejNiUG5MWm0y
-            cDdQcTRkKzBFWGNzdWUrSjBWUHVNeU5YbUdFCmlFNnBBN1ZPcDByZGV6WWJZMkRF
-            eFM1aERVQTE0WmFTTW93Q1h4WW9sRzgKLS0tIG1qR0VTUTRoN2V3WTdoazdFRFNa
-            WnVBQWJHcXIyakVUcGlhV21vTUtqM00KfTjzAEu02q3IUAeMbCPGwcEY5t/1fZKh
-            428KwSYnHO3wPlJWnyHf2PSYSCUjgbpoQ5IcFhe+CbC2sN1GNnuDNg==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAyL3lhanh2UXd5Q0V1amdE
+            ZDBDcE1TNU1QRXdIdnpWVG55UUY3eGJvQlV3CmFmMVozN0piQlM3cWZuaVZyemN5
+            dERqSlBXU2ovY0xYTkVSNmQ1L0xtbFkKLS0tIHpFS1ZleVFUU29Lb1VCeVlSNjly
+            N0JhSjlFRXRYYlNEK0UwbVBjUTFoOWsKzx4C2JRxiFZw0XXpflwX8hsSPG/2QbyC
+            LmHlePTMR8yly0AmMQ0LhFTOgRrinWNH20hieKfDjAYIFIaMZHYlpQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-26T20:44:43Z"
-    mac: ENC[AES256_GCM,data:qRu1G8+OSY/hnO8+O10RsDaei7PNta1FLE9xlg7aagPYaJVgSVH7HuC6rminXmqJgJG6YkWkgKfj3BEUr9aP24ajRN8RcaCWfzYTVLJmGE1LyCm+TbO7Rh48fmAH7V/1VXkxYGX+pzkvWnl+dw9GuwOClk8hHxVgS5bwFK/49aA=,iv:r3TZnzLz7RmubbS3pwXEfrmTkHhxLtU8sP9wubOsoiw=,tag:/0vcQfSWuUv3ewP9wLf7AQ==,type:str]
+    lastmodified: "2025-01-26T21:01:51Z"
+    mac: ENC[AES256_GCM,data:Xri17nVMtCC9HB4yy+OqL0dvGS9ppaUlOIKQGNDbsAWK5Ug9LAv3XcsYfbQd3vxBdbC/szaM4GrNNfs5Uoip8TwFi8Bu8QhBdnSRcI9JL6LUbqHFRUwahCMpBbKHe/q9+AAJ9A2ojNIHq2du8JeUW7HTLzq8er0SX6LHnfMtbaQ=,iv:rw6a4meB7DRVc0KKB5qKS6J2/tWSaTEhY6baJtcKyDI=,tag:9GqmTsH0VqMMNKl1PB4cxA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

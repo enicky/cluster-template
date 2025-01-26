@@ -35,7 +35,7 @@ serviceDns:
   # -- deploys a mixed (TCP + UDP) Service instead of separate ones
   mixedService: true
   # -- `spec.type` for the DNS Service
-  type: ClusterIP
+  type: LoadBalancer
   # -- The port of the DNS service
   port: 53
   # -- Optional node port for the DNS service
@@ -50,9 +50,9 @@ serviceDns:
 
   # -- Annotations for the DNS service
   annotations:
+    io.cilium/lb-ipam-sharing-key: "pihile-#{ bootstrap_pihole.static_ip }#"
+    io.cilium/lb-ipam-ips: #{ bootstrap_pihole.static_ip }#
     metallb.universe.tf/allow-shared-ip: pihole-dns
-    tailscale.com/expose: "true"
-    tailscale.com/hostname: "k8s-pihole"
 
 # -- Configuration for the DHCP service on port 67
 serviceDhcp:
@@ -95,7 +95,7 @@ serviceWeb:
     port: 443
 
   # -- `spec.type` for the web interface Service
-  type: ClusterIP
+  type: LoadBalancer
 
   # -- `spec.externalTrafficPolicy` for the web interface Service
   #externalTrafficPolicy: Local
@@ -107,12 +107,10 @@ serviceWeb:
 
   # -- Annotations for the DHCP service
   annotations:
-    tailscale.com/expose: "true"
-    tailscale.com/hostname: "pihole-ui"
-    # metallb.universe.tf/address-pool: network-services
-    # metallb.universe.tf/allow-shared-ip: pihole-svc
+    io.cilium/lb-ipam-sharing-key: "pihile-#{ bootstrap_pihole.static_ip }#"
+    io.cilium/lb-ipam-ips: #{ bootstrap_pihole.static_ip }#
 
-virtualHost: pihole-v2.gitlab.be
+virtualHost: #{ bootstrap_pihole.fqdn }#
 
 # -- Configuration for the Ingress
 ingress:
@@ -133,7 +131,7 @@ ingress:
   path: /
   hosts:
     # virtualHost (default value is pi.hole) will be appended to the hosts
-    - pihole-v2.gitlab.be
+    - #{ bootstrap_pihole.fqdn }#
   #tls:
   #  - secretName: pihole-tls
   #    hosts:

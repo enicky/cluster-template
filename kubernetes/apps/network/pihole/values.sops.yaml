@@ -29,7 +29,7 @@ serviceDns:
     # -- deploys a mixed (TCP + UDP) Service instead of separate ones
     mixedService: true
     # -- `spec.type` for the DNS Service
-    type: ClusterIP
+    type: LoadBalancer
     # -- The port of the DNS service
     port: 53
     # -- Optional node port for the DNS service
@@ -42,9 +42,9 @@ serviceDns:
     #loadBalancerIPv6: ""
     # -- Annotations for the DNS service
     annotations:
+        io.cilium/lb-ipam-sharing-key: pihile-192.168.1.90
+        io.cilium/lb-ipam-ips: 192.168.1.90
         metallb.universe.tf/allow-shared-ip: pihole-dns
-        tailscale.com/expose: "true"
-        tailscale.com/hostname: k8s-pihole
 # -- Configuration for the DHCP service on port 67
 serviceDhcp:
     # -- Generate a Service resource for DHCP traffic
@@ -76,7 +76,7 @@ serviceWeb:
         # -- The port of the web HTTPS service
         port: 443
     # -- `spec.type` for the web interface Service
-    type: ClusterIP
+    type: LoadBalancer
     # -- `spec.externalTrafficPolicy` for the web interface Service
     #externalTrafficPolicy: Local
     # -- A fixed `spec.loadBalancerIP` for the web interface Service
@@ -85,10 +85,8 @@ serviceWeb:
     loadBalancerIPv6: ""
     # -- Annotations for the DHCP service
     annotations:
-        tailscale.com/expose: "true"
-        tailscale.com/hostname: pihole-ui
-        # metallb.universe.tf/address-pool: network-services
-        # metallb.universe.tf/allow-shared-ip: pihole-svc
+        io.cilium/lb-ipam-sharing-key: pihile-192.168.1.90
+        io.cilium/lb-ipam-ips: 192.168.1.90
 virtualHost: pihole-v2.gitlab.be
 # -- Configuration for the Ingress
 ingress:
@@ -333,14 +331,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBZRjFZUmorMVl4WE0yc3ZS
-            ajhJdlJ6THNoeFQ0eGg1bVRrVEtkSEp1U0UwClB2Q3BteDBUM24wbWVycjIxLysz
-            ZldMK2dBMTdlUURBcEZiM1JnMUdzQTAKLS0tIGdGMkNBYlUreE9PUCtuTSt5S1Vl
-            Slpab0QyRm16TFZpSkpkd0pTWm5YOUUK07boV7r4CDQe0u66FIlGhVp/ty/cF1/c
-            lBXla1q1/9ZndWmzlw9VxPoSZ6Lvz1RK64oUcQZ8FsvQg8JrZDVXhw==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBXWDZteFB6dHJQdjZFUlEr
+            WkVjcXZnZ2J5Wjg0U1h1dXowMzRGVkFDOVhvCmpkaDRlL1JMYkdyUUdBUHpCWnlv
+            eTVqeHpncFU1N3VFMlZrT2JBT0xhZTAKLS0tIFUySi9MSzJ3a1dwQThZOCthZEdh
+            VnUxclIrMG9hWGZrRk5veENjNGQ5VEUK5BzIMYJpQbDK2sAPzxBC2KueMgqBe50l
+            +fV1vAB578lttcDEa7T6BuYA3S9SmcIqBzSuDSw6EDUVkOEoVxUvLA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-26T06:55:43Z"
-    mac: ENC[AES256_GCM,data:XFndwxnU4qL0yhKj6LIbtcbhbpDxElFD5MBizP7OdKgYnu8jmWewSSohwbwQ6cqwbRpiD3Ku31aOvmqXNeydR5hihHGqRfLcYViJrpzIy9d+XVelPQInopA0ibI9eVo+ZDtwG4Ov90sRfUawYYZ2hhzu7spT8kgetCNsfwd2L2Y=,iv:hpGNuvMhI6kk4hiqoPcrMS/d9RRszoVzetOeBFM0Mm4=,tag:BaqtaIRbUqrLM1+clW8LTw==,type:str]
+    lastmodified: "2025-01-26T07:54:36Z"
+    mac: ENC[AES256_GCM,data:3kKbQLS8FtC15WbC2lAr1BkBYiesMc0RTqIm0daR/C98R8S3YaHbWY15OBaaHuo1Q/QN7gdP2ymBBamjd+wjMEJ3jtSbElYn5BSkNzYmB8gl64KgwX6XAVHoD4xKppXaTrd9+HyK2XgEAPZLhJgto0+ukYnxYLaG/FwTCPWSZlI=,iv:MzokDjBj5K8we6W9sM3uC5fsRM4saqYF9nUi7Qm55js=,tag:ZeTtznivc4h9Wh4wnMAcmw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

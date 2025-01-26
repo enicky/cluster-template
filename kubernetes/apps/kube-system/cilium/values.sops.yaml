@@ -29,6 +29,9 @@ kubeProxyReplacementHealthzBindAddr: 0.0.0.0:10256
 #externalIP:
 #  enabled: true
 #devices: "end0"
+l2podAnnouncements:
+    enabled: true
+    interface: end0
 l2announcements:
     enabled: true
 loadBalancer:
@@ -117,14 +120,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAxQU9YN3liVW9Ha3NBZmJO
-            cFkyYjNWSTNJT21uNmttcFl3ellPSll1L0JnCk5ZRHYrM014SDNpclJ5UHlZUEl5
-            V2hNU2FraHgyai8yTjZVbEJWMFJWRkkKLS0tIERnZFV6aWlHTVA5TTRRZ3hnYU4v
-            a0xZTDZ4N1IzZytIQ1NiOUY3N0JmRFEKk4XEnSuh+JpqawSiJO93ii+G04CUsuaJ
-            7g/DFf6NMIYMqLF6f5++lxcv/VOkrEUfkD2P147s0pXHGIpGcGYYOA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBna05CdVlTejNiUG5MWm0y
+            cDdQcTRkKzBFWGNzdWUrSjBWUHVNeU5YbUdFCmlFNnBBN1ZPcDByZGV6WWJZMkRF
+            eFM1aERVQTE0WmFTTW93Q1h4WW9sRzgKLS0tIG1qR0VTUTRoN2V3WTdoazdFRFNa
+            WnVBQWJHcXIyakVUcGlhV21vTUtqM00KfTjzAEu02q3IUAeMbCPGwcEY5t/1fZKh
+            428KwSYnHO3wPlJWnyHf2PSYSCUjgbpoQ5IcFhe+CbC2sN1GNnuDNg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-26T18:10:50Z"
-    mac: ENC[AES256_GCM,data:X7T7N2prqkkdrLCLIj+PbVBP1KVaqcsbGRwaGQ1pTOFuqiY5LxLw4A1qPpEqFhWUt37SV3SQa6IYMVaz9OwWwthYpY1wBgsjPj2HP4lDytEVb2zHS/mZmCGA/2NtWMNRO03KbOF8sQEK+DqEDyoBcJVEyLnJcTSrW2zSQ4sUjuM=,iv:7ulT+jDGJ/hWq3tAV+cxav6/LpOm/1Wmb6H+3sCDwZE=,tag:ZDwRZLf3mIqRpTIy95wLdA==,type:str]
+    lastmodified: "2025-01-26T20:44:43Z"
+    mac: ENC[AES256_GCM,data:qRu1G8+OSY/hnO8+O10RsDaei7PNta1FLE9xlg7aagPYaJVgSVH7HuC6rminXmqJgJG6YkWkgKfj3BEUr9aP24ajRN8RcaCWfzYTVLJmGE1LyCm+TbO7Rh48fmAH7V/1VXkxYGX+pzkvWnl+dw9GuwOClk8hHxVgS5bwFK/49aA=,iv:r3TZnzLz7RmubbS3pwXEfrmTkHhxLtU8sP9wubOsoiw=,tag:/0vcQfSWuUv3ewP9wLf7AQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

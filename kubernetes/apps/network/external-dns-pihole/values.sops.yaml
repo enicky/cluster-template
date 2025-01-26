@@ -8,7 +8,7 @@ extraArgs:
     # IMPORTANT: If you have records that you manage manually in Pi-hole, set
     # the policy to upsert-only so they do not get deleted.
     #- --policy=upsert-only
-    - --pihole-server=pihole-web.network.svc.cluster.local
+    - --pihole-server=http://pihole-web.network.svc.cluster.local
     - --pihole-password=Aveve2008
 policy: upsert-only
 sources:
@@ -31,14 +31,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzdjBxWU1XbkFNcW9sblFm
-            QVRkb2FVNkRZZWdxMG5OOGVCc3FXclpqM0NVCkVONDdDT0Q5cWRCSnJHWXY2UUNm
-            RUFEbFlEQlM4NmFmN1RzYUNMUTk2eTQKLS0tIGlqeDhNRG12Um5PZGlVbUZTRVhN
-            UmdLNkZjZ0pWdHFycUtteHJldlkxaU0KtSdISCPxTajijR5bJ5CBHFU+R6XUc25H
-            6n69Ps/wiKwkphmI5ulZMM1KbRWy7VMq3/BATVbMMN8H9r9KaVoqJg==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBIemZyblNYMVh4ajM2VUZH
+            WE5iMEw0ZjFZY2VuaFM0d1N0YmdFWjFwYlNjCndzS3dNbTVZS0lUa2NIUFZSTzZY
+            Y1AxS3grcktQWkRzR0pkRkZUcS9rVGsKLS0tIGhUTXBkNThaUEY5TnVxYWY5S0tq
+            WVhrT3U1VE9wNmhWanJ6bmZIRXJwQ2cKsveTAL8zLNTv5B/5NGgpvy1mAi8JINLK
+            hoMyFtCN1LrYhoktACN66RTlCfYLlYUFhuQmkA6z4SSw7uoA0aNOSA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-26T17:11:36Z"
-    mac: ENC[AES256_GCM,data:oDvFsajn0vPOwmE+iLkkhyMdvuJI+q9wbzUyFwUIH2fHP7r/qoDf47vp4hz2jgB5hjvTjEk+Zfdqzdo6AieQgOCE/uQ/oG3xVli7OAw59CFylatN/A7T683C+hzCQ+yK6UqQWjc6ExpJNQB3C9L1MCtKpq6+14aA+OR9y2oxe/0=,iv:temoelUi/cB79PLq72xLYSzmCHu6BumZtdiV786ysr4=,tag:KPh39edUpOZ0aOl8kjEpvA==,type:str]
+    lastmodified: "2025-01-26T17:13:34Z"
+    mac: ENC[AES256_GCM,data:9IClAxTPI1yrTx9JA660bEjWMZC2AtLSMG7i2cX6o5Ils7b/V9uc4ivbUtO08CfryXB2+PoJVcdCbuL4Dtv4Cj2HQ1JTJqBpkakrqKWM/7BhyTNUmU7tI4qO6K1hEr0N3VvchcFFcWb9AB0bH7yA38CVDpU6YnUQMcMR5Bw7JBg=,iv:1q4piTli0uVAOoNqTwqlzG5OqmNGIel52d9aDFgkYMI=,tag:Uaw1Ty3BKAPLrhvoJURAVg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

@@ -8,7 +8,7 @@ extraArgs:
     # IMPORTANT: If you have records that you manage manually in Pi-hole, set
     # the policy to upsert-only so they do not get deleted.
     #- --policy=upsert-only
-    - --pihole-server=http://192.168.1.56
+    - --pihole-server=pihole-web.network.svc.cluster.local
     - --pihole-password=Aveve2008
 policy: upsert-only
 sources:
@@ -31,14 +31,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA2Ympvbm5kY1Rwa1VTNnBy
-            aS9NY0hoWHJVZS9BcklFSXg0T2lJUWt4c3hNCkUwZFBSZVR3a2RvWmJNeFVFOXIz
-            OGhNK0hxTXkxNkMzSTI1NUp0REpPdmMKLS0tIHl5MTBPRCtnRmNyaHYvZkFVS0Fp
-            S3EwUEpSaU96cGdpMjdhK01NMDRaVWsK6ttHvLJsts8iZnLqdn+TtcX1eVpy3buh
-            5GztEsCh9/qOg310/Eu5Lmy3FViuQp02k6k8eiz4Nudmr7CehtHZCw==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzdjBxWU1XbkFNcW9sblFm
+            QVRkb2FVNkRZZWdxMG5OOGVCc3FXclpqM0NVCkVONDdDT0Q5cWRCSnJHWXY2UUNm
+            RUFEbFlEQlM4NmFmN1RzYUNMUTk2eTQKLS0tIGlqeDhNRG12Um5PZGlVbUZTRVhN
+            UmdLNkZjZ0pWdHFycUtteHJldlkxaU0KtSdISCPxTajijR5bJ5CBHFU+R6XUc25H
+            6n69Ps/wiKwkphmI5ulZMM1KbRWy7VMq3/BATVbMMN8H9r9KaVoqJg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-26T15:42:25Z"
-    mac: ENC[AES256_GCM,data:YsDFiXa9jfUfqMK71FPrsdZve8JeAK02jYtYd1Jo/ZzWOGxQQInbR0XjDNULyZ26sIcqsfGc0lKyuglZo1QqCRHutKTcdglmnwjKPoNT1sqskelzdEmHbovVcjvgjpA/q9zAk4fPW5mKk7T3uakdfTrfap8VLRbR5TUa2BC3RNs=,iv:5YICdEdMtABJmtC9H2LYTu8aldzYRxM+3kFw/csy7fM=,tag:VJNRvTZFcZz3j+KxvkRKLw==,type:str]
+    lastmodified: "2025-01-26T17:11:36Z"
+    mac: ENC[AES256_GCM,data:oDvFsajn0vPOwmE+iLkkhyMdvuJI+q9wbzUyFwUIH2fHP7r/qoDf47vp4hz2jgB5hjvTjEk+Zfdqzdo6AieQgOCE/uQ/oG3xVli7OAw59CFylatN/A7T683C+hzCQ+yK6UqQWjc6ExpJNQB3C9L1MCtKpq6+14aA+OR9y2oxe/0=,iv:temoelUi/cB79PLq72xLYSzmCHu6BumZtdiV786ysr4=,tag:KPh39edUpOZ0aOl8kjEpvA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

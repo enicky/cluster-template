@@ -1,13 +1,11 @@
 apiVersion: discovery.k8s.io/v1
-kind: EndpointSlice
+kind: Endpoints
 metadata:
   name: unifi-service
   namespace: home
-  labels:
-    kubernetes.io/service-name: unifi-service # Must be present for EndpointSlice and equal to Service name for automatic mapping - with having it in place, you can change the name of EndpointSlice to something else. The official convention is using Service name as the prefix.
-addressType: IPv4
-ports:
+subsets:
+- addresses:
+  - ip: 192.168.1.154
+  ports:
   - port: 8443
-endpoints:
-  - addresses:
-    - 192.168.1.154  # IP address of your external service that you would like to proxy requests to
+    name: http

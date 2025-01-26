@@ -47,7 +47,6 @@ controller:
     #% else %#
     default-ssl-certificate: "network/#{ bootstrap_cloudflare.domain.replace('.', '-') }#-staging-tls"
     #% endif %#
-    v: "5"
   resources:
     requests:
       cpu: 100m

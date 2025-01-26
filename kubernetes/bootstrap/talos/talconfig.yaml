@@ -55,6 +55,21 @@ nodes:
           - network: 0.0.0.0/0
             gateway: "192.168.1.1"
         mtu: 1500
+  - hostname: "controller-3"
+    ipAddress: "192.168.1.10"
+    installDisk: "/dev/nvme0n1"
+    talosImageURL: factory.talos.dev/installer/b8c35df6594a5e6b955b2b920bdae208731bd7edf018d6d009283bc0cc104008
+    controlPlane: false
+    networkInterfaces:
+      - deviceSelector:
+          hardwareAddr: "b2:f8:cf:21:be:be"
+        dhcp: false
+        addresses:
+          - "192.168.1.10/24"
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "192.168.1.1"
+        mtu: 1500
 
 # Global patches
 patches:

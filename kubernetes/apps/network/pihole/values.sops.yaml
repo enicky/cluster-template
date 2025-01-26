@@ -42,8 +42,8 @@ serviceDns:
     #loadBalancerIPv6: ""
     # -- Annotations for the DNS service
     annotations:
-        io.cilium/lb-ipam-sharing-key: pihile-192.168.1.56
-        io.cilium/lb-ipam-ips: 192.168.1.56
+        io.cilium/lb-ipam-sharing-key: pihile-192.168.1.25
+        io.cilium/lb-ipam-ips: 192.168.1.25
         metallb.universe.tf/allow-shared-ip: pihole-dns
 # -- Configuration for the DHCP service on port 67
 serviceDhcp:
@@ -85,8 +85,8 @@ serviceWeb:
     loadBalancerIPv6: ""
     # -- Annotations for the DHCP service
     annotations:
-        io.cilium/lb-ipam-sharing-key: pihile-192.168.1.56
-        io.cilium/lb-ipam-ips: 192.168.1.56
+        io.cilium/lb-ipam-sharing-key: pihile-192.168.1.25
+        io.cilium/lb-ipam-ips: 192.168.1.25
 virtualHost: pihole.gitlab.be
 # -- Configuration for the Ingress
 ingress:
@@ -331,14 +331,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAzOWVhL2V5VlFjZmprc0hl
-            ejk2RDJJeWlHR1FTU21aMmxsV1JLeWR2Ym5VCmg4NE01d3JUNHFGelZaTnpieXZY
-            OU9BcWVJQ0xDd0RwUGZZQjE0R3ZTT2MKLS0tIDUzUmh6Vm9mTE5LVzZ6R1hsL0ZC
-            dUJsS2JJd0JtWk56Q2x3VlIxaS9oTHcKffrJglyMIdxPaJbe8gbeqTE2yxvLPzxj
-            k9apoCvo0tRFns0+9+nU8CvOXT2Ed5DjsQ/TOzgtmGh4rRuciVa90Q==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBTSlhZN053ODZKSGRWUmNN
+            NEVQWnMxZ242bFRxM1lZakFZSVpTOHdLU1I4CndRUmhuZzE5ZkxLSmxmY0FHSHE4
+            WUZaNkplUDFmS2NTTWdJMC9KMEdTMEEKLS0tIFNKakR5NWRQMVF3b0t2Y1I4OURS
+            cUVvSWV2YmlBUjE1MzJmYTMzTUN6VkkK7WwxUsCquQ1Ux4p9jYT6VPMD86Cmjp3N
+            ZPFJXXws/J9KyPZGj/tdRhxCLixTrJOGaSuwGEbqinlMJxxOaZUv+w==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-26T15:22:02Z"
-    mac: ENC[AES256_GCM,data:jfq3jbTA4D009mlLfzmObJIs+Qa0MA/1h3Xjt29JbYVuKUgxui37qLm18L1QMPOBZeVPEhfMmSvZM3WYwR4q/kffv0VKdC/rH9mdjV8IQHV5EMd9tG5gNYmxqQOlZYqkpdSDc7tAYk9wtCUKFmgrSeMziDGni/pAV7P9/EK93cs=,iv:hmBJvRftOcJA1fHinhrcg+30gkXkoJiUnjh7uLrOMTo=,tag:1rJIrJIQjuBMITF7UM8w8Q==,type:str]
+    lastmodified: "2025-01-26T15:42:26Z"
+    mac: ENC[AES256_GCM,data:UuwGs3z4wN6qPZDnIcJPLTtR+MvF+PZwFkiVSJ9mEAvbpkQVZWwPP00AHj3bsLdBDtwUXyo545CitDtSAKfojJEvavZy/xxUX1Q9EySTt7lfXFdRNj5Jlj1NjefBK2BhiD49Shu2SkCOTutdihh9JDcALER1WkK5S5GkRg31mhE=,iv:1cLVNPFmutpW4Qgf/4shd89IliWiCpS+SurCzzgvaWk=,tag:dHC7vA40xFtkR4tbhNDP3w==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

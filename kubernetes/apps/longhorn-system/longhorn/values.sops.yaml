@@ -6,7 +6,7 @@ service:
     ui:
         type: ClusterIP
 defaultSettings:
-    defaultDataPath: /storage
+    defaultDataPath: /var/mnt/storage
 sops:
     kms: []
     gcp_kms: []
@@ -16,14 +16,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA2b2l0K0c2MlR2dlNRWmQx
-            a2gzbkFPRmM0aDc1eU5FMnBEd3Y2U2NuOGdZCmZIc2MrV2U5UURYaVJWWGk5OGtI
-            YmliOHBiUy8vOXY4WkdVbUJ3VWFXeUkKLS0tICt1Mko2QmxnNGlJQ0JBYnBNanhW
-            ZWxTWHZ2QW5QUDZMVzE1bldkTmxWUWsKYjg67+TTWnbhrmVLfJ17tVkTevWAghyy
-            Npri+Fx3ccjIaIftqqC1AgjoSFKp2GV0tfM5iuy6acjBg9LCa5Lmiw==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBFZlF3TnMvZHltU2dtWXdZ
+            WkFrVHlxd0pnd2hjNVg2aTZPNTVrV0lsRFhjCmgvNmZzc2VXUXpNb1puVlBwcWpt
+            cnhXT3prelI3ZW41TlVtNUwzcUtpL1UKLS0tIGJFOTlhVEx0NnZuOGZGTDIxdStw
+            RC9LOFNIVjdJQzJFY2RTVWVZT0JTWjAKLdwo0+kIcD/v6YQqGmwfIFeUIPy6OUdc
+            OaCH88zPY6NUtRk2uM8TdBAvgI/ERAN3cI03xMhuOC5EVWXB2eDOsQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-26T11:25:11Z"
-    mac: ENC[AES256_GCM,data:aFFH9Oi3a70MbTT8sCAREKVREQEnKF+w9MfCkke94+phN9pNMREAtjjlI82LfHjwxG7VqUSIGNvo2LzyoqmmlHeLVB3803+evHXYQUu/c8A2U3ua0KY83QfHc5LE4vSD+u81EAAHlPOjCaG9DI0UIbazGrZRP9uDOKjEF6N5vIw=,iv:evRh8XAorsw6/WQib57679YQitvF/Qw0aULV1wb6Ei8=,tag:5aLdBIyPWXo1ZqbJBiu3bA==,type:str]
+    lastmodified: "2025-01-26T14:55:19Z"
+    mac: ENC[AES256_GCM,data:CDgIwyaA/hPZxAJUgGTadIeE5mguK2lvFSTH4kifTTNLY9NOy7t/rEwWxu+91FpsvOjB7JUIdWqb6YCC48vH6RQF6vhViBLRPOV1JElEQWlqoh2Oma70sWvq92rv/hbjxGn8ICisuQm4x7rUWIvap3c6jfAYkCfFFL7AZpDj0f0=,iv:V1Sk+ArtP9EhQob4ObGmons8DnD9e8yH+k0HV5FM3tU=,tag:f0WaX1ZAaZyH2uVKiviKjw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

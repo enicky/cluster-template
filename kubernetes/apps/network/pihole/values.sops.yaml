@@ -42,8 +42,8 @@ serviceDns:
     #loadBalancerIPv6: ""
     # -- Annotations for the DNS service
     annotations:
-        io.cilium/lb-ipam-sharing-key: pihile-192.168.1.90
-        io.cilium/lb-ipam-ips: 192.168.1.90
+        io.cilium/lb-ipam-sharing-key: pihile-192.168.1.56
+        io.cilium/lb-ipam-ips: 192.168.1.56
         metallb.universe.tf/allow-shared-ip: pihole-dns
 # -- Configuration for the DHCP service on port 67
 serviceDhcp:
@@ -85,9 +85,9 @@ serviceWeb:
     loadBalancerIPv6: ""
     # -- Annotations for the DHCP service
     annotations:
-        io.cilium/lb-ipam-sharing-key: pihile-192.168.1.90
-        io.cilium/lb-ipam-ips: 192.168.1.90
-virtualHost: pihole-v2.gitlab.be
+        io.cilium/lb-ipam-sharing-key: pihile-192.168.1.56
+        io.cilium/lb-ipam-ips: 192.168.1.56
+virtualHost: pihole.gitlab.be
 # -- Configuration for the Ingress
 ingress:
     # -- Generate a Ingress resource
@@ -106,7 +106,7 @@ ingress:
     path: /
     hosts:
         # virtualHost (default value is pi.hole) will be appended to the hosts
-        - pihole-v2.gitlab.be
+        - pihole.gitlab.be
     #tls:
     #  - secretName: pihole-tls
     #    hosts:
@@ -331,14 +331,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBEK2JKTCtteGNtS2syRmUv
-            SmVQMnJkWHRHaHhWODFhUkduTndyZGxIM0ZJCjh6Vzh2a1YxV1ZZN1Z3cU02VE5T
-            NUxMczNqL1RWS3VtdWg2eUhGMDAvRm8KLS0tIDc0bG8vajFlOE04MEFQZkNycWlT
-            bFdsRjY2K01weDRNdmlSVklmcWE3WFUKtExTqOFwLBbsk0+9eLCm8vAAr5WoTCqJ
-            LqbPor/S14l4yrYMYxpImvR93OAiFnODZjSrNY39GdukG7yuOhtlMA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAzOWVhL2V5VlFjZmprc0hl
+            ejk2RDJJeWlHR1FTU21aMmxsV1JLeWR2Ym5VCmg4NE01d3JUNHFGelZaTnpieXZY
+            OU9BcWVJQ0xDd0RwUGZZQjE0R3ZTT2MKLS0tIDUzUmh6Vm9mTE5LVzZ6R1hsL0ZC
+            dUJsS2JJd0JtWk56Q2x3VlIxaS9oTHcKffrJglyMIdxPaJbe8gbeqTE2yxvLPzxj
+            k9apoCvo0tRFns0+9+nU8CvOXT2Ed5DjsQ/TOzgtmGh4rRuciVa90Q==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-26T14:55:20Z"
-    mac: ENC[AES256_GCM,data:kZJOJzSX4MzjdEqHhFgtF5IefboerhmbHQ9M0Z1mjErfPag6ny/YGUOVFdsx+KWm6oZS5PsU2ZEPHxtfTRRWN+087zr/80t0VPB7nd2IJcnowymMv4YsEmqR2FqO/4Ydzk5SSg/rvwzV/djVP/zzuGG3JOk5kucP/Yc0SyrgAf4=,iv:tsDe3O2u/oKcRpyxUu/Qh1ziG7e6uBf4PdoZ6Eh0gj8=,tag:JeFj241r/Ew+Qa/AQ4uUjA==,type:str]
+    lastmodified: "2025-01-26T15:22:02Z"
+    mac: ENC[AES256_GCM,data:jfq3jbTA4D009mlLfzmObJIs+Qa0MA/1h3Xjt29JbYVuKUgxui37qLm18L1QMPOBZeVPEhfMmSvZM3WYwR4q/kffv0VKdC/rH9mdjV8IQHV5EMd9tG5gNYmxqQOlZYqkpdSDc7tAYk9wtCUKFmgrSeMziDGni/pAV7P9/EK93cs=,iv:hmBJvRftOcJA1fHinhrcg+30gkXkoJiUnjh7uLrOMTo=,tag:1rJIrJIQjuBMITF7UM8w8Q==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

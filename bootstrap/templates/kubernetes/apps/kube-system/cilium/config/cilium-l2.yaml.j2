@@ -7,9 +7,11 @@ metadata:
   name: l2-policy
 spec:
   loadBalancerIPs: true
+  externalIPs: true
+
   # NOTE: interfaces might need to be set if you have more than one active NIC on your hosts
-  # interfaces:
-  #   - ^eno[0-9]+
+  interfaces:
+     - ^end+
   #   - ^eth[0-9]+
   nodeSelector:
     matchLabels:

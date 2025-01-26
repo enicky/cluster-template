@@ -14,7 +14,7 @@ cni:
 # NOTE: devices might need to be set if you have more than one active NIC on your hosts
 #eth+
 devices: end+
-direct-routing-device: end+
+#direct-routing-device: end+
 endpointRoutes:
     enabled: true
 envoy:
@@ -117,14 +117,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAvQmRGSGRsNjYxSWhMdDhk
-            cWY4aUNqRjV6Zy9FV1ZYT0swb2c4WmdRVUVNCjFkdnJpenlTTXlwdVRxWkJtNHZu
-            VmtFRHl4b1RXbEphdUJuejRxeUJZcEUKLS0tIGZPRm1SWUtzZ253N3FTU0xVSHZj
-            ejFlR0tLaWo0bWpvRmNMVkN1L0c3SXcKTuFafvuyjmxoLiFRRoH0GGgnfQot0Yb8
-            UTGk/uKWzQLtB4GUth54u71KrhFIHvVT6cPILw26Uv/Zi0i9R8l+7A==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBVd0hQSDQxaUZhTzR6OXMw
+            bkV4dXIzalhreUZwcGdLRXIwaGNqRDI4VjBVCjRKWEpmS0RhZjdyMlNWakkzcmVX
+            SDIrT0Z2Vk9CRzZ0aGJQNGJrVC9wMEEKLS0tIFdpNmtXblNmVjFJVzZXWlNjNDU4
+            dWdTMnpGK0ZqampPc2ZKbEdMejN5Sm8KazRGQOlRfmper2P/1D+nFtUkTqEwEx/6
+            I4hcRcJQJCzoF7Y7znA0dNoz6ZTBXGB7eSoyaPFQzCvkeBMUm2ikpg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-26T17:58:29Z"
-    mac: ENC[AES256_GCM,data:o3KBcQtWZP92W8TG3wFHa8vIwBBabQUxzcITgCUnK4wF14J0FAxwcBR6dnYVSLYX7m8E9pPe0xGEsUYBA7YyqWL2kXww/ar6aRdMhk5M3B4s1bnuaSZww2YBJPR/03OIqJg+EaM5a4taPEKo+GihOv+j3xKo3Nt04HQa8pEFqLg=,iv:D+OcrDOMBH608s1DqBXrYPMsS0GDwEnhAMjkfgNjtms=,tag:xiWQgWAEpe3I89tZeVWW6A==,type:str]
+    lastmodified: "2025-01-26T18:05:59Z"
+    mac: ENC[AES256_GCM,data:P/q2VjVyMUQuy5ybDfMqZiZNBCyG6aw9h/IXKGHs7emevS4TaDnLTrGmRNQE86ZVoSaKVdXZ5+MTMdOJBTQ48edsn8Rt8jZHoHCegA4DGms41hKS4AypeC0jR7soTKJ5RKIHCMB2osyGRYqPlP6YQ8eiqK52RyITSHz7aMBVVHM=,iv:vHqLRAxpLKvfxp4HNrzCZbQt3aO8QyflhLOYK9964To=,tag:bq32GQQIYJKyPtW+su2cBg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

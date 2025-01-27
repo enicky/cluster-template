@@ -43,8 +43,8 @@ nodes:
   - hostname: "controller-4"
     ipAddress: "192.168.1.13"
     installDisk: "/dev/nvme0n1"
-    talosImageURL: factory.talos.dev/installer/10e266ceff7e9bf72d8447eea75719052c2207522756eb49f3d7b2611f4a335f
-    controlPlane: false
+    talosImageURL: factory.talos.dev/installer/c0199a24ed9a10634bf90f7b05476b678b9372aac3216538c165b4f003216618
+    controlPlane: true
     networkInterfaces:
       - deviceSelector:
           hardwareAddr: "b2:2a:c2:35:73:a9"
@@ -55,11 +55,13 @@ nodes:
           - network: 0.0.0.0/0
             gateway: "192.168.1.1"
         mtu: 1500
+        vip:
+          ip: "192.168.1.20"
   - hostname: "controller-1"
     ipAddress: "192.168.1.10"
     installDisk: "/dev/nvme0n1"
     talosImageURL: factory.talos.dev/installer/b8c35df6594a5e6b955b2b920bdae208731bd7edf018d6d009283bc0cc104008
-    controlPlane: false
+    controlPlane: true
     networkInterfaces:
       - deviceSelector:
           hardwareAddr: "b2:f8:cf:21:be:be"
@@ -70,6 +72,8 @@ nodes:
           - network: 0.0.0.0/0
             gateway: "192.168.1.1"
         mtu: 1500
+        vip:
+          ip: "192.168.1.20"
 
 # Global patches
 patches:

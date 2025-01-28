@@ -32,8 +32,8 @@ k8sServiceHost: 127.0.0.1
 k8sServicePort: 7445
 kubeProxyReplacement: true
 kubeProxyReplacementHealthzBindAddr: 0.0.0.0:10256
-externalIP:
-    enabled: true
+#externalIP:
+#  enabled: true
 #devices: "end0"
 l2podAnnouncements:
     enabled: true
@@ -48,7 +48,7 @@ loadBalancer:
     mode: hybrid
     #dsrDispatch: geneve
     #acceleration: native
-tunnelProtocol: geneve
+tunnelProtocol: ""
 localRedirectPolicy: true
 rollOutCiliumPods: true
 routingMode: native
@@ -132,14 +132,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAzT0h1aHdJNFdNb1hvOVU1
-            SnVYTFRNQW1IOTJVWlY3RExwUE8xb0xoTFVjCmUyTzhTd2dBYzRoN1FqdnhibTdE
-            Y1Bla0NjWEtWRUNsblB3WnpDQVJPOEUKLS0tIEJnaEtqUXhPNFI4NkMwOHZjMUhN
-            bCs0aFN0VFJiWHg2ZGtJNVJJbjkrWHcKCS8NEc7MDLHv9P3MNIkYOW8OPQl/uiBJ
-            tKsd/Kk1ZdUSzuR4xH/jqqdfIv8MGwB5F2y68Q411RcqA3Vnyf2ivw==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA3QjdCVHNxNW9seVNQSmZk
+            bytpWDFscnM0T1cwc2tBenFNRTVKVHJaV1VVCm9ERW9yL1FZdTh1alFxRVd5Rklw
+            TWgvMmk4d3FpYnBrOTkxSXlzZnBtT28KLS0tIEdRd0drMmR1ZXE2NTlNQ0VWTjhV
+            STRvbTdxelhSd1FuSmdweDVJSHFrdTAKbB3fpQPWys07HLy+YZuoZ7LfZR0NZfAu
+            ey43A35XkjxRiDpr6fvSTn4mSqnGXZcM89gUSarXEtJD162ZC3/3Ag==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-28T10:53:41Z"
-    mac: ENC[AES256_GCM,data:AVI2xzCkBATF0Y1tQmRrqwJn2vjnv4f995kBaprRykeHS2aziCse27z7a1VtgjqPZuKoOb8D9D/Q5Gzcgz5IkNYmVENd9kj+PZECAznmj4p+s6rN++H4rex/3hvVsEZxlVMPELM1mv7Vd2+xTdJJ8zU+HTY7IE9mzy7XvHtihjk=,iv:jzuijhND8n0/9/Y+z3SLzuuGy2idIe76mRYErgf32bQ=,tag:0y76Qxgnl0hknrlQrbLDxA==,type:str]
+    lastmodified: "2025-01-28T11:01:57Z"
+    mac: ENC[AES256_GCM,data:VOAR07LG9b0RLSFMOXBoqfPB6RvX/OeSascLEfUcvTt0Px+XRoY4h0C3fSPfHcJ9SefH4AR2sG6blQnP5ITPrFnHdvFdzuytz31KOcFJng/g/WxqtUv6dpHA65BW0H1HjRYy7rIs6Dg4xwamk33CtAMG9ZBKEduc5lvx2FErg/s=,iv:77eTIDG3jIgA8S7VWKk5HP+NtL3gOOGDBQ4IbEvH83Y=,tag:yoJHygVWTvOqu1EKrYxQZg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

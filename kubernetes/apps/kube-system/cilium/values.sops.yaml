@@ -41,14 +41,14 @@ l2podAnnouncements:
   interface: end0
 l2announcements:
   enabled: true
-loadBalancer:
-  algorithm: maglev
-  mode: snat
 #loadBalancer:
-#  mode: dsr
-#  dsrDispatch: geneve
-#  acceleration: native
-#tunnelProtocol: geneve
+#  algorithm: maglev
+#  mode: snat
+loadBalancer:
+  mode: dsr
+  dsrDispatch: geneve
+  acceleration: native
+tunnelProtocol: geneve
 localRedirectPolicy: true
 rollOutCiliumPods: true
 routingMode: native

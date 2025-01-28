@@ -54,14 +54,14 @@ l2announcements:
   #% else %#
   enabled: true
   #% endif %#
-loadBalancer:
-  algorithm: maglev
-  mode: snat
 #loadBalancer:
-#  mode: dsr
-#  dsrDispatch: geneve
-#  acceleration: native
-#tunnelProtocol: geneve
+#  algorithm: maglev
+#  mode: snat
+loadBalancer:
+  mode: dsr
+  dsrDispatch: geneve
+  acceleration: native
+tunnelProtocol: geneve
 localRedirectPolicy: true
 rollOutCiliumPods: true
 routingMode: native

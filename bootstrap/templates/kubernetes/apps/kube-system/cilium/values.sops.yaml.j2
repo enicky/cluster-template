@@ -60,8 +60,8 @@ l2announcements:
 loadBalancer:
   algorithm: maglev
   mode: hybrid
-  #dsrDispatch: geneve
-  #acceleration: native
+  dsrDispatch: opt
+  acceleration: native
 tunnelProtocol: ""
 localRedirectPolicy: true
 rollOutCiliumPods: true

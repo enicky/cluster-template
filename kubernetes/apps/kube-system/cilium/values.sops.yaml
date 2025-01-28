@@ -48,7 +48,7 @@ loadBalancer:
     mode: snat
     #dsrDispatch: geneve
     #acceleration: native
-tunnelProtocol: tunnel
+tunnelProtocol: native
 localRedirectPolicy: true
 rollOutCiliumPods: true
 routingMode: native
@@ -132,14 +132,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBHdzF4Y0ZTblpSV09ZNzF5
-            TzZMdWZjZzhUU2dIZ1psdUxiY3RGSk8vaWtRCjFJQkQ0TU5YaXdlSVRhZWdBSU0w
-            U0Q2bFVNVmMrdHBpbUQwNmMza3lIZEUKLS0tIEFGR0FjZDVMQ1Z3aGl5QWQ3V2lo
-            QTBISmdIMlhzbG5BbVk2eXdLR0M5dGsKsk3NH9MonsA4gArGzyF2Y+YWAMpWDZbq
-            vDG4NEUOXH3CIsBsO3PNGC2hQSA3Y3gOEOV+piB1mjjeuaMoQqf/Kg==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzclhwMGZNM1l1YkQ3Zk5N
+            S3BlRXZvc0VLZkg1aTIvSDRNYW1PcVJlV21jClhRcU4wZHQxbHlhUXpndm9aWjRP
+            MExwcWx4M2QrZlBrZlpZTjJIKzlBZGsKLS0tIFg3Tjd0QktSaE5qbTNnaUt5d0pp
+            U2hPRklEdTVybkJMZ1VaeGlLWWtqajgKJ+008pDIxnkYxU0BHLm/d7gDMflqUUJU
+            yuFKGjssXOpf4SSKlDTe5hPzSbAKUIt3qHpghBQVeNMTV1dswz45gQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-28T09:18:16Z"
-    mac: ENC[AES256_GCM,data:clyi/rhVr9gAl/+v9kP7z5NzaKvJsc2GKqRla0FhCDC7wx+Mh6vTPtvzGsngvRYuVLYcgaGtThirEN1iIVa2uottH4gkR9BcxnjvZBPhpXU8f7B0VJbLe83ggbQ1p50+OfHzBXBiPKpTC4IZe4OPfIR47MacYDUgTut56VtBFDU=,iv:3Gg6iwk6UjymgDW5fdOTnwtD5dbz+p3oOEvPU7xFjps=,tag:FG5xsns1ICHmTSe3lnjg7w==,type:str]
+    lastmodified: "2025-01-28T09:22:13Z"
+    mac: ENC[AES256_GCM,data:I9a6P8Is0C38knh58S8f5r95rcNKACUTnOJLMI4yqfOnJGaugOVPRq/VQcjrSLN4W3Ta8fORPddcYi3Hdrdr7fJHa7eL2P7iyOEMfA+M04plyQ/zo5tlKinwh8E3rlyUFKxK42NWfWCF40NAIYUBzqMkAy41chr+iWag/ybOsBo=,iv:xuwqtc3hnNf0Lp/9WWmZyAdReg9Fgoa2640hHLPsKcM=,tag:s6oPs1AFhf7iqzyzDzY3KQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

@@ -44,7 +44,7 @@ kubeProxyReplacement: true
 kubeProxyReplacementHealthzBindAddr: 0.0.0.0:10256
 externalIP:
   enabled: true
-devices: "end0"
+#devices: "end0"
 l2podAnnouncements:
   enabled: true
   interface: end0
@@ -58,10 +58,11 @@ l2announcements:
 #  algorithm: maglev
 #  mode: snat
 loadBalancer:
+  algorithm: maglev
   mode: dsr
-  dsrDispatch: geneve
-  acceleration: native
-tunnelProtocol: geneve
+  #dsrDispatch: geneve
+  #acceleration: native
+tunnelProtocol: tunnel
 localRedirectPolicy: true
 rollOutCiliumPods: true
 routingMode: native

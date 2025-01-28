@@ -59,10 +59,10 @@ l2announcements:
 #  mode: snat
 loadBalancer:
   algorithm: maglev
-  mode: snat
+  mode: dsr
   #dsrDispatch: geneve
   #acceleration: native
-tunnelProtocol: ""
+tunnelProtocol: geneve
 localRedirectPolicy: true
 rollOutCiliumPods: true
 routingMode: native

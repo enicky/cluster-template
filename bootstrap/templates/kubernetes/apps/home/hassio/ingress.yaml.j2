@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: external
   rules:
-  - host: hassio.#{ bootstrap_cloudflare.domain }#
+  - host: home.#{ bootstrap_cloudflare.domain }#
     http:
       paths:
       - path: /

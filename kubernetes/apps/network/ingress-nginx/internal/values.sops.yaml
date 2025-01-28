@@ -2,7 +2,7 @@ fullnameOverride: ingress-nginx-internal
 controller:
     service:
         annotations:
-            io.cilium/lb-ipam-ips: 192.168.1.21
+            io.cilium/lb-ipam-ips: 192.168.1.24
         externalTrafficPolicy: Cluster
     ingressClassResource:
         name: internal
@@ -52,14 +52,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBjbnlhV1ZuWEhubVZNS3hM
-            KzRkVW0rR0hBNWFrcFhiTVdESndKZlA5eERFCms2NFNCQ1JZdTY3TloxcEM1N3Ba
-            L1VrL3lHd2pZdzV3NVdWWHNkUWdlSTQKLS0tIFJHWHcxVlVoamhiWUxQK2FJMlZr
-            TkNpcngrTmhMZCt1L1NLbk5aMkRWSDQKoOr3gYNTdegDbUL/SaCFmgg3WRqUmWjA
-            j2V02Allhuqo5t6xlCkGzcYbRD1Z0r4w2E2S3/3aHHh43Nzcgm9Eww==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBKcGdiWno3KzlsOE8wNTZK
+            R3RBVjdadnI0V3JYRVN2YnZsWFdOcUNJZlNBCm8xZWJHWjlTWVI4OCtXamw4WVcr
+            Tm9MbzA2VDhORHF5UXVPdFFrY1hhQXMKLS0tIGdhajRmRndkdjg4ajNKV2FSMVdo
+            c3R6bjJ1blBTRm9rQkY5SGpnV25BYUEK9YmxuJTvramJm2v7VSlMs3lw4sDeWMvi
+            X4JZP6UPUlfVJCJxadWpQQJ9hceMKwLbtFAtofB8zu2K2+in6dRWSw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-28T11:01:57Z"
-    mac: ENC[AES256_GCM,data:pPO36NoyM9Yf10k4GIuTiCQj/HWLHAgNf1ckN88+adMNliX0SMZsoNEoX8QOrCUwm1nAEyiRUDwGDAtS7zTPvk2cVXx6nAOD7m09DXufeE8IPIEq2FfYctQl3pRsm8LYcdyq13UUEwwjPz1C7MkIXv3ij6YC0rTU1XfYvI8St1s=,iv:lp3y6AvWir+FS3svjZTnYuqdSXAlg4mb7OihwRVBJA4=,tag:a9byZDdRct7dQ8gy2rZ5Zw==,type:str]
+    lastmodified: "2025-01-28T11:17:52Z"
+    mac: ENC[AES256_GCM,data:8wa8nHmpaL2UcaGW0e56RYb1k2w7hXMv76q6zFIE5FsCC0XgTfPdG634DDV7WeNPwM1scUTdcLP2cTMip6HuvgPjzQv3akJNAnS9dCw3XV/vOYklcQU/DcgRJvu/k52j9SpJiZtZHYLklQml7Xu5SRwD/DHJB4os48/aJshQgbw=,iv:paPEdMs3vWZzfi3x7PBz0rwYgJpVP8Di2kcE2z43L20=,tag:3/IH/oe36I2sUxj8VUgfHA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: external
   rules:
-  - host: home.gitlab.be
+  - host: hassio.gitlab.be
     http:
       paths:
       - path: /

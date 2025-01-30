@@ -9,6 +9,23 @@ metadata:
 spec:
   project: home-kubernetes
   sources:
+    - repoURL: https://immich-app.github.io/immich-charts
+      chart: immich
+      targetRevision: "0.9.0"
+      helm:
+        releaseName: immich
+        valueFiles:
+          - $repo/kubernetes/apps/home/immich/values.yaml
+    - repoURL: https://cloudnative-pg.github.io/charts
+      chart: cluster
+      alias: cpng-cluster
+      targetRevision: "0.2.0"
+      helm:
+        releaseName: cluster
+        valueFiles:
+          - $repo/kubernetes/apps/home/immich/values.yaml
+
+
     - repoURL: https://github.com/enicky/cluster-template.git
       path: kubernetes/apps/home/immich
       targetRevision: main

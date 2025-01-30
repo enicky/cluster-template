@@ -22,7 +22,7 @@ spec:
       helm:
         releaseName: cluster
         valueFiles:
-          - $repo/kubernetes/apps/home/immich/values.yaml
+          - $repo/kubernetes/apps/home/immich/immich-cluster.yaml
 
 
     - repoURL: https://github.com/enicky/cluster-template.git

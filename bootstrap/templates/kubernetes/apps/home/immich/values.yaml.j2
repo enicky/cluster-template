@@ -52,7 +52,7 @@ immich:
         enabled: true
         maxDistance: 0.03
     server:
-      externalDomain: https://immich.terence.cloud
+      externalDomain: https://immich.gitlab.be
     # trash:
     #   enabled: false
     #   days: 30
@@ -101,7 +101,7 @@ redis:
   auth:
     enabled: false
   master:
-    resourcesPreset: micro
+    resourcesPreset: large
     persistence:
       labels:
         velero.io/exclude-from-backup: "true"
@@ -128,15 +128,15 @@ server:
         gethomepage.dev/description: "Photo library management."
         gethomepage.dev/group: "Media"
         gethomepage.dev/icon: "immich"
-      ingressClassName: nginx
+      ingressClassName: external
       hosts:
-        - host: immich.terence.cloud
+        - host: immich.gitlab.be
           paths:
             - path: "/"
       tls:
         - secretName: immich-tls
           hosts:
-            - immich.terence.cloud
+            - immich.gitlab.be
 
 machine-learning:
   enabled: true

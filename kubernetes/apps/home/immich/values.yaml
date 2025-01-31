@@ -121,21 +121,16 @@ server:
         # proxy-body-size is set to 0 to remove the body limit on file uploads
         nginx.ingress.kubernetes.io/proxy-body-size: "0"
         external-dns.alpha.kubernetes.io/target: "external.gitlab.be"
-        cert-manager.io/cluster-issuer: letsencrypt
-        gethomepage.dev/enabled: "true"
-        gethomepage.dev/name: "Immich"
-        gethomepage.dev/description: "Photo library management."
-        gethomepage.dev/group: "Media"
-        gethomepage.dev/icon: "immich"
+
       ingressClassName: external
       hosts:
         - host: immich.gitlab.be
           paths:
             - path: "/"
-      tls:
-        - secretName: immich-tls
-          hosts:
-            - immich.gitlab.be
+      #tls:
+      #  - secretName: immich-tls
+      #    hosts:
+      #      - immich.gitlab.be
 
 machine-learning:
   enabled: true

@@ -1,30 +1,30 @@
 apiVersion: externaldns.k8s.io/v1alpha1
 kind: DNSEndpoint
 metadata:
-  name: cloudflared
+    name: cloudflared
 spec:
-  endpoints:
-    - dnsName: external.gitlab.be
-      recordType: CNAME
-      targets:
-        - d1ae206c-f43b-4d43-9dc0-39c273c60b45.cfargotunnel.com
+    endpoints:
+        - dnsName: external.gitlab.be
+          recordType: CNAME
+          targets:
+            - d1ae206c-f43b-4d43-9dc0-39c273c60b45.cfargotunnel.com
 sops:
-  kms: []
-  gcp_kms: []
-  azure_kv: []
-  hc_vault: []
-  age:
-    - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
-      enc: |
-        -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB0SVRBSWovb0M3QVN1RHZn
-        d2FjTHViUTk5Y0FEQ0tXbVBxNUhXZ0RrV1MwCm8vbk5pa0ZuY3B5T3p5d1FLM2U5
-        T0Vqb1FLbE1iYVA5cVNKWDdmQTUrKzgKLS0tIGFqTzVrc2lMZ3Y4dlNCN1B3a0lG
-        d0ZtbW91UjdYSVlBZXo3V2ZodGh3d00KhFI8M1lDU0r3SbokuTplnAclg1Y2Yhw9
-        L3q/sNxbEMfxLwTYWShllDiDkKjqCVI4CKQWsy4RjzEmucTZvzhRVw==
-        -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2025-04-26T05:17:26Z"
-  mac: ENC[AES256_GCM,data:nVNn7UbWOgb0TU0ZyomkNH11jAQ7PUiaH+vIbtqazzCXGWdaghaDqvh+BXLtmHNg+TzsaAI43sX1IltcCXfV+JmloovnqsygOeEA+mmvIJSTV4HIUS5nv4fWztYeY+eo8IgNHvQaNOHZACW5kckp/5aI/GejbXEgVj0JUeT9wuI=,iv:G0Qb5GEiCtqGEeiZUW57HBDTLdkKrZMCLwWAdX/sCDg=,tag:J992OQ4TdGS9dxPdyLIUTQ==,type:str]
-  pgp: []
-  encrypted_regex: ^(data|stringData)$
-  version: 3.9.3
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBROGFFU2I0RVV4Lzd3VEVM
+            USt3OGZkYUgwOFRjQTFqQ2d2ZFVxR1I1SkNvCmdZWFJraE5OOWlQQVRrZmhhUzZT
+            anB6SDBaaHB2K2owMSt4YWFtTG5lVzgKLS0tIHVZVlB0K2w4ck9rZVV6V3doQ1RL
+            OHRZR3E4c0pCSnI2ZTdWVmdXSGZ6VWMKyO64feOGGOq1FWK676j+coLoZXrLKWI7
+            2PKfJk6ExmnDtzMhhmvA2Z93vq1cHvtgTJEad3i96VfK4QOG3AKsXA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-26T05:33:14Z"
+    mac: ENC[AES256_GCM,data:dj89HzV8knl/eVrNPngOwKm71XjKrJeWS066JHxygNFoc7FDGjpPXTNjgK5YUImW/w7pGHr/MgBp3SHbMb5HRemGwNwchSjccAGr6ivtZrYAYMvHNajiJWb/YDefapcRzNp1qT5YZ5ruC642ojj61Sn0lzqDZtY2Czm3aSZ2+Q8=,iv:IAkZ7A5YgKCMqKIpSpdk+jTqsQbY+Q0TTSxgBfIYWcQ=,tag:UHMa/DwnbA3v1Xo/U5ldXw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.3

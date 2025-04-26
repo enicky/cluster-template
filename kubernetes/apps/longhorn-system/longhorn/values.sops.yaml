@@ -1,29 +1,29 @@
 ingress:
-  enabled: true
-  host: longhorn2.gitlab.be
-  ingressClassName: internal
+    enabled: true
+    host: longhorn2.gitlab.be
+    ingressClassName: internal
 service:
-  ui:
-    type: ClusterIP
+    ui:
+        type: ClusterIP
 defaultSettings:
-  defaultDataPath: /var/mnt/storage
+    defaultDataPath: /var/mnt/storage
 sops:
-  kms: []
-  gcp_kms: []
-  azure_kv: []
-  hc_vault: []
-  age:
-    - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
-      enc: |
-        -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB3Z0FHTnQ0SVQ1akdUOUY5
-        VEQwRjFkTXE4V1pPZTVGMVI0MFlhR3loNDNRClgweEhjRE43eUszUWNybzhmQTlQ
-        Y1lsa3ZVM0VBdGZ6TC8wb1Z4Y0JLVVEKLS0tIFYzM0YrMC9iK2tReEJwNjFTOVg0
-        aXRubWdOeUlUTm81NFEvbWlybVRVRzQKWz3iBkUua7XRX4GgTaqxK+CO1uGV+ER8
-        i2c4zRcYaIHT8u1x1S0QF130/Kl1vVDx/UgwEZXxDrEIcB5qFO69JA==
-        -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2025-04-26T05:17:26Z"
-  mac: ENC[AES256_GCM,data:zqzlXmYbCZwiTmEDHy64p9q97/PpQrKFYmFcyDYtrtzj6EtjWQuy2TK3kUjcvXREfxE7WJwLGgT3KxdPLeHU9zIbZA7vAd3fDioTyD+LXSOH8kS91LaUcdQzURRzZhnmz6X1dyTqbr0h/+ZSa5/aRSwLym7dVXmcnnRPdzYKbp0=,iv:JtuhlGuD8H1OKWX35XEWp9tQqRFRDMmqzbgV9Uu1zOk=,tag:vWTIvC3Js1zjBAFKGt4vrg==,type:str]
-  pgp: []
-  encrypted_regex: ^(data|stringData)$
-  version: 3.9.3
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA1OXVwUUFBK0RpR3ZrZ29S
+            MDBWRWtEQW1SdnhINDVRbWZCWlBXT0VOMUZVCkV4RnZFYkRURWNUbXFEYmx6K1hz
+            Y2syT1JTL2lGajJRZUdoeURva3VtUncKLS0tIEEyUzRkaXFoTHJUVWF0NUVFS05R
+            STYzc25YZlNkYjFKVDRQdkU0bHFEYlkKOhBFDJQiTHAXCMN6u837BYKv1UBEDQiO
+            cFlypqBixXgEJaer5nLPJXtHwrE3+7AbexYhr7ep+JjQyBgrQZ1J8Q==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-26T05:33:14Z"
+    mac: ENC[AES256_GCM,data:wEx02YWxQ1SxZV0qWA2qlVE9ovosAuSyHr/FctuSFv21dalaUuhs6lzE1az68LzApdhKHibbp8C6Zyq44ElOxvD0hgfx/hKwvynxJoTEsVudsKhJlHTs6hedrY/l5fQZ2UA+k8vdaiYdaXlNL2d79UN9Vi9bLwOMZ2qr8bTZ6Yg=,iv:iYMBVw0ao+bXmxrL/EHQxeXopfciidFcFFxdPoB/c1U=,tag:/MTnDxL2NvRVv0xNGKNCVA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.3

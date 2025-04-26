@@ -1,32 +1,32 @@
 autoDirectNodeRoutes: true
 bpf:
-  # Required for Talos `.machine.features.hostDNS.forwardKubeDNSToHost`
-  masquerade: false
+    # Required for Talos `.machine.features.hostDNS.forwardKubeDNSToHost`
+    masquerade: false
 cgroup:
-  automount:
-    enabled: false
-  hostRoot: /sys/fs/cgroup
+    automount:
+        enabled: false
+    hostRoot: /sys/fs/cgroup
 cluster:
-  id: 1
-  name: homelab
+    id: 1
+    name: homelab
 cni:
-  exclusive: false
+    exclusive: false
 # NOTE: devices might need to be set if you have more than one active NIC on your hosts
 #eth+
 devices: end+
 direct-routing-device: end+
 externalIPs:
-  enable: true
+    enable: true
 endpointRoutes:
-  enabled: true
+    enabled: true
 envoy:
-  enabled: false
+    enabled: false
 ipv4:
-  enabled: true
+    enabled: true
 ipv6:
-  enabled: false
+    enabled: false
 ipam:
-  mode: kubernetes
+    mode: kubernetes
 ipv4NativeRoutingCIDR: 10.69.0.0/16
 k8sServiceHost: 127.0.0.1
 k8sServicePort: 7445
@@ -36,110 +36,110 @@ kubeProxyReplacementHealthzBindAddr: 0.0.0.0:10256
 #  enabled: true
 #devices: "end0"
 l2podAnnouncements:
-  enabled: true
-  interface: end0
+    enabled: true
+    interface: end0
 l2announcements:
-  enabled: true
+    enabled: true
 #loadBalancer:
 #  algorithm: maglev
 #  mode: snat
 loadBalancer:
-  algorithm: maglev
-  mode: hybrid
-  dsrDispatch: opt
-  acceleration: native
+    algorithm: maglev
+    mode: hybrid
+    dsrDispatch: opt
+    acceleration: native
 tunnelProtocol: ""
 localRedirectPolicy: true
 rollOutCiliumPods: true
 routingMode: native
 securityContext:
-  capabilities:
-    ciliumAgent:
-      - CHOWN
-      - KILL
-      - NET_ADMIN
-      - NET_RAW
-      - IPC_LOCK
-      - SYS_ADMIN
-      - SYS_RESOURCE
-      - DAC_OVERRIDE
-      - FOWNER
-      - SETGID
-      - SETUID
-    cleanCiliumState:
-      - NET_ADMIN
-      - SYS_ADMIN
-      - SYS_RESOURCE
+    capabilities:
+        ciliumAgent:
+            - CHOWN
+            - KILL
+            - NET_ADMIN
+            - NET_RAW
+            - IPC_LOCK
+            - SYS_ADMIN
+            - SYS_RESOURCE
+            - DAC_OVERRIDE
+            - FOWNER
+            - SETGID
+            - SETUID
+        cleanCiliumState:
+            - NET_ADMIN
+            - SYS_ADMIN
+            - SYS_RESOURCE
 socketLB:
-  hostNamespaceOnly: true
+    hostNamespaceOnly: true
 hubble:
-  enabled: true
-  metrics:
-    enabled:
-      - dns:query
-      - drop
-      - tcp
-      - flow
-      - port-distribution
-      - icmp
-      - http
-    serviceMonitor:
-      enabled: true
-    dashboards:
-      enabled: true
-      annotations:
-        grafana_folder: Cilium
-  relay:
     enabled: true
+    metrics:
+        enabled:
+            - dns:query
+            - drop
+            - tcp
+            - flow
+            - port-distribution
+            - icmp
+            - http
+        serviceMonitor:
+            enabled: true
+        dashboards:
+            enabled: true
+            annotations:
+                grafana_folder: Cilium
+    relay:
+        enabled: true
+        rollOutPods: true
+        prometheus:
+            serviceMonitor:
+                enabled: true
+    ui:
+        enabled: true
+        rollOutPods: true
+        ingress:
+            enabled: true
+            className: internal
+            hosts:
+                - hubble.gitlab.be
+operator:
+    replicas: 1
     rollOutPods: true
     prometheus:
-      serviceMonitor:
         enabled: true
-  ui:
-    enabled: true
-    rollOutPods: true
-    ingress:
-      enabled: true
-      className: internal
-      hosts:
-        - hubble.gitlab.be
-operator:
-  replicas: 1
-  rollOutPods: true
-  prometheus:
+        serviceMonitor:
+            enabled: true
+    dashboards:
+        enabled: true
+        annotations:
+            grafana_folder: Cilium
+prometheus:
     enabled: true
     serviceMonitor:
-      enabled: true
-  dashboards:
+        enabled: true
+        trustCRDsExist: true
+dashboards:
     enabled: true
     annotations:
-      grafana_folder: Cilium
-prometheus:
-  enabled: true
-  serviceMonitor:
-    enabled: true
-    trustCRDsExist: true
-dashboards:
-  enabled: true
-  annotations:
-    grafana_folder: Cilium
+        grafana_folder: Cilium
 sops:
-  kms: []
-  gcp_kms: []
-  azure_kv: []
-  hc_vault: []
-  age:
-    - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
-      enc: |
-        -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJRlJGLzRhRHludC8wNHJQ
-        R0U2NENDdklabSs2c01WRHpUZXN0OWFDR1RFClVTN2FEVjZtVWhINjh2UnBERHo5
-        YWlmcit2SkxhdGpoUFVXZnVNK0hMSkkKLS0tIENtWld5WWMrQ2EyVmhDc1JEWjZt
-        aEtQUVd5cUgySG9ZenhRSjdiaFdCNWMK4suOgrtc/q5S+ZjRTU0VZwO5FtH3vRKq
-        8dy1DxJJhovLmf6ZgV4nkUCxkEeqShegpFg0mBcgizt6ILdpNTSB/Q==
-        -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2025-04-26T05:17:27Z"
-  mac: ENC[AES256_GCM,data:+QP9B/SyBZMb3+a5ZgnFritjXwPFYLyJ5DKU4rNkNM04g9DwT4/PwGYygRdJNhdsD4V3VrIIKlo5i12qE8ZWEQvJsEoX6lV2UcdAAnxvrY3C4rax0ArEy+PjwW58Y+i4f356xeu2n5z4PMAkAQDsBGkSoRcbuMKfcUUJ6hRlcJ0=,iv:0G+9CcENPdjOdDg4hyqhT92tGmTa7KOD87LWmCJyxDw=,tag:GnEgYRnGjwYs46a81y48FQ==,type:str]
-  pgp: []
-  encrypted_regex: ^(data|stringData)$
-  version: 3.9.3
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBpQzYxNWdjYmozR2dUVTd3
+            VlJjRjJCTzNCSWdmdWNOb1l6RHVoUlVGUWljCkxyRkFRV0t2NmpxZTNsV1hVQUZa
+            RzcyWU5SM0xPN2hLZDFNbWo3d0o4YjAKLS0tIElvUWF0T3ZFdEtURlFKaS9JV3ZQ
+            Ti9EamFzem16L3h3eWdCL0t6Nmd2NG8KshUdOWrNutC7hk9U0ryj60E0j7Dvwabx
+            PTi4YXpkj8TVgxJXUmSh8Jj+7TP3+kmTaZLME9+fYu7colvOdKFrIA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-26T05:33:14Z"
+    mac: ENC[AES256_GCM,data:scSSXp8SHWMJ7MD4ia+cnHfSqK5nHj+p0u9SD0cqDnFBs9b917SIK4Ce9pA5PEwgTiKhOS3M9Xb2LQIxk1p77tHwG2DLAinmRJZqU2Eyectbo5V/Vo6chJ7md6EHpfyCKpgXECUVthHvoMoDidZDsw6hl0VjHxdGdWVaJb14rwU=,iv:aIGKxDcprHjS/4JNOhvi4H1AtSQCqfbOLNM8kCGmLAg=,tag:n9KMha20aHwTBDhKqb0luQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.3

@@ -2,31 +2,31 @@ fullnameOverride: k8s-gateway
 domain: gitlab.be
 ttl: 1
 service:
-    type: LoadBalancer
-    port: 53
-    annotations:
-        io.cilium/lb-ipam-ips: 192.168.1.22
-    externalTrafficPolicy: Cluster
+  type: LoadBalancer
+  port: 53
+  annotations:
+    io.cilium/lb-ipam-ips: 192.168.1.22
+  externalTrafficPolicy: Cluster
 watchedResources:
-    - Ingress
-    - Service
+  - Ingress
+  - Service
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBEazRnSzJVenFuSllJcHI0
-            Q2V0a3RuNkdZTnJpc3BDS0xzakE5RStHaGpBCmJzRHIyRjhtRW1zVnFUTGZMa2xX
-            Ni9INUNaMVpCYnlLZVVSaEV0V05jbE0KLS0tIEtuNzJkNHJidUFKUnVVNTdGVEpm
-            VUhlNGVuei8rSzVKRmJPcm9BczFiMkkKrshClQAO44jZe2EPXW6h/xSRzEaDmME8
-            Wyx0LTH4gKQ1neHPCDVF4Fmvyv8xEjL5KCWDy3zAJFtOFg23yW5nHA==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-26T05:29:58Z"
-    mac: ENC[AES256_GCM,data:17xAvH1Ita/S6a8LWJY6+TX3kEXcLqvXrqAQ1aHxnEln7z2PCYg9y75PVB5U0VWSRvKJcaK5yIhQ+CVPGPikn5ioWliUZaZV7e8Ie85Z6vSk8Il2uw2a7eHsA7qJ/TBMESKzRWhXcGYtEKQXqefcF1ZivvkmmVx4gzfs5UzMbcA=,iv:1MyppszzzQW3Gy/VqoHt1IhYGizpSKgDHsRjjN/rkPQ=,tag:yeuBzGP7nR0GmIQG6HvcdA==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBMK3RNRVhGN2k1YXRpUWdm
+        R25WVGJISTVRaHlEY0ZjRkZrQ3BQK3hReVVrCkxRMmtwNmI3Z2svMG5QMFZGd1do
+        QXR0NFlnM2cvZTdzSHlVaTZUTmdsRkEKLS0tIEl0aXBjZVd1Q29uQSsxSFhycjFT
+        cThzZXBnNFFPelJOWnUxL1htcktHNWcK37QHlghXAFgZ9XqmOlSk6kaSUoSr3FUc
+        It7mxzF9wYwgDBT/wLYaIM6lxCOcom2xanbaX5svGE5bSIcGewwNRw==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-04-26T05:17:26Z"
+  mac: ENC[AES256_GCM,data:19BQ+41CarQnY3DnE49N/5w6AxWwWxgjK2WfQaLIBoO3/0zT3yygWU6SDqutFT4jBczSxGKrpseBiLPgOc0ci/VQwK9YCOipAEsxlVzYqxV7Wm6WLfGkZOb5wVw/zu36DRTDLd3kQvCYP3s6OKSTJIRrjc39jILnRTWL7ZyuTZQ=,iv:/eSixnAEGfOQ6Jq9Nkk97+qTopqiLMt/dleV6KSJ0LQ=,tag:o1g0Z3l+7Wsnvg0epd21sg==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.3

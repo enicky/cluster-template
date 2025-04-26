@@ -10,154 +10,154 @@ maxSurge: 1
 # -- The maximum number of Pods that can be unavailable during updating
 maxUnavailable: 1
 image:
-    # -- the repostory to pull the image from
-    repository: pihole/pihole
-    # -- the docker tag
-    tag: 2024.07.0
-    # -- the pull policy
-    pullPolicy: IfNotPresent
+  # -- the repostory to pull the image from
+  repository: pihole/pihole
+  # -- the docker tag
+  tag: 2024.07.0
+  # -- the pull policy
+  pullPolicy: IfNotPresent
 dualStack:
-    # -- set this to true to enable creation of DualStack services or creation of separate IPv6 services if `serviceDns.type` is set to `"LoadBalancer"`
-    enabled: false
+  # -- set this to true to enable creation of DualStack services or creation of separate IPv6 services if `serviceDns.type` is set to `"LoadBalancer"`
+  enabled: false
 dnsHostPort:
-    # -- set this to true to enable dnsHostPort
-    enabled: false
-    # -- default port for this pod
-    port: 53
+  # -- set this to true to enable dnsHostPort
+  enabled: false
+  # -- default port for this pod
+  port: 53
 # -- Configuration for the DNS service on port 53
 serviceDns:
-    # -- deploys a mixed (TCP + UDP) Service instead of separate ones
-    mixedService: true
-    # -- `spec.type` for the DNS Service
-    type: LoadBalancer
-    # -- The port of the DNS service
-    port: 53
-    # -- Optional node port for the DNS service
-    nodePort: ""
-    # -- `spec.externalTrafficPolicy` for the DHCP Service
-    externalTrafficPolicy: Local
-    # -- A fixed `spec.loadBalancerIP` for the DNS Service
-    #loadBalancerIP: "192.168.1.57"
-    # -- A fixed `spec.loadBalancerIP` for the IPv6 DNS Service
-    #loadBalancerIPv6: ""
-    # -- Annotations for the DNS service
-    annotations:
-        io.cilium/lb-ipam-sharing-key: pihile-192.168.1.25
-        io.cilium/lb-ipam-ips: 192.168.1.25
-        metallb.universe.tf/allow-shared-ip: pihole-dns
+  # -- deploys a mixed (TCP + UDP) Service instead of separate ones
+  mixedService: true
+  # -- `spec.type` for the DNS Service
+  type: LoadBalancer
+  # -- The port of the DNS service
+  port: 53
+  # -- Optional node port for the DNS service
+  nodePort: ""
+  # -- `spec.externalTrafficPolicy` for the DHCP Service
+  externalTrafficPolicy: Local
+  # -- A fixed `spec.loadBalancerIP` for the DNS Service
+  #loadBalancerIP: "192.168.1.57"
+  # -- A fixed `spec.loadBalancerIP` for the IPv6 DNS Service
+  #loadBalancerIPv6: ""
+  # -- Annotations for the DNS service
+  annotations:
+    io.cilium/lb-ipam-sharing-key: pihile-192.168.1.25
+    io.cilium/lb-ipam-ips: 192.168.1.25
+    metallb.universe.tf/allow-shared-ip: pihole-dns
 # -- Configuration for the DHCP service on port 67
 serviceDhcp:
-    # -- Generate a Service resource for DHCP traffic
-    enabled: false
-    # -- `spec.type` for the DHCP Service
-    type: NodePort
-    # -- `spec.externalTrafficPolicy` for the DHCP Service
-    externalTrafficPolicy: Local
-    # -- A fixed `spec.loadBalancerIP` for the DHCP Service
-    loadBalancerIP: ""
-    # -- A fixed `spec.loadBalancerIP` for the IPv6 DHCP Service
-    loadBalancerIPv6: ""
-    # -- Annotations for the DHCP service
-    annotations: {}
-    # metallb.universe.tf/address-pool: network-services
-    # metallb.universe.tf/allow-shared-ip: pihole-svc
+  # -- Generate a Service resource for DHCP traffic
+  enabled: false
+  # -- `spec.type` for the DHCP Service
+  type: NodePort
+  # -- `spec.externalTrafficPolicy` for the DHCP Service
+  externalTrafficPolicy: Local
+  # -- A fixed `spec.loadBalancerIP` for the DHCP Service
+  loadBalancerIP: ""
+  # -- A fixed `spec.loadBalancerIP` for the IPv6 DHCP Service
+  loadBalancerIPv6: ""
+  # -- Annotations for the DHCP service
+  annotations: {}
+  # metallb.universe.tf/address-pool: network-services
+  # metallb.universe.tf/allow-shared-ip: pihole-svc
 # -- Configuration for the web interface service
 serviceWeb:
-    # -- Configuration for the HTTP web interface listener
-    http:
-        # -- Generate a service for HTTP traffic
-        enabled: true
-        # -- The port of the web HTTP service
-        port: 80
-    # -- Configuration for the HTTPS web interface listener
-    https:
-        # -- Generate a service for HTTPS traffic
-        enabled: false
-        # -- The port of the web HTTPS service
-        port: 443
-    # -- `spec.type` for the web interface Service
-    type: LoadBalancer
-    # -- `spec.externalTrafficPolicy` for the web interface Service
-    #externalTrafficPolicy: Local
-    # -- A fixed `spec.loadBalancerIP` for the web interface Service
-    loadBalancerIP: ""
-    # -- A fixed `spec.loadBalancerIP` for the IPv6 web interface Service
-    loadBalancerIPv6: ""
-    # -- Annotations for the DHCP service
-    annotations:
-        io.cilium/lb-ipam-sharing-key: pihile-192.168.1.25
-        io.cilium/lb-ipam-ips: 192.168.1.25
+  # -- Configuration for the HTTP web interface listener
+  http:
+    # -- Generate a service for HTTP traffic
+    enabled: true
+    # -- The port of the web HTTP service
+    port: 80
+  # -- Configuration for the HTTPS web interface listener
+  https:
+    # -- Generate a service for HTTPS traffic
+    enabled: false
+    # -- The port of the web HTTPS service
+    port: 443
+  # -- `spec.type` for the web interface Service
+  type: LoadBalancer
+  # -- `spec.externalTrafficPolicy` for the web interface Service
+  #externalTrafficPolicy: Local
+  # -- A fixed `spec.loadBalancerIP` for the web interface Service
+  loadBalancerIP: ""
+  # -- A fixed `spec.loadBalancerIP` for the IPv6 web interface Service
+  loadBalancerIPv6: ""
+  # -- Annotations for the DHCP service
+  annotations:
+    io.cilium/lb-ipam-sharing-key: pihile-192.168.1.25
+    io.cilium/lb-ipam-ips: 192.168.1.25
 virtualHost: pihole.gitlab.be
 # -- Configuration for the Ingress
 ingress:
-    # -- Generate a Ingress resource
-    enabled: true
-    # -- Specify an ingressClassName
-    ingressClassName: internal
-    pathType: Prefix
-    #annotations:
-    #  internal-dns.alpha.kubernetes.io/target: "internal.gitlab.be"
-    # -- Annotations for the ingress
-    #annotations:
-    #cert-manager.io/cluster-issuer: letsencrypt-staging
-    #external-dns.alpha.kubernetes.io/target: home.terence.cloud
-    #nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
-    #nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
-    path: /
-    hosts:
-        # virtualHost (default value is pi.hole) will be appended to the hosts
-        - pihole.gitlab.be
+  # -- Generate a Ingress resource
+  enabled: true
+  # -- Specify an ingressClassName
+  ingressClassName: internal
+  pathType: Prefix
+  #annotations:
+  #  internal-dns.alpha.kubernetes.io/target: "internal.gitlab.be"
+  # -- Annotations for the ingress
+  #annotations:
+  #cert-manager.io/cluster-issuer: letsencrypt-staging
+  #external-dns.alpha.kubernetes.io/target: home.terence.cloud
+  #nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
+  #nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
+  path: /
+  hosts:
+    # virtualHost (default value is pi.hole) will be appended to the hosts
+    - pihole.gitlab.be
     #tls:
     #  - secretName: pihole-tls
     #    hosts:
     #      - pihole-v2.gitlab.be
 # -- Probes configuration
 probes:
-    # -- probes.liveness -- Configure the healthcheck for the ingress controller
-    liveness:
-        # -- Generate a liveness probe
-        enabled: true
-        initialDelaySeconds: 60
-        failureThreshold: 10
-        timeoutSeconds: 5
-    readiness:
-        # -- Generate a readiness probe
-        enabled: true
-        initialDelaySeconds: 60
-        failureThreshold: 3
-        timeoutSeconds: 5
+  # -- probes.liveness -- Configure the healthcheck for the ingress controller
+  liveness:
+    # -- Generate a liveness probe
+    enabled: true
+    initialDelaySeconds: 60
+    failureThreshold: 10
+    timeoutSeconds: 5
+  readiness:
+    # -- Generate a readiness probe
+    enabled: true
+    initialDelaySeconds: 60
+    failureThreshold: 3
+    timeoutSeconds: 5
 # -- We usually recommend not to specify default resources and to leave this as a conscious
 # -- choice for the user. This also increases chances charts run on environments with little
 # -- resources, such as Minikube. If you do want to specify resources, uncomment the following
 # -- lines, adjust them as necessary, and remove the curly braces after 'resources:'.
 resources:
-    limits:
-        cpu: 200m
-        memory: 256Mi
-    requests:
-        cpu: 100m
-        memory: 128Mi
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
 # -- `spec.PersitentVolumeClaim` configuration
 persistentVolumeClaim:
-    # -- set to true to use pvc
-    enabled: true
-    # -- specify an existing `PersistentVolumeClaim` to use
-    # existingClaim: ""
-    # -- Annotations for the `PersitentVolumeClaim`
-    annotations: {}
-    accessModes:
-        - ReadWriteOnce
-    size: 500Mi
-    ## If defined, storageClassName: <storageClass>
-    ## If set to "-", storageClassName: "", which disables dynamic provisioning
-    ## If undefined (the default) or set to null, no storageClassName spec is
-    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
-    ##   GKE, AWS & OpenStack)
-    ##
-    storageClass: longhorn
-    ## If subPath is set mount a sub folder of a volume instead of the root of the volume.
-    ## This is especially handy for volume plugins that don't natively support sub mounting (like glusterfs).
-    ## subPath: "pihole"
+  # -- set to true to use pvc
+  enabled: true
+  # -- specify an existing `PersistentVolumeClaim` to use
+  # existingClaim: ""
+  # -- Annotations for the `PersitentVolumeClaim`
+  annotations: {}
+  accessModes:
+    - ReadWriteOnce
+  size: 500Mi
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  storageClass: longhorn
+  ## If subPath is set mount a sub folder of a volume instead of the root of the volume.
+  ## This is especially handy for volume plugins that don't natively support sub mounting (like glusterfs).
+  ## subPath: "pihole"
 #nodeSelector: {}
 #tolerations: []
 # -- Specify a priorityClassName
@@ -173,9 +173,9 @@ persistentVolumeClaim:
 adminPassword: ""
 # -- Use an existing secret for the admin password.
 admin:
-    # Secret with an empty password to disable shipped-in authentication as we do it with OAuth2
-    existingSecret: pihole-secret
-    passwordKey: password
+  # Secret with an empty password to disable shipped-in authentication as we do it with OAuth2
+  existingSecret: pihole-secret
+  passwordKey: password
 # -- extraEnvironmentVars is a list of extra enviroment variables to set for pihole to use
 extraEnvVars: {}
 # TZ: UTC
@@ -189,24 +189,24 @@ DNS1: 8.8.8.8
 # -- default upstream DNS 2 server to use
 DNS2: 8.8.4.4
 antiaff:
-    # -- set to true to enable antiaffinity (example: 2 pihole DNS in the same cluster)
-    enabled: false
-    # -- Here you can set the pihole release (you set in `helm install <releasename> ...`)
-    # you want to avoid
-    avoidRelease: pihole1
-    # -- Here you can choose between preferred or required
-    strict: true
+  # -- set to true to enable antiaffinity (example: 2 pihole DNS in the same cluster)
+  enabled: false
+  # -- Here you can set the pihole release (you set in `helm install <releasename> ...`)
+  # you want to avoid
+  avoidRelease: pihole1
+  # -- Here you can choose between preferred or required
+  strict: true
 doh:
-    # -- set to true to enabled DNS over HTTPs via cloudflared
-    enabled: false
-    #name: "cloudflared"
-    #repository: "crazymax/cloudflared"
-    #tag: latest
-    #pullPolicy: IfNotPresent
-    # -- Here you can pass environment variables to the DoH container, for example:
-    #envVars:
-    #  {}
-    # TUNNEL_DNS_UPSTREAM: "https://1.1.1.2/dns-query,https://1.0.0.2/dns-query"
+  # -- set to true to enabled DNS over HTTPs via cloudflared
+  enabled: false
+  #name: "cloudflared"
+  #repository: "crazymax/cloudflared"
+  #tag: latest
+  #pullPolicy: IfNotPresent
+  # -- Here you can pass environment variables to the DoH container, for example:
+  #envVars:
+  #  {}
+  # TUNNEL_DNS_UPSTREAM: "https://1.1.1.2/dns-query,https://1.0.0.2/dns-query"
 # -- Probes configuration
 #probes:
 # -- Configure the healthcheck for the doh container
@@ -220,39 +220,39 @@ doh:
 # -- defines the timeout in secondes for the liveness probe
 #    timeoutSeconds: 5
 dnsmasq:
-    # -- Add upstream dns servers. All lines will be added to the pihole dnsmasq configuration
-    upstreamServers: []
-    # - server=/foo.bar/192.168.178.10
-    # - server=/bar.foo/192.168.178.11
-    # -- Add custom dns entries to override the dns resolution. All lines will be added to the pihole dnsmasq configuration.
-    customDnsEntries: []
-    # - address=/foo.bar/192.168.178.10
-    # - address=/bar.foo/192.168.178.11
-    # -- Dnsmasq reads the /etc/hosts file to resolve ips. You can add additional entries if you like
-    additionalHostsEntries: []
-    # - 192.168.0.3     host4
-    # - 192.168.0.4     host5
-    # -- Static DHCP config
-    staticDhcpEntries: []
-    # staticDhcpEntries:
-    # - dhcp-host=MAC_ADDRESS,IP_ADDRESS,HOSTNAME
-    # -- Other options
-    customSettings: null
-    # otherSettings:
-    # - rebind-domain-ok=/plex.direct/
-    # -- Here we specify custom cname entries that should point to `A` records or
-    # elements in customDnsEntries array.
-    # The format should be:
-    #  - cname=cname.foo.bar,foo.bar
-    #  - cname=cname.bar.foo,bar.foo
-    #  - cname=cname record,dns record
-    customCnameEntries: []
-    # Here we specify custom cname entries that should point to `A` records or
-    # elements in customDnsEntries array.
-    # The format should be:
-    #   - cname=cname.foo.bar,foo.bar
-    #   - cname=cname.bar.foo,bar.foo
-    #   - cname=cname record,dns record
+  # -- Add upstream dns servers. All lines will be added to the pihole dnsmasq configuration
+  upstreamServers: []
+  # - server=/foo.bar/192.168.178.10
+  # - server=/bar.foo/192.168.178.11
+  # -- Add custom dns entries to override the dns resolution. All lines will be added to the pihole dnsmasq configuration.
+  customDnsEntries: []
+  # - address=/foo.bar/192.168.178.10
+  # - address=/bar.foo/192.168.178.11
+  # -- Dnsmasq reads the /etc/hosts file to resolve ips. You can add additional entries if you like
+  additionalHostsEntries: []
+  # - 192.168.0.3     host4
+  # - 192.168.0.4     host5
+  # -- Static DHCP config
+  staticDhcpEntries: []
+  # staticDhcpEntries:
+  # - dhcp-host=MAC_ADDRESS,IP_ADDRESS,HOSTNAME
+  # -- Other options
+  customSettings: null
+  # otherSettings:
+  # - rebind-domain-ok=/plex.direct/
+  # -- Here we specify custom cname entries that should point to `A` records or
+  # elements in customDnsEntries array.
+  # The format should be:
+  #  - cname=cname.foo.bar,foo.bar
+  #  - cname=cname.bar.foo,bar.foo
+  #  - cname=cname record,dns record
+  customCnameEntries: []
+  # Here we specify custom cname entries that should point to `A` records or
+  # elements in customDnsEntries array.
+  # The format should be:
+  #   - cname=cname.foo.bar,foo.bar
+  #   - cname=cname.bar.foo,bar.foo
+  #   - cname=cname record,dns record
 # -- list of adlists to import during initial start of the container
 adlists: {}
 # If you want to provide blocklists, add them here.
@@ -285,12 +285,12 @@ hostNetwork: "false"
 # -- should container run in privileged mode
 privileged: "false"
 customVolumes:
-    # -- set this to true to enable custom volumes
-    enabled: false
-    # -- any volume type can be used here
-    config: {}
-    # hostPath:
-    #   path: "/mnt/data"
+  # -- set this to true to enable custom volumes
+  enabled: false
+  # -- any volume type can be used here
+  config: {}
+  # hostPath:
+  #   path: "/mnt/data"
 # -- Additional annotations for pods
 podAnnotations: {}
 # Example below allows Prometheus to scape on metric port (requires pihole-exporter sidecar enabled)
@@ -317,28 +317,28 @@ podAnnotations: {}
 #  cpu: 100m
 #  memory: 128Mi #}
 podDnsConfig:
-    enabled: true
-    policy: None
-    nameservers:
-        - 127.0.0.1
-        - 8.8.8.8
+  enabled: true
+  policy: None
+  nameservers:
+    - 127.0.0.1
+    - 8.8.8.8
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAvMmEzY0dBVDROck0zUWRz
-            TXBnd0tiUkZXV0NaRDh4ZXd0eVJjSFNtZFZzCmVvS0hCcUppTEkzd3VBZU4wcDBs
-            cW1TdTAvb3RuU0JySXo4NWIvdU94ZWcKLS0tIFBwYjRLdHcxd1ExVEtMRDFFUGlS
-            eVBYZXVVVzZWbFpMMy9XMER1WmJnbTQKAhgEh8ECfJ8m57+CVxJqSsS77fFVyWz5
-            ZSvzJ0mi/HcmLcbQPNLeEcgr5Oxt4AC1wUBPvYqz7yKij83CHLTn8w==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-26T05:29:58Z"
-    mac: ENC[AES256_GCM,data:8jgiLarWtP/qQT4sd/CVJ5vNQIS28HXCeW6+BB/swZRVd6RKKAhQMmuF7sxA9xCZZwbnNUsOBmkJBpAlJ9nsDXBDJcydvVCsK1V91LGY5cT60+hpvwH/Fb+RSqJQu09qWjqDh17V8dma1iSRlSlgRWryEkroiW3Xa66DFS5UjUk=,iv:zGeSXHQpGPA/F4sg9hespZ23YDOTeYRB/2g1UCubIh8=,tag:ncdKWpFLmMYklVJvhahBNA==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB2SmlmaHViSmJQR01laUtK
+        TTVtTHRKQ2hzS0pGWFRlWmo1REVld1d1RFh3CnNMVllSSDBFKytqVTVTUVFKWlA4
+        eldwdWJKLzlXMmsyQnFWY3VUK09WUEEKLS0tIFNla2hnNzJrNUpCeFE3dllMcFVv
+        UUpqM2Y1ZEZhRTNaTFRyb0hEODVDWEUKxYqQCQMlSOT+M2BmkZJ+7u3wB0l4hD6R
+        zEPX/p84OxA+bpDC/Y6lbZ4+8+rrtUgShjxlmHXges/vrwAmMe2pow==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-04-26T05:17:26Z"
+  mac: ENC[AES256_GCM,data:26/dY4D/JF8VMJo/kTk7fkQP6iDcmHIrQVEE25nxx4jQ7SKWdSZKFByH90RyaWI4DIQetZu5c/zQ5JbHai7PYO55nMjw+QeVyqZpTk2l55DPmVjvS28Kzw96RE3UBMzKs1VcTcdkIrKkr/ggvNoXIvlnORHZYNAPd7ZLN82p0BI=,iv:YaetGNrrvwTqBO4YfhXzHnDXxL/TIALF0IZcutZXviw=,tag:ENZjw7zlkmYZrg3dNB3Zyg==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.3

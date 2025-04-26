@@ -2,43 +2,43 @@ fullnameOverride: internal-dns
 provider: pihole
 registry: noop
 extraArgs:
-    - --events
-    - --ignore-ingress-tls-spec
-    - --ingress-class=internal
-    # IMPORTANT: If you have records that you manage manually in Pi-hole, set
-    # the policy to upsert-only so they do not get deleted.
-    #- --policy=upsert-only
-    - --pihole-server=http://pihole-web.network.svc.cluster.local
-    - --pihole-password=Aveve2008
+  - --events
+  - --ignore-ingress-tls-spec
+  - --ingress-class=internal
+  # IMPORTANT: If you have records that you manage manually in Pi-hole, set
+  # the policy to upsert-only so they do not get deleted.
+  #- --policy=upsert-only
+  - --pihole-server=http://pihole-web.network.svc.cluster.local
+  - --pihole-password=Aveve2008
 policy: upsert-only
 sources:
-    - crd
-    - ingress
+  - crd
+  - ingress
 txtPrefix: k8s.
 txtOwnerId: default
 domainFilters:
-    - gitlab.be
+  - gitlab.be
 serviceMonitor:
-    enabled: true
+  enabled: true
 podAnnotations:
-    secret.reloader.stakater.com/reload: internal-dns-secret
+  secret.reloader.stakater.com/reload: internal-dns-secret
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzREV4eUJLSVVoVSs5Qmxm
-            eThibVA5Q2RWVGNyMFFVZllvaE11MXRmajJvCjZVS21PYVZTS2FkZkQyQ1Uva2NW
-            UTVDaFdtZTYvYjQzVWtJbS93S3cvWDAKLS0tIEZVektSQlpCbnhNNGtTM1p4VEhI
-            aUg0ZFFwUGJpOGsxR2xLT2NiK2F5WGcK26NJtkX2zkO4xP/ADG+ARZip3Pmbk3LX
-            CKzUE5ELGn5XVwS3ggOzZPpRPbcdTFNbxCI0AFP8hLZ4O4JW7frmBw==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-26T05:29:58Z"
-    mac: ENC[AES256_GCM,data:z2XvK1mGXRZj8Ec47U/+P/ylw30xpoPBRGRvuQyb9ZmEGk2k6mDxAEvsJdtjfMoMUeR+Z9Xh+/f6tbka1JK6mdnU0EMo/QsTZG6H20rAElLmVl+MkBtzOpNfy2PyXPA1MWt06csZYtQIgIVpkZ6yOgjwjpxztxEmvLGM59u0QNw=,iv:g8uJvfsjp8PsTv4xZd21bsiKsn8rDbxLBgOZNgcOjYs=,tag:d8fWNQvam/A0poVyxavGxQ==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB1NjVBYVFkWkNoZjRXcUtM
+        UWhVUHQ3SUQ3MGxvRGFJTTVNdWIzSTcyNkI0ClA2WmY3RG1zb2xzc0VGWEpLVkN1
+        ZGJTeDRVa2dHYjBxSm4xdi9VWEtWRW8KLS0tIEJsYUdUbFZxeGMzOTVEbjFWR2U1
+        dEdlRnUrT0IrS3B6U2tsVkVwRGtQRmsKYkyyhPO0YJ4ukRccayzHZ7OL7yUAWBk+
+        Aw0q9Xv58yjyN4fuI8juorqx++fihj/rF6wIbrwvz14eQ3CqyNxAdg==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-04-26T05:17:26Z"
+  mac: ENC[AES256_GCM,data:uQGeomItWQjELMcPdfXnWfZDlx7PrT9v5gxuRdAF8LXox8UmTiWI79h4Q4oAadLmHxTs56VOtb7Tjgabym/8zcNyS5eY4e+hPOCP7PdBC/ZwI6Q+gI4XF6xGeUGQiwWZ/K16Y84dNUhtvf6VOdJ2Pi3rWxG35bUmTp6/rnPZxAM=,iv:DfvJarSaNUbQWr89mN6zmyzNiAUYym9Fg2gkxwxYgHU=,tag:AtA60M7w0Jxe0wk3Spaz5w==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.3

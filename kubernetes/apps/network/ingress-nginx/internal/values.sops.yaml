@@ -1,65 +1,65 @@
 fullnameOverride: ingress-nginx-internal
 controller:
-    service:
-        annotations:
-            io.cilium/lb-ipam-ips: 192.168.1.24
-        externalTrafficPolicy: Cluster
-    ingressClassResource:
-        name: internal
-        default: true
-        controllerValue: k8s.io/internal
-    admissionWebhooks:
-        objectSelector:
-            matchExpressions:
-                - key: ingress-class
-                  operator: In
-                  values:
-                    - internal
-    config:
-        client-body-buffer-size: 100M
-        client-body-timeout: 120
-        client-header-timeout: 120
-        enable-brotli: "true"
-        enable-real-ip: "true"
-        hsts-max-age: 31449600
-        keep-alive-requests: 10000
-        keep-alive: 120
-        log-format-escape-json: "true"
-        log-format-upstream: |
-            {"time": "$time_iso8601", "remote_addr": "$proxy_protocol_addr", "x_forwarded_for": "$proxy_add_x_forwarded_for", "request_id": "$req_id", "remote_user": "$remote_user", "bytes_sent": $bytes_sent, "request_time": $request_time, "status": $status, "vhost": "$host", "request_proto": "$server_protocol", "path": "$uri", "request_query": "$args", "request_length": $request_length, "duration": $request_time, "method": "$request_method", "http_referrer": "$http_referer", "http_user_agent": "$http_user_agent"}
-        proxy-body-size: 0
-        proxy-buffer-size: 16k
-        ssl-protocols: TLSv1.3 TLSv1.2
-    metrics:
-        enabled: true
-        serviceMonitor:
-            enabled: true
-            namespaceSelector:
-                any: true
-    extraArgs:
-        default-ssl-certificate: network/gitlab-be-staging-tls
-    resources:
-        requests:
-            cpu: 100m
-        limits:
-            memory: 500Mi
+  service:
+    annotations:
+      io.cilium/lb-ipam-ips: 192.168.1.24
+    externalTrafficPolicy: Cluster
+  ingressClassResource:
+    name: internal
+    default: true
+    controllerValue: k8s.io/internal
+  admissionWebhooks:
+    objectSelector:
+      matchExpressions:
+        - key: ingress-class
+          operator: In
+          values:
+            - internal
+  config:
+    client-body-buffer-size: 100M
+    client-body-timeout: 120
+    client-header-timeout: 120
+    enable-brotli: "true"
+    enable-real-ip: "true"
+    hsts-max-age: 31449600
+    keep-alive-requests: 10000
+    keep-alive: 120
+    log-format-escape-json: "true"
+    log-format-upstream: |
+      {"time": "$time_iso8601", "remote_addr": "$proxy_protocol_addr", "x_forwarded_for": "$proxy_add_x_forwarded_for", "request_id": "$req_id", "remote_user": "$remote_user", "bytes_sent": $bytes_sent, "request_time": $request_time, "status": $status, "vhost": "$host", "request_proto": "$server_protocol", "path": "$uri", "request_query": "$args", "request_length": $request_length, "duration": $request_time, "method": "$request_method", "http_referrer": "$http_referer", "http_user_agent": "$http_user_agent"}
+    proxy-body-size: 0
+    proxy-buffer-size: 16k
+    ssl-protocols: TLSv1.3 TLSv1.2
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+      namespaceSelector:
+        any: true
+  extraArgs:
+    default-ssl-certificate: network/gitlab-be-staging-tls
+  resources:
+    requests:
+      cpu: 100m
+    limits:
+      memory: 500Mi
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBkb2FpWUtZWFpzbW01eHN5
-            ZE5pdE9lVVZrTEtiZW5tdHZocGd3c0tzRGlFCmZrWTVKdCsrNWhDMG4yV3VEZmdT
-            Z3E1MkVHekozbUpXNkJ5Rm56OS81OWMKLS0tIHRzaDNHVzgzZjZhU0poZytnSDBB
-            ZTcybGczYXQ5aG4vKzlMRHNWVjJsRWMKIGoap+W1LDtti55d11DelsXAaPNNTf6T
-            qnaZWR+L0wbaRGjGrT22hWnnZ599wI9IjuLZil6YV/pySaXsJh+vfQ==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-26T05:29:58Z"
-    mac: ENC[AES256_GCM,data:i0igbeEkMD21rvmp3lrZ9TNA/h/2KYQcRPiV0QxLDH+62nYKVi3gl5sS5lMP5qrZe+4rLKRcgpsH732uua4cM+jX4q0hZfnaDgJ39x0u/jk/8CYEViUNggoMZnONEhdHgj8+juKlOhtepN2L837BYP4ZsVDk6s0BgjOZpHpU9qc=,iv:J7zlAVfu5sg93Gbn4CDghMRuqLxL7oDaEugOSG05aAo=,tag:VPbaX+4pVYXCch2vUm2tsg==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzQU5MNTFwSmxDTXU1OHBI
+        MkZwUGRNcFZTVkxsbEZ5NWRkVTRtZ0F0UlRJClVFNTRHcmJhdGgxVFE1Znc2MWF1
+        clF0b09VSElqNVBwNUFWd1ZUdHpCeTgKLS0tIGIxN21EaENFZFo2U2ZEOXpnTWxj
+        Wit5dE1WdGwvNDcwZmZ4QXNTd3pDYjQKsBNOn0gOdOgxcp4N89obGPUJGrGUOLJA
+        HvpdsgKBIWgW2cBbTNo2MfMdzu1O5ZEc1ibzQz/X7/kUj4zSZvkpgg==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-04-26T05:17:27Z"
+  mac: ENC[AES256_GCM,data:M8pOfkU5VYfjgyeThZgfJGmcDxsCmaB3jT5Ql9Fcj1OH4tIBTlEcfWpUubE2uzrNDA4xuM/6zNHT+95xu+nklFrd4V1N2CCahgdJt4J1LswETsVlcVqcQ1LTRx3nI9Zntd7gCHKaXXz5hxkTtVd71bVwdExinRRArg/zyzckVJ4=,iv:LC++cWK98iD9B89q842b8X9wrX7TApeHPxJxJsyejqY=,tag:LldlEVbxGAo5JBDek+q5rA==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.3

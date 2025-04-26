@@ -1,48 +1,48 @@
 fullnameOverride: external-dns
 provider: cloudflare
 env:
-    - name: CF_API_TOKEN
-      valueFrom:
-        secretKeyRef:
-            name: external-dns-secret
-            key: api-token
+  - name: CF_API_TOKEN
+    valueFrom:
+      secretKeyRef:
+        name: external-dns-secret
+        key: api-token
 extraArgs:
-    - --cloudflare-dns-records-per-page=1000
-    - --cloudflare-proxied
-    - --crd-source-apiversion=externaldns.k8s.io/v1alpha1
-    - --crd-source-kind=DNSEndpoint
-    - --events
-    - --ignore-ingress-tls-spec
-    - --ingress-class=external
+  - --cloudflare-dns-records-per-page=1000
+  - --cloudflare-proxied
+  - --crd-source-apiversion=externaldns.k8s.io/v1alpha1
+  - --crd-source-kind=DNSEndpoint
+  - --events
+  - --ignore-ingress-tls-spec
+  - --ingress-class=external
 policy: sync
 sources:
-    - crd
-    - ingress
+  - crd
+  - ingress
 txtPrefix: k8s.
 txtOwnerId: default
 domainFilters:
-    - gitlab.be
+  - gitlab.be
 serviceMonitor:
-    enabled: true
+  enabled: true
 podAnnotations:
-    secret.reloader.stakater.com/reload: external-dns-secret
+  secret.reloader.stakater.com/reload: external-dns-secret
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBHWG5OaWtHRkV2dk4wTmZi
-            VG9ab3JmWWhieTkrMG9NZ2hZdXRXdDg0Y1hJCmVwWTFwWElnRXR6SFQyYWdGMzF3
-            Uy9uUFdXSGMzcXFnbHI4REcya1JxcU0KLS0tIDNCZHhPc1g1ckJUVExjc2k3VVlD
-            VWhuWFFLNE5YcTlWam9TalltY0dzWTgKZGessWJ+JODvHWgAO/cmp492ZszO1QMR
-            YpNwM5Ar/rtZ6bO+xqm2Nwa4kjbfvgv99PMj+wZPODRtK/4/QOrlMw==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-26T05:29:58Z"
-    mac: ENC[AES256_GCM,data:TokTQdVi+yvZKw3XkdrDwfxrnc9+aeofSY5478DA1jnJt1aOpbUmXRhLI4Jzgf00XoDuX/oA7WpP/HwIO2hmFIVxULFaL5YyaIqLriEw1ghqsl3oQ8ThQ4ryGJfz1XEoEfGW5zwQN+XhwsHJOb0nHNHrlH8FOuPBZnZqJQVLRqQ=,iv:xwvK32yRusaWQ9MMb2JBqozCM4yEfrOaeF2Tg4eR2r0=,tag:gOLMIKQqVu6Bth0SYlg/3g==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJQ3EyVEpwdFU5V1g0eGVC
+        NDZNMnhKc2p0V3htcDNqa2pGVlVpeDR0R1IwCnZMNXVEdGVucDZoRmIwM0NIVUgz
+        Y0lIZG9KQ01Tc1pTY1A3ajBoblM2WWcKLS0tIHBlNUhvejlPYU90U1ROQXJiYllL
+        NVNlMHUvKzlBc1h5ZUVSNGJJZHAwRE0KxliAVjnnkR9fM7uReCH8blI/fCXHwuOT
+        JfeP8nk9wtT0eInuQUO5Ev9hyehRwXFgLx0gSnLxYx0f+KqrPBXkmg==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-04-26T05:17:26Z"
+  mac: ENC[AES256_GCM,data:RW1aK6o0CTQ0/c4NzKVrL9IKrjuSwPb7PfBQC1/2DXY7o3lGrBQvCO6EJcEd61VRfMXTSxxt880Jq44CulSBl6y4cowJdSERsCjmbOzQ11RUcN2lQ2rbpScutr7xoj4a21kAoKHtP6S2Ga+0ZpE0nJdHsoWDUBesidxakqeyu7A=,iv:nRhO4IQ5Bm+jrVtgECOdN95170GTdUta2tXR54VCNjE=,tag:KolO/n1qavIozwG/8pWiQQ==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.3

@@ -1,79 +1,79 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-    name: letsencrypt-staging
+  name: letsencrypt-staging
 spec:
-    acme:
-        server: https://acme-staging-v02.api.letsencrypt.org/directory
-        email: enicky80@gmail.com
-        privateKeySecretRef:
-            name: letsencrypt-staging
-        solvers:
-            - dns01:
-                cloudflare:
-                    apiTokenSecretRef:
-                        name: cert-manager-secret
-                        key: api-token
-              selector:
-                dnsZones:
-                    - gitlab.be
+  acme:
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    email: enicky80@gmail.com
+    privateKeySecretRef:
+      name: letsencrypt-staging
+    solvers:
+      - dns01:
+          cloudflare:
+            apiTokenSecretRef:
+              name: cert-manager-secret
+              key: api-token
+        selector:
+          dnsZones:
+            - gitlab.be
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBTV3AraTVCMnRGU1htb2Rv
-            MFZ0MU1yTEVkT292NVp0bFR6cWhjWmdxV0ZNCk94UXd4MG81dW9KUXZyM3A3ZFpO
-            ME91MDB2dVRsMmZ6UU9tRkF1TURYbWMKLS0tIEhnbXhZaXRUaDRXQklqbFIyeXp4
-            MVB6eW9rSDhIVUE4TTBtM1RjMTdZZG8KhEfXJplrn4GMThgriDr4OJpzIiYUVgmH
-            7D/JDHHOqVZ72oo/ysKAYPtDQs1xVVEhk45PTZOdrDfdT5D4AWld2g==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-26T05:29:58Z"
-    mac: ENC[AES256_GCM,data:oLhcFAhkeqeI4yLlzLHxBJ2WW+qsOvC37VTqCL5M3dPSf61e4YeWf4o+XoD0WwGfryY3gN1D1WV/wHWEd4b2bl+d2F3cURGnnFfmnJup3QbiJXS3phHhuUz/rjemRBhVxOAv2Emw8olMHGDt7MxLsZvjeotsv1dBBnUshFG24Cg=,iv:NigR39NxiugggOW2BlXMP6nZzFwzoiTH7TgFt5kJSxM=,tag:Cmd9PTPLz4NQz89xfm7zkg==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBqaEluL3hPRUVINmtSUzRx
+        MDRXRDR4NjRNZnFTRXRnREdYMVIxSWZqUHlFCm9oSkNIMWZ4bGV3TWMwaDJnRzdm
+        WWxQUlRLdUU4QlAyZDY4d1dTRFdiYVUKLS0tIGVvcVZBa3pEbXNWT2NZYkdNamtu
+        ejFyaEVwSU5XancybFhzM09qSGhaUXMKH8sDfWWdzAml7v0h+xJe+t8ONdHOrYw+
+        YOztMTl8O96WxaOLNiudQ9TD7smDZR0geu5S1DZB9+tAwnkkxJp1Jg==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-04-26T05:17:26Z"
+  mac: ENC[AES256_GCM,data:hCVkwbNR6HDv6NU6BLuTChddh5TQk4lCo1FEwLfeJ4utQ5BeAO8Suw8mDKk+bX0ccmaAYdSNQ7O5tWiM6FyV4CDQJ36QqRlyt6y4Y1swg1PciNCD0aUzjB03jsu3MnZSR+xKShln8nW7odwo9NmC5lcGGIYJnHvmF/W5HIQst9A=,iv:ELX44jIeKIL/i7iRwCE5zPgM5OiEWl784WmE60LQNCs=,tag:Zd5Ck1osSDxsDy3/vXZR4Q==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.3
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-    name: letsencrypt-production
+  name: letsencrypt-production
 spec:
-    acme:
-        server: https://acme-v02.api.letsencrypt.org/directory
-        email: enicky80@gmail.com
-        privateKeySecretRef:
-            name: letsencrypt-production
-        solvers:
-            - dns01:
-                cloudflare:
-                    apiTokenSecretRef:
-                        name: cert-manager-secret
-                        key: api-token
-              selector:
-                dnsZones:
-                    - gitlab.be
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: enicky80@gmail.com
+    privateKeySecretRef:
+      name: letsencrypt-production
+    solvers:
+      - dns01:
+          cloudflare:
+            apiTokenSecretRef:
+              name: cert-manager-secret
+              key: api-token
+        selector:
+          dnsZones:
+            - gitlab.be
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBTV3AraTVCMnRGU1htb2Rv
-            MFZ0MU1yTEVkT292NVp0bFR6cWhjWmdxV0ZNCk94UXd4MG81dW9KUXZyM3A3ZFpO
-            ME91MDB2dVRsMmZ6UU9tRkF1TURYbWMKLS0tIEhnbXhZaXRUaDRXQklqbFIyeXp4
-            MVB6eW9rSDhIVUE4TTBtM1RjMTdZZG8KhEfXJplrn4GMThgriDr4OJpzIiYUVgmH
-            7D/JDHHOqVZ72oo/ysKAYPtDQs1xVVEhk45PTZOdrDfdT5D4AWld2g==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-26T05:29:58Z"
-    mac: ENC[AES256_GCM,data:oLhcFAhkeqeI4yLlzLHxBJ2WW+qsOvC37VTqCL5M3dPSf61e4YeWf4o+XoD0WwGfryY3gN1D1WV/wHWEd4b2bl+d2F3cURGnnFfmnJup3QbiJXS3phHhuUz/rjemRBhVxOAv2Emw8olMHGDt7MxLsZvjeotsv1dBBnUshFG24Cg=,iv:NigR39NxiugggOW2BlXMP6nZzFwzoiTH7TgFt5kJSxM=,tag:Cmd9PTPLz4NQz89xfm7zkg==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBqaEluL3hPRUVINmtSUzRx
+        MDRXRDR4NjRNZnFTRXRnREdYMVIxSWZqUHlFCm9oSkNIMWZ4bGV3TWMwaDJnRzdm
+        WWxQUlRLdUU4QlAyZDY4d1dTRFdiYVUKLS0tIGVvcVZBa3pEbXNWT2NZYkdNamtu
+        ejFyaEVwSU5XancybFhzM09qSGhaUXMKH8sDfWWdzAml7v0h+xJe+t8ONdHOrYw+
+        YOztMTl8O96WxaOLNiudQ9TD7smDZR0geu5S1DZB9+tAwnkkxJp1Jg==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-04-26T05:17:26Z"
+  mac: ENC[AES256_GCM,data:hCVkwbNR6HDv6NU6BLuTChddh5TQk4lCo1FEwLfeJ4utQ5BeAO8Suw8mDKk+bX0ccmaAYdSNQ7O5tWiM6FyV4CDQJ36QqRlyt6y4Y1swg1PciNCD0aUzjB03jsu3MnZSR+xKShln8nW7odwo9NmC5lcGGIYJnHvmF/W5HIQst9A=,iv:ELX44jIeKIL/i7iRwCE5zPgM5OiEWl784WmE60LQNCs=,tag:Zd5Ck1osSDxsDy3/vXZR4Q==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.3

@@ -1,33 +1,33 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-    name: gitlab-be-staging
+  name: gitlab-be-staging
 spec:
-    secretName: gitlab-be-staging-tls
-    issuerRef:
-        name: letsencrypt-staging
-        kind: ClusterIssuer
-    commonName: gitlab.be
-    dnsNames:
-        - gitlab.be
-        - '*.gitlab.be'
+  secretName: gitlab-be-staging-tls
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: gitlab.be
+  dnsNames:
+    - gitlab.be
+    - '*.gitlab.be'
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBDTVRaV0F2aHIvNHYvYlp0
-            SUlEdXRkWklEMlFXNHorUHJZNTdJaHVIbmc0Ck00QnJWWTZ0bXROZDFiTEZ0QTBB
-            bkJoQ05qaExaU053VHhacXk1NzhIYUkKLS0tIFNBOGtULzFvMjQ3R0ZETUxDSFB3
-            b3Ruczk2bUNmeEJVKzJ0QUVOdHhIMTQKhPrC30CdM0cAnjYxOlsz+gOZaaLgiEzs
-            PHN85av+OTBWmJfZ72hQfTfvb1J0NkjxxAVqvhpap/wBAr5eSF5ROA==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-26T05:29:58Z"
-    mac: ENC[AES256_GCM,data:gjR6H+Jb1OefOMOlAile/XEzVEEfGB+h2YQA0CUXiL9mC09CWJp9FUOGw8cbFX2xaYbdBVGjVQvJ8uV11ozFaGoFsZn6M6pG8ZUAm0Z1E34QTBhzc8gWO0AJ+wdZs22UZuqzGkP8NcCyRYuJlLaF3tJI36iRHAXPq6Dn/r0YJt4=,iv:8buulVDtkJIECbL38GqGqss0NMFCOuEDCuG/2yWspAo=,tag:ZG5YWw4DxzVhjP/OiOrRug==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age:
+    - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB1aHMwdjltOFdzRlJyOFlm
+        RzhrcGwrNFkzRTNwRGk4SWF6R3p2NmovVFQ0CkRHSm5DclJYNjFzVU1KNFVzZHhh
+        UG1wMDdPcnRxTUhJdkFSeldSMEp4OW8KLS0tIDN6a0Y3RGFOYWkzalkzMjlpWFFl
+        K01yT3FFWjhtV0Q0OTF4Y3pRc28vY2cKUcfL23pUBfd/OanylLxTACwEFAz+tF7a
+        pDVVL8LtYlcOLa963sr+sEpenJnf04Hd7AHuCJmrVGe0BjFx9lwhow==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-04-26T05:17:27Z"
+  mac: ENC[AES256_GCM,data:z7cE8YZJSEdU+cB6gBw9DUdwkQY4PiRF7Q5FGoVJgx53gTpMg1E9JGb4W3e2d4o7wEZ6u0yHTRVsm+tWIczhQfgegQamTtecsuIhVtKpftMIWIheRmm5hvZT1cvdxVn4CABnpSeva9mXdGKLLir5lzUEhUXWE8e6a7FrESfnhVI=,iv:ifIoZBLuokB0IprMfz2Kc8o9kj82HfxyyepWIls1QWQ=,tag:zJ7mGzoRiWKtpKoJT0Ne8Q==,type:str]
+  pgp: []
+  encrypted_regex: ^(data|stringData)$
+  version: 3.9.3

@@ -115,7 +115,7 @@ server:
   image:
     repository: ghcr.io/immich-app/immich-server
     pullPolicy: IfNotPresent
-    tag: v1.125.7
+    tag: v1.132.1
   ingress:
     main:
       enabled: true
@@ -139,7 +139,7 @@ machine-learning:
   image:
     repository: ghcr.io/immich-app/immich-machine-learning
     pullPolicy: IfNotPresent
-    tag: v1.125.7
+    tag: v1.132.1
   env:
     TRANSFORMERS_CACHE: /cache
   persistence:

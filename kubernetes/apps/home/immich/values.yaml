@@ -1,7 +1,7 @@
 ## This chart relies on the common library chart from bjw-s
 ## You can find it at https://github.com/bjw-s/helm-charts/tree/main/charts/library/common
 ## Refer there for more detail about the supported values
-
+#
 # These entries are shared between all the Immich components
 env:
   REDIS_HOSTNAME: '{{ printf "%s-redis-master" .Release.Name }}'
@@ -28,9 +28,8 @@ env:
         key: password
   IMMICH_MACHINE_LEARNING_URL: '{{ printf "http://%s-machine-learning:3003" .Release.Name }}'
   IMMICH_LOG_LEVEL: log
-
 image:
-  tag: v1.126.1
+  tag: v1.132.1
 immich:
   metrics:
     # Enabling this will create the service monitors needed to monitor immich with the prometheus operator
@@ -61,9 +60,7 @@ immich:
     # storageTemplate:
     #   enabled: true
     #   template: "{{y}}/{{y}}-{{MM}}-{{dd}}/{{filename}}"
-
 # Dependencies
-
 postgresql:
   enabled: false
   image:
@@ -96,7 +93,6 @@ postgresql:
     persistence:
       enabled: true
       # existingClaim: immich-postgresql-data
-
 redis:
   enabled: true
   architecture: standalone
@@ -107,9 +103,7 @@ redis:
     persistence:
       labels:
         velero.io/exclude-from-backup: "true"
-
 # Immich components
-
 server:
   enabled: true
   image:
@@ -123,7 +117,6 @@ server:
         # proxy-body-size is set to 0 to remove the body limit on file uploads
         nginx.ingress.kubernetes.io/proxy-body-size: "0"
         external-dns.alpha.kubernetes.io/target: "external.gitlab.be"
-
       ingressClassName: external
       hosts:
         - host: immich.gitlab.be
@@ -133,7 +126,6 @@ server:
       #  - secretName: immich-tls
       #    hosts:
       #      - immich.gitlab.be
-
 machine-learning:
   enabled: true
   image:

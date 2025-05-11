@@ -5,6 +5,7 @@ extraArgs:
     - --events
     - --ignore-ingress-tls-spec
     - --ingress-class=internal
+    - --pihole-api-version=6
     # IMPORTANT: If you have records that you manage manually in Pi-hole, set
     # the policy to upsert-only so they do not get deleted.
     #- --policy=upsert-only
@@ -31,14 +32,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB6TWdaOWcvUll5VUt4RGhw
-            UCtPN3BjN1U4RUVOTlFRSHd1TTJteDEzODJnCjZMS0JMUFpxbDg4YkUxakVDZ09I
-            N0l5NFJDUTlBUFZDM1lrTDI0a2xTZzAKLS0tIFVUb3g0SmRNRk93SXBTWE0rcmNB
-            SFg2VlhFa1F6dWwrZEpvcXdkc0ZyR2MKOYEyBF4damtF5/UoCD7vN4T5LChezY9o
-            Wdt8sVOV+euo1Q+9orPrL/h/fBGRuoP2pmNAxqq6fNv+aMdcvqedMw==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAxYi9SYmo0elVuenFHd25G
+            Skx0MSs0STdOcEZYdG1qT0VDS0pVQzl4RFdjCk9nWmJBa1VvSWxIVEhHVjdaVDRW
+            RTlrL1JzbnZ3bkZoZ2Q5dHpheHR4UlUKLS0tIHRjYXRqRzJrMzFQZEtFOGkvVzA4
+            SWRUUTB1cGVwRFBidmtFS3hySnB6elkKonqSUymPqm5XLpanWjKuzFJgCo/U25pB
+            LLlfy1lo6l4trMCGBxHv9BveLTqc+6CM61aPmJhBVbxfIuHdpF/dTg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-05-11T06:10:50Z"
-    mac: ENC[AES256_GCM,data:ZkkLLfUlw+cNscokhGKyHdGNzn5xEWI3GqyF8vPXmT+6ssIWMtcjVYley9oZrKLDuXrHHLoz35/EFs17dU6NO2m8fzGq2SPwTOvf5JCR4ikw1YYFJpOD5LaulGlKm6RSLcIOPS9GROspbuXjx5ADejW48FA+pllHq5sJIbfDejE=,iv:56ykyu3Mx2hz7Ok2XocZDSaix3nu4pz+o84+NWLqBEw=,tag:ByfJ/NBrI1RSgqBxJrAwKw==,type:str]
+    lastmodified: "2025-05-11T06:28:50Z"
+    mac: ENC[AES256_GCM,data:uyE80q3ST1shzzyrN1ka8l6Ky9gtn2eD5ykmP3U97ohc/jIn+AXtGEKmGet1+ATZwtG/jlKq51qqTgjKwXy3T6npefp5qEG1dEP5TdPikkjD+tv4T2ODTuv9HHWxUQCsuw31rdwRRjg/9fdfjzS4Jf4/CjAX5q+p0/L63C4hloc=,iv:36bTvR8aecIT9X+miy+pYBQ7/Xh9acotyHRTB77KQ7g=,tag:buMKvUbB3nAXeRILU94oYg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

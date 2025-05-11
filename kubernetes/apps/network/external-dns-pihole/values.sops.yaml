@@ -1,25 +1,47 @@
----
 fullnameOverride: internal-dns
 provider: pihole
 registry: noop
 extraArgs:
-  - --events
-  - --ignore-ingress-tls-spec
-  - --ingress-class=internal
-  - --provider=pihole
-  - --pihole-api-version=6
-  # IMPORTANT: If you have records that you manage manually in Pi-hole, set
-  # the policy to upsert-only so they do not get deleted.
-  #- --policy=upsert-only
-  - --pihole-server=http://pihole-web.network.svc.cluster.local
-  - --pihole-password=Aveve2008
+    - --events
+    - --ignore-ingress-tls-spec
+    - --ingress-class=internal
+    - --provider=pihole
+    - --pihole-api-version=6
+    # IMPORTANT: If you have records that you manage manually in Pi-hole, set
+    # the policy to upsert-only so they do not get deleted.
+    #- --policy=upsert-only
+    - --pihole-server=http://pihole-web.network.svc.cluster.local
+    - --pihole-password=Aveve2008
 policy: upsert-only
-sources: ["crd", "ingress"]
+sources:
+    - crd
+    - ingress
 txtPrefix: k8s.
 txtOwnerId: default
-domainFilters: ["gitlab.be"]
+domainFilters:
+    - gitlab.be
 serviceMonitor:
-  enabled: true
+    enabled: true
 podAnnotations:
-  secret.reloader.stakater.com/reload: internal-dns-secret
-image.tag="v20250510-v0.16.1-151-g2f165e87"
+    secret.reloader.stakater.com/reload: internal-dns-secret
+image.tag: v20250510-v0.16.1-151-g2f165e87
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBsYXdhdEVnVnJqYXJ1dTIw
+            Z1Qwci90cHJWekNlNy95QmhVV2p2WitNNWl3CnlSZDl6WE44OEJpOWlPRnBZWnR1
+            VXZQK2o5R2VRRkJlRkpOMEcrZFpoVUEKLS0tIHgxajFmMmRBYVpiU0JETGJMTmJF
+            VGU5SEZoa0MrRXdpeEFTdmlxVVUwYjAKErO5hBb/yYRzwjB7m2hdvy2/QC4MkBRK
+            cqVejX5wV7fK5K22Sx/0SoVmn+fpiES/0PIcFvKg6zUCUOGQdIxD2w==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-05-11T06:48:36Z"
+    mac: ENC[AES256_GCM,data:tsh3Vz4f8Xrjp3EPJUcLdgTmjE9L1cAzrY4hdQa5SA7XIZ2GGCQibssXNJzYDMz3ygdJH0C24H5TcQ27vXIxwGu300qRJ1Rrj6Yb9UjisNjZa1b7Dq4cOm35zeQO4dPUQMmxjqaCDdhjLdRZIR+YbbpIHj12KHaf9I3UmuMeU6M=,iv:XIlFXZh3JYLgCk/v9I4mFDFKR/K2FYh9qxpwSsVEFUU=,tag:2xr/HOZkm2rygzO01PtDJg==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.3

@@ -24,7 +24,8 @@ serviceMonitor:
     enabled: true
 podAnnotations:
     secret.reloader.stakater.com/reload: internal-dns-secret
-image.tag: v20250510-v0.16.1-151-g2f165e87
+image:
+    tag: v20250510-v0.16.1-151-g2f165e87
 sops:
     kms: []
     gcp_kms: []
@@ -34,14 +35,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBsYXdhdEVnVnJqYXJ1dTIw
-            Z1Qwci90cHJWekNlNy95QmhVV2p2WitNNWl3CnlSZDl6WE44OEJpOWlPRnBZWnR1
-            VXZQK2o5R2VRRkJlRkpOMEcrZFpoVUEKLS0tIHgxajFmMmRBYVpiU0JETGJMTmJF
-            VGU5SEZoa0MrRXdpeEFTdmlxVVUwYjAKErO5hBb/yYRzwjB7m2hdvy2/QC4MkBRK
-            cqVejX5wV7fK5K22Sx/0SoVmn+fpiES/0PIcFvKg6zUCUOGQdIxD2w==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBlRkJLOHlob3lQV2NDM3dl
+            eXRBWXgxL1dxQkpTbFl6UDFRTGpPb0ZLcFRJClZkMnU4QzZPYm1OTEE0TjNuWWdy
+            d1VlOXpkYWt5MElzY2hMOC9KQThQekkKLS0tIGRQRGFxM0pTcFFMdzV2SlBqVXpC
+            YXQ1L1d5QXpHaGVoS2trT0ZYeVlPYW8KtE/BUkQlmwAwxfQhTgJROT7Ug2FVLEp9
+            d8chNEDbzPU7lQP/QOvAeUrf70QIg2ny3mDuNVeeEdAWkfk2CGxSjw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-05-11T06:48:36Z"
-    mac: ENC[AES256_GCM,data:tsh3Vz4f8Xrjp3EPJUcLdgTmjE9L1cAzrY4hdQa5SA7XIZ2GGCQibssXNJzYDMz3ygdJH0C24H5TcQ27vXIxwGu300qRJ1Rrj6Yb9UjisNjZa1b7Dq4cOm35zeQO4dPUQMmxjqaCDdhjLdRZIR+YbbpIHj12KHaf9I3UmuMeU6M=,iv:XIlFXZh3JYLgCk/v9I4mFDFKR/K2FYh9qxpwSsVEFUU=,tag:2xr/HOZkm2rygzO01PtDJg==,type:str]
+    lastmodified: "2025-05-11T06:52:18Z"
+    mac: ENC[AES256_GCM,data:AQpcjY1PHYoySHBzpKRyxYQEVnqttlcyHEkYpkwmS3x4jub5xaL3a5myhKo2teB6y6rQeF3d0NQK3+awzZOml3+WRTNlWSibb6As3lJtz8jaPO01QQyPxuQ7vrVM3tzW83Pn9mMZ0Yl0N5uH8yXltG7wjBaUYwQ9YxgY+nFImc8=,iv:0hLXrzFq3H57aemCsaYE0jg8kdv9lHl8efuyERax1Z8=,tag:TgfrcBL2a/bsVeQZKrAEXA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

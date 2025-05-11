@@ -116,13 +116,13 @@ probes:
     # -- probes.liveness -- Configure the healthcheck for the ingress controller
     liveness:
         # -- Generate a liveness probe
-        enabled: true
+        enabled: false
         initialDelaySeconds: 60
         failureThreshold: 10
         timeoutSeconds: 5
     readiness:
         # -- Generate a readiness probe
-        enabled: true
+        enabled: false
         initialDelaySeconds: 60
         failureThreshold: 3
         timeoutSeconds: 5
@@ -331,14 +331,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBRVWI1NkV2ZVNxVS9TWWRQ
-            ZWNyak04YVViKzdWK1djZTNkWHBLOGI0VGpjCnQrdUUvQWdRMDFIMEtuS0JOQWxB
-            MFo4MGFwQ2dvdEtVWjFPNXBPTVpWV00KLS0tIE1SWGM4NVJONU8yK0Q3ZXIxR3JH
-            clk4Nlo2WlVMeG4rRDFwbnoyT0Zwc1kKGRjIneGXC0zrLsWMVAHEi6A2V2Jo7N4N
-            qB0S5k6NPdS0mpKOI2BhKOYD3f248dGtpFfhuf4evYS/pBXg34loSQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBXOWtVV3hZOGp0ZkN6eWpu
+            b2c3aHF5WStOVUNzYkN0Qk9RbS93RGk1WG5VCnZ6QXRhYkp2T3g0SGhFQUtiU1Nk
+            UVNwMnBuU3M5aVNWZUh0NWJBU2ZqMXMKLS0tIGVMYUZLZHVHbHpOZ0lMM010a0RY
+            NjZMTEhiVmNyMFJHWW1lOFJnMWlhVTAKNxbhXnrVepcX0WzlHZPYhmxgN7aaFzuM
+            /h3vmLud0oYyBq/UTsjbgaEe5fpOPn5kylq8bqbKPnAGfPlW2LiX1w==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-05-11T06:55:19Z"
-    mac: ENC[AES256_GCM,data:bKVi0AshJ0DselScneHZIx0ZPjZ+X6sw9RzhvlowBuk4Kupn0J+FR/x6g9nbw9mQbFYUsHwtNeara1/hq5sginC7Ct1E183nSXUXX6/on449Ix3ng/2UU6VS1YKKAlcUyd9V3bDFNy9q1OPc3PH/3897oOW6lkqlNCrPRC/aPR8=,iv:OHup8EcdcHx0mx7eCrP5nXt8btOxNt5iD0Vx0MpDvu8=,tag:5/jCoR7wulWsNCnonwQyJg==,type:str]
+    lastmodified: "2025-05-11T07:10:16Z"
+    mac: ENC[AES256_GCM,data:uiUzrsqSFnwBJ9u0frQpOlV66CrsSI/Uazj1XP/6dKOzocXsWU0Xt9MFnVK8MUrUUdkbMaoDeN5xIuOvW0n2SyPZ897cgHD0W72X5D/Uiu53O2j7DwFrjG9H7tlf0qBzGD5ubt42Zr6g/xOqwwGWuW1B71u7SC+Z6hJk1gt0agk=,iv:cppFsoqUX8nMhkXaQKrSwJjFSCLjkl571C1oim7yPfw=,tag:nGbyID1z1ujAbz8PMGQQuQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

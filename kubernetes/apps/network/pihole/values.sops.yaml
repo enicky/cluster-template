@@ -13,7 +13,7 @@ image:
     # -- the repostory to pull the image from
     repository: pihole/pihole
     # -- the docker tag
-    tag: 2024.07.0
+    tag: 2025.04.0
     # -- the pull policy
     pullPolicy: IfNotPresent
 dualStack:
@@ -331,14 +331,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBhcVdldHpuNVRLbmtaK2Fj
-            cm5Gd3psdy9Uc1llN0NRM0RkS1A3Zk0xZWw0CmRRR2JjU2Q3b1FScllsdWlqell5
-            bWZFTElocS9kaTl4L1JpSFZFSUpQWWcKLS0tIDhhSGwzUXhReXlQS1o5cjF3MzRq
-            QldJV2Y1cnF0MENxN1VjM0JvMlM1eVEKP5aKlf03VGvfvDydFk6kVaCc391vQDtU
-            7rKxxx8QMSkU02r5dvt054/cpt9OjH7zM4IuC5q2CDT7seRxjnOP0A==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA5MnZxS2lxWmJsUzdacU14
+            bmEvdE8wZmhHRGdCdkV0YURXckgzOEN6RjEwCjA0NjJmc0hqV2hMTFI0TXhSL0F1
+            NkRoSncydytMUXZjQUk4VmQwZjhVZ1UKLS0tIFpNL3lMTmFQa1YrWjJJc3Fpc3Fx
+            WVJvVHN3WGoyWGhLTGZzMkRGTURVeTAKmPXY4+LozrDuYPnanKDsU2/3IthrfEvC
+            sZp31j2mh+KCv9WVVH1QuDpxwvFNtaM0kg1z0NVMFvs21Lp+BtCD0g==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-26T05:40:35Z"
-    mac: ENC[AES256_GCM,data:juxK1B2XGeXKojnmLmmw0rG5O3+nx7si3Lk7pTB0pwQitZRKTTO3RxK39QC2RXWe+xvoMVag671iZXuorPeJH2XzZuMFB/kH+rwA+0+h9iT0X5zsgZmTj7EMXTaoliwqJs1WMZBQiXuy5vPMTCd4GCrP1siZFAZC3TT1PsYKkgE=,iv:ZIn6xCtI41WM3vwCODnWgUfeduTy3j6X8Rg2PRVTvds=,tag:n7WQSEx1yZW0F9Puyuylaw==,type:str]
+    lastmodified: "2025-05-11T06:10:50Z"
+    mac: ENC[AES256_GCM,data:9JFjPhX0/HTRgVb5Fhry/aJ53bXLhi2MGI51qP6FsEVHVbeMUbxaBfwbCca+a68MsCEHTsMKVAwS0hVR5R+aLxUzaHjYEORabzi55nmi3ppwaTdlwoQFW5Zkp/6tkDnbeO3DPkUtWIL7YeHlVtjaEoP6awblVEUHzruhyPRdDdo=,iv:Nf4OkZI+L9lMk9N1nazK2pRxAYUabJ76QY+nBDuvsUg=,tag:3L8rctNbuAy31hDxQujW3A==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

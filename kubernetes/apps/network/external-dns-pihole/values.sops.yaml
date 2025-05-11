@@ -1,46 +1,25 @@
+---
 fullnameOverride: internal-dns
 provider: pihole
 registry: noop
 extraArgs:
-    - --events
-    - --ignore-ingress-tls-spec
-    - --ingress-class=internal
-    - --provider=pihole
-    - --pihole-api-version=6
-    # IMPORTANT: If you have records that you manage manually in Pi-hole, set
-    # the policy to upsert-only so they do not get deleted.
-    #- --policy=upsert-only
-    - --pihole-server=http://pihole-web.network.svc.cluster.local
-    - --pihole-password=Aveve2008
+  - --events
+  - --ignore-ingress-tls-spec
+  - --ingress-class=internal
+  - --provider=pihole
+  - --pihole-api-version=6
+  # IMPORTANT: If you have records that you manage manually in Pi-hole, set
+  # the policy to upsert-only so they do not get deleted.
+  #- --policy=upsert-only
+  - --pihole-server=http://pihole-web.network.svc.cluster.local
+  - --pihole-password=Aveve2008
 policy: upsert-only
-sources:
-    - crd
-    - ingress
+sources: ["crd", "ingress"]
 txtPrefix: k8s.
 txtOwnerId: default
-domainFilters:
-    - gitlab.be
+domainFilters: ["gitlab.be"]
 serviceMonitor:
-    enabled: true
+  enabled: true
 podAnnotations:
-    secret.reloader.stakater.com/reload: internal-dns-secret
-sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA4Mld5RmRvODdldXQyM1ls
-            cHhjL1JxQXloblV6QjBvUDhaOWpiUXBCSlRvCjJkYytVZzFBT0VpT2JZZXNDaDNn
-            MDNLd1JyT1VJWlBiWFl5RGxiVHJSWFEKLS0tICtyNnJyb0FDRVpEQTI5K1F2Vmtj
-            YkMybjQycFozZmRpRGFMYkovazdUUkkKzyYaa3uxdzYc2gKVZ4V3lv1AdwgUGdFA
-            nQuISyuEUTYbMd9BujeRH1PmQ849OqMZsZQocFneJM8IqhqU0avVBw==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-05-11T06:41:33Z"
-    mac: ENC[AES256_GCM,data:Wbd40U5IlSUnkiisUjUwpPJSolaKHp+VyOoDLgju0pCv6Lwxl2YYaBYQQdl5NBYzAWfnJe5Byi4x+5MyxisqKKnMb3dmw+E++7o8LraNtoVM7afajIBGxQU2oQCygGOKRT8XzOqDvTULJQ/FcpNHobGJ7zDBBlIqxeI4+mAfltE=,iv:r9Eth8fsHbVekM55c3DBVI7/beDpZNIrQgsyFsodpkk=,tag:a095wer5bo2WGHUhXa6q2w==,type:str]
-    pgp: []
-    encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+  secret.reloader.stakater.com/reload: internal-dns-secret
+image.tag="v20250510-v0.16.1-151-g2f165e87"

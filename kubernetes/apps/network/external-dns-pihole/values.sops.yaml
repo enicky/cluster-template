@@ -5,6 +5,7 @@ extraArgs:
     - --events
     - --ignore-ingress-tls-spec
     - --ingress-class=internal
+    - --pihole-api-version=6
     # IMPORTANT: If you have records that you manage manually in Pi-hole, set
     # the policy to upsert-only so they do not get deleted.
     #- --policy=upsert-only
@@ -22,6 +23,9 @@ serviceMonitor:
     enabled: true
 podAnnotations:
     secret.reloader.stakater.com/reload: internal-dns-secret
+image:
+    repository: gcr.io/k8s-staging-external-dns/external-dns
+    tag: v20250510-v0.16.1-151-g2f165e87
 sops:
     kms: []
     gcp_kms: []
@@ -31,14 +35,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBBSjFBS2QrNjFNQW1MR0xn
-            R3FlRnNnc1BHRWN4SE50MmhQS1FNL1Vyc3c0CjRub0hDUElpR2cwM2xhbWJoQktT
-            Nk1lMEJRdTVGVFA2ZWgyWUl1WjVRVVkKLS0tIFRhU2JQMmNJZXU5SjVYMmFkMUlt
-            dnV3ejdkYkFXR3NxSnVKMkNHZTB1TjgK7JwvdTo3rPt9xhVLXuvxA2vowONNySjg
-            UZS0oho+nrVpUgn4O0bic0ioWAd/+nAbmkvASoeiPPAI+ZnTE7BOHQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB6Y3RXbHJqWHlSNE9lQlIr
+            Vk5QUUpHQy9vRmFiSC92R2QydUUrbUtiNWpvCm5LdVc5bXJZRlljZ25sM0JNQXB0
+            Z29QRWkzZkJrMitBR1E3RnV3Yi8vbmMKLS0tIHhuNk90Tzc3T1RTUmVSZDc5TWxF
+            Wks1bi9vd1Vod05BQWgzaDEwSGJDelEK6QcOynFQtBqK74uj7TQHBoQgp3Nfs8Yv
+            mgZl4t436PvuXbIf1NrKNPtwJBepGh2hTyunltHlWqiyE3OdtQtKDw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-02-16T11:31:48Z"
-    mac: ENC[AES256_GCM,data:hxTPZtKfwryngjPLJyj4uSSnLS9Q+zTZ1mAPT16hzsMBFhP+ObGSIYgOKC1xDZuhzKu+Zd9adzgKjOJ4VXSghWR3m6ey0ulYMYa8LxvdwHVLmJA/nsiTZwOjYdV8/u+u6itMdTeFFI6x01BYGdohACv5ehPSSrIonSAwxx8+0aA=,iv:7Lkz/N/mbbsceayU2GNY+zJvBPw164HCbN7Z4/ipqAk=,tag:V+0FT1SiH+rDxrlNZxBEaw==,type:str]
+    lastmodified: "2025-05-18T07:56:30Z"
+    mac: ENC[AES256_GCM,data:baWh8nmCuv5kCjYQUOlrK0ec4GyN523pE3kqv+/Qc69jCdEcktJOY8Uq6Au230zwZEi4knDe4MZs7reZW53JnF7ncif56T/nC6mcmygPsKmu6SjcF1WwSGKoFPSGH4kHpQpm2c8ueIMt51DY8v3f3Purh4/PUdG9p0zfVi5qFcA=,iv:ltvkv4qkjTAGg0+TqEuuYTxiJl20OAv1e4Kd9cByMd8=,tag:kAp96VSnD5mEfpAQa64bpQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

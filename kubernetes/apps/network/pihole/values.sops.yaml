@@ -13,7 +13,7 @@ image:
     # -- the repostory to pull the image from
     repository: pihole/pihole
     # -- the docker tag
-    tag: 2024.07.0
+    tag: 2025.04.0
     # -- the pull policy
     pullPolicy: IfNotPresent
 dualStack:
@@ -116,13 +116,13 @@ probes:
     # -- probes.liveness -- Configure the healthcheck for the ingress controller
     liveness:
         # -- Generate a liveness probe
-        enabled: true
+        enabled: false
         initialDelaySeconds: 60
         failureThreshold: 10
         timeoutSeconds: 5
     readiness:
         # -- Generate a readiness probe
-        enabled: true
+        enabled: false
         initialDelaySeconds: 60
         failureThreshold: 3
         timeoutSeconds: 5
@@ -331,14 +331,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBNMVBRWjQ1b3k0OGU1bUQz
-            YkpiMjJtOWZLaVdGUVVNbW5HS2RUald5bzI0CkMvdm0rNUQvVlVnVS9hckM2OWZl
-            Ymxaa0Qzdmt2dFhzR25iMlhUb0tlZFkKLS0tIGY2aUxCZXJzSFU0MEZhaDhUTkNO
-            djVpNWJaNENyMmdhRmpRb3N2RGZ4Zm8KoaIVaIx6tiQCfvOwJA4wriYhmuxi1MGO
-            5Us7+NbYpPQPgzhK1G5Qao77hmS5EoCjcjwWigG5NUSgffLDyZNpSA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBoNG1pUEtldm5iYXc2TjY4
+            enZWOS9lT1JCSk13eHhSM3hUYUZWMi9oUWlNCiswdW1GTkVuTWdJS1QwbndzdUR1
+            WUJGM1ZjSE9tOFdCSVpxa2dDbkJPVDQKLS0tIEgvYmtyUTdjamcxNHpXQ3hpNitq
+            N2FIUHdSQjllb2JHTU5TNGN5WlFvVXMKHVBhrWIVweybjd+HFRN75Oh4JhvGHzr8
+            4JW5E3lgAK6RaySBMGO+q7iUe5PNyAQPEiWPgiVF1j3cyQsrvb07Pw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-02-16T11:31:49Z"
-    mac: ENC[AES256_GCM,data:FlTNzuLjffhZVHFNh13niB5uQrppjHU3ZwLXlqWP8MimIw0q63irb2w42cDpyGSaLBATKSHLBLKkKzwHLxbumRKYJtwblhxcAH8/Nn75c0+Pg3+i05AIPHaxYTTOlYKP19gPNNnCUArribNGiHaJXJZtvNrlZwZTSYg+pnak25o=,iv:WkaL9ftdYLu/ZeUtOy97q3FVnvAd3PcYyNwZkE505mA=,tag:T8AMPvFhmSlqrk7fWV1TrA==,type:str]
+    lastmodified: "2025-05-18T07:56:30Z"
+    mac: ENC[AES256_GCM,data:9VxKx1mz+cT1MClmUuZtCq+KPSeOrTU3nkamukAuD2RijalMnWFv7Pd8BifYx/uVrKJqcdS+2nExWtWf72mzQl3UYuLHaYQRJFxI7sEDJm5b5SvjfAigvY7Sr0L6umKr/Ypt3vzd0hSMeTvPKPiecK8dDVO19JRQg1emxwqwwTU=,iv:oo2EBT7/1+bVTkhPQcNnOJVz6o/w7L5dx5C8OQ7CV5w=,tag:E5X03RO+q+sJoDgAwN7l7g==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

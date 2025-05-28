@@ -30,7 +30,7 @@ env:
   IMMICH_LOG_LEVEL: log
 
 image:
-  tag: v1.126.1
+  tag: v1.132.1
 immich:
   metrics:
     # Enabling this will create the service monitors needed to monitor immich with the prometheus operator
@@ -66,35 +66,35 @@ immich:
 
 postgresql:
   enabled: false
-  image:
-    repository: tensorchord/pgvecto-rs
-    tag: pg14-v0.2.0
-  global:
-    postgresql:
-      auth:
-        username: immich
-        database: immich
-        existingSecret: immich-postgres-user-password
-        secretKeys:
-          userPasswordKey: "DB_PASSWORD"
-          adminPasswordKey: "ADMIN_PASSWORD"
-          replicationPasswordKey: "REPLICATION_PASSWORD"
-  primary:
-    initdb:
-      scripts:
-        create-extensions.sql: |
-          CREATE EXTENSION cube;
-          CREATE EXTENSION earthdistance;
-          CREATE EXTENSION vectors;
-    containerSecurityContext:
-      enabled: false
-      runAsUser: 0
-      runAsGroup: 0
-      runAsNonRoot: false
-    podSecurityContext:
-      enabled: false
-    persistence:
-      enabled: true
+  # image:
+  #  repository: tensorchord/pgvecto-rs
+  #  tag: pg14-v0.2.0
+  #global:
+  #  postgresql:
+  #    auth:
+  #      username: immich
+  #      database: immich
+  #      existingSecret: immich-postgres-user-password
+  #      secretKeys:
+  #        userPasswordKey: "DB_PASSWORD"
+  #        adminPasswordKey: "ADMIN_PASSWORD"
+  #        replicationPasswordKey: "REPLICATION_PASSWORD"
+  #primary:
+  #  initdb:
+  #    scripts:
+  #      create-extensions.sql: |
+  #        CREATE EXTENSION cube;
+  #        CREATE EXTENSION earthdistance;
+  #        CREATE EXTENSION vectors;
+  #  containerSecurityContext:
+  #    enabled: false
+  #    runAsUser: 0
+  #    runAsGroup: 0
+  #    runAsNonRoot: false
+  #  podSecurityContext:
+  #    enabled: false
+  #  persistence:
+  #    enabled: true #}
       # existingClaim: immich-postgresql-data
 
 redis:
@@ -115,7 +115,7 @@ server:
   image:
     repository: ghcr.io/immich-app/immich-server
     pullPolicy: IfNotPresent
-    tag: v1.125.7
+    tag: v1.132.1
   ingress:
     main:
       enabled: true
@@ -139,7 +139,7 @@ machine-learning:
   image:
     repository: ghcr.io/immich-app/immich-machine-learning
     pullPolicy: IfNotPresent
-    tag: v1.125.7
+    tag: v1.132.1
   env:
     TRANSFORMERS_CACHE: /cache
   persistence:

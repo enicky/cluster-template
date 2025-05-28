@@ -10,7 +10,7 @@ spec:
   project: home-kubernetes
   sources:
     - repoURL: https://github.com/enicky/cluster-template.git
-      path: kubernetes/apps/home/ai
+      path: kubernetes/apps/home/ai/dataexporter
       targetRevision: main
   destination:
     name: in-cluster

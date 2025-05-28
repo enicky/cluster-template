@@ -11,6 +11,6 @@ spec:
     - port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.port }}
       protocol: TCP
-      name: tcp8080
+      name: tcp-8080
   selector:
     {{- include "DataExporter.selectorLabels" . | nindent 4 }}

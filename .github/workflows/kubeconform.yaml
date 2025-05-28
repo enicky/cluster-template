@@ -19,11 +19,7 @@ jobs:
         run: brew install argocd kubeconform kustomize
       - name: Install KSOPS
         run: |
-          wget https://github.com/viaduct-ai/kustomize-sops/releases/download/v4.3.3/ksops_latest_Linux_x86_64.tar.gz
-          tar -xzf ksops_latest_Linux_x86_64.tar.gz
-          ls -la
-          chmod +x ksops
-          sudo mv ksops /usr/local/bin/ksops
+          curl -s https://raw.githubusercontent.com/viaduct-ai/kustomize-sops/master/scripts/install-ksops-archive.sh | bash
       - name: Check KSOPS version
         run: ksops --version
       - name: Run kubeconform

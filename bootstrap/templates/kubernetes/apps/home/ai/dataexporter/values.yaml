@@ -84,7 +84,7 @@ volumes:
 volumeMounts:
   - name: ai-prob-results-main
     mountPath: /app/checkpoints
-    subPath: ai-prop-results-checkpoints
+    subPath: ai-prob-results-checkpoints
 
 nodeSelector: {}
 tolerations: []

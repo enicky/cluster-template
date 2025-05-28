@@ -20,8 +20,6 @@ jobs:
       - name: Install KSOPS
         run: |
           curl -s https://raw.githubusercontent.com/viaduct-ai/kustomize-sops/master/scripts/install-ksops-archive.sh | bash
-      - name: Check KSOPS version
-        run: ksops --version
       - name: Run kubeconform
         shell: bash
         run: bash ./scripts/kubeconform.sh ${{ env.KUBERNETES_DIR }}

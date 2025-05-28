@@ -22,7 +22,7 @@ jobs:
           wget https://github.com/viaduct-ai/kustomize-sops/releases/download/v4.3.3/ksops_latest_Linux_x86_64.tar.gz
           tar -xzf ksops_latest_Linux_x86_64.tar.gz
           ls -la
-          chmod +x ksops_latest_Linux_x86_64
+          chmod +x ksops
           sudo mv ksops /usr/local/bin/ksops
       - name: Check KSOPS version
         run: ksops --version

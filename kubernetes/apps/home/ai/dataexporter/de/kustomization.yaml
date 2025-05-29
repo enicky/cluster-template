@@ -6,5 +6,6 @@ resources:
 - service.yaml
 - config-map.yaml
 - namespace.yaml
+- storage.yaml
 generators:
 - ./secret-generator.yaml

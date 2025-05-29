@@ -52,3 +52,6 @@ spec:
           - name: dataexporter-config
             configMap:
               name: dataexporter-config
+          - name: ai-prob-results-main
+            configMap:
+              name: 

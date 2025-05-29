@@ -6,7 +6,7 @@ metadata:
 spec:
   revisionHistoryLimit: 3
   replicas: 1
-  selectors:
+  selector:
     matchLabels:
       app: dataexporter
   template:
@@ -25,7 +25,6 @@ spec:
         app.kubernetes.io/version: app-77
         app.kubernetes.io/component: dataexporter
     spec:
-      revisionHistoryLimit: 3
       containers:
         - name: dataexporter
           image: "neichmann/dataexporter:app-77"

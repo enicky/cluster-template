@@ -8,7 +8,7 @@ spec:
   #% if not bootstrap_ai.dataexporter.autoscaling.enabled %#
   replicas: #{ bootstrap_ai.dataexporter.replicaCount }#
   #% endif %#
-  selectors:
+  selector:
     matchLabels:
       app: #{ bootstrap_ai.dataexporter.fullname }#
   template:
@@ -24,7 +24,6 @@ spec:
         app.kubernetes.io/version: #{ bootstrap_ai.dataexporter.image.tag }#
         app.kubernetes.io/component: dataexporter
     spec:
-      revisionHistoryLimit: 3
       containers:
         - name: #{ bootstrap_ai.dataexporter.name }#
           image: "#{ bootstrap_ai.dataexporter.image.repository }#:#{ bootstrap_ai.dataexporter.image.tag  }#"

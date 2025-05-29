@@ -55,6 +55,11 @@ spec:
       volumes:
         #% for mount in bootstrap_ai.dataexporter.volumes %#
           - name: #{ mount.name }#
+            #% if mount.configMap is defined %#
             configMap:
               name: #{ mount.configMap.name }#
+            #% elif mount.persistentVolumeClaim is defined %#
+            persistentVolumeClaim:
+              claimName: #{ mount.persistentVolumeClaim.claimName }#
+            #% endif %#
         #% endfor %#

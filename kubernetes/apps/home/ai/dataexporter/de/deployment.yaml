@@ -53,5 +53,5 @@ spec:
             configMap:
               name: dataexporter-config
           - name: ai-prob-results-main
-            configMap:
-              name: 
+            persistentVolumeClaim:
+              claimName: ai-python-results

@@ -1,78 +1,61 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "DataExporter.fullname" . }}
-  namespace: {{ .Values.namespace }}
-  labels:
-    {{- include "DataExporter.labels" . | nindent 4 }}
+  name: #{ bootstrap_ai.dataexporter.fullname | default('dataexporter') }#
+  namespace: #{ bootstrap_ai.namespace | default('ai') }#
 spec:
   revisionHistoryLimit: 3
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
-  selector:
+  #% if not bootstrap_ai.dataexporter.autoscaling.enabled %#
+  replicas: #{ bootstrap_ai.dataexporter.replicaCount }#
+  #% endif %#
+  selectors:
     matchLabels:
-      {{- include "DataExporter.selectorLabels" . | nindent 6 }}
+      app: #{ bootstrap_ai.dataexporter.fullname }#
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
       annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+      #% for key, value in bootstrap_ai.dataexporter.podAnnotations.items() %#
+        #{ key }#: "#{ value }#"
+      #% endfor %#
       labels:
-        {{- include "DataExporter.labels" . | nindent 8 }}
-        {{- with .Values.podLabels }}
-        {{- toYaml . | nindent 8 }}
-        {{- end }}
+        app: #{ bootstrap_ai.dataexporter.fullname }#
+        app.kubernetes.io/name: #{ bootstrap_ai.dataexporter.fullname }#
+        app.kubernetes.io/instance: #{ bootstrap_ai.dataexporter.fullname }#
+        app.kubernetes.io/version: #{ bootstrap_ai.dataexporter.image.tag }#
+        app.kubernetes.io/component: dataexporter
     spec:
       revisionHistoryLimit: 3
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      serviceAccountName: {{ include "DataExporter.serviceAccountName" . }}
-      securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        - name: #{ bootstrap_ai.dataexporter.name }#
+          image: "#{ bootstrap_ai.dataexporter.image.repository }#:#{ bootstrap_ai.dataexporter.image.tag  }#"
+          imagePullPolicy: #{ bootstrap_ai.dataexporter.image.pullPolicy }#
           ports:
             - name: http
-              containerPort: {{ .Values.service.port }}
+              containerPort: #{ bootstrap_ai.dataexporter.service.port }#
               protocol: TCP
-
           resources:
-            {{- toYaml .Values.resources | nindent 12 }}
+            requests:
+              cpu: #{ bootstrap_ai.dataexporter.resources.requests.cpu }#
+              memory: #{ bootstrap_ai.dataexporter.resources.requests.memory }#
+            limits:
+              cpu: #{ bootstrap_ai.dataexporter.resources.limits.cpu }#
+              memory: #{ bootstrap_ai.dataexporter.resources.limits.memory }#
           envFrom:
             - secretRef:
                 name: secret-dataexporter
             - configMapRef:
                 name: config-dataexporter-env
-          {{- with .Values.volumeMounts }}
           volumeMounts:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-
-      {{- with .Values.env }}
-      env:
-        {{- toYaml . | nindent 8 }}
-      {{- end}}
-      {{- with .Values.volumes }}
+            #% for mount in bootstrap_ai.dataexporter.volumeMounts %#
+            - name: #{ mount.name }#
+              mountPath: #{ mount.mountPath }#
+              #% if mount.readOnly is defined %#
+              readOnly: #{ mount.readOnly | default(false) }#
+              #% endif %#
+            #% endfor %#
       volumes:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.nodeSelector }}
-      nodeSelector:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.tolerations }}
-      tolerations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        #% for mount in bootstrap_ai.dataexporter.volumes %#
+          - name: #{ mount.name }#
+            configMap:
+              name: #{ mount.configMap.name }#
+        #% endfor %#

@@ -1,78 +1,55 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "DataExporter.fullname" . }}
-  namespace: {{ .Values.namespace }}
-  labels:
-    {{- include "DataExporter.labels" . | nindent 4 }}
+  name: dataexporter
+  namespace: ai
 spec:
   revisionHistoryLimit: 3
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
-  selector:
+  replicas: 1
+  selectors:
     matchLabels:
-      {{- include "DataExporter.selectorLabels" . | nindent 6 }}
+      app: dataexporter
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
       annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        dapr.io/config: "appconfig"
+        dapr.io/app-id: "dataexporter"
+        dapr.io/app-port: "8080"
+        dapr.io/enabled: "true"
+        dapr.io/metrics-port: "63895"
+        dapr.io/unix-domain-socket-path: ""
       labels:
-        {{- include "DataExporter.labels" . | nindent 8 }}
-        {{- with .Values.podLabels }}
-        {{- toYaml . | nindent 8 }}
-        {{- end }}
+        app: dataexporter
+        app.kubernetes.io/name: dataexporter
+        app.kubernetes.io/instance: dataexporter
+        app.kubernetes.io/version: app-77
+        app.kubernetes.io/component: dataexporter
     spec:
       revisionHistoryLimit: 3
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      serviceAccountName: {{ include "DataExporter.serviceAccountName" . }}
-      securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        - name: dataexporter
+          image: "neichmann/dataexporter:app-77"
+          imagePullPolicy: Always
           ports:
             - name: http
-              containerPort: {{ .Values.service.port }}
+              containerPort: 8080
               protocol: TCP
-
           resources:
-            {{- toYaml .Values.resources | nindent 12 }}
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
           envFrom:
             - secretRef:
                 name: secret-dataexporter
             - configMapRef:
                 name: config-dataexporter-env
-          {{- with .Values.volumeMounts }}
           volumeMounts:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-
-      {{- with .Values.env }}
-      env:
-        {{- toYaml . | nindent 8 }}
-      {{- end}}
-      {{- with .Values.volumes }}
+            - name: ai-prob-results-main
+              mountPath: /app/checkpoints
       volumes:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.nodeSelector }}
-      nodeSelector:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.tolerations }}
-      tolerations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+          - name: dataexporter-config
+            configMap:
+              name: dataexporter-config

@@ -6,9 +6,9 @@ metadata:
   labels:
     app: #{ bootstrap_ai.sqlserver.name }#
 spec:
-  type: #{ bootstrap_ai.sqlserver.service.type }#
+  type: LoadBalancer
   ports:
-    - port: #{ bootstrap_ai.sqlserver.service.port }#
+    - port: 1433
       targetPort: 1433
       protocol: TCP
   selector:

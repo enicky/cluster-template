@@ -13,6 +13,8 @@ spec:
       app: #{ bootstrap_ai.sqlserver.name }#
   template:
     metadata:
+      annotations:
+        lbipam.cilium.io/ips: "192.168.1.27"
       labels:
         app: #{ bootstrap_ai.sqlserver.name }#
     spec:

@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: #{ bootstrap_ai.sqlserver.fullname }#
+  namespace: #{ bootstrap_ai.namespace }#
+  labels:
+    app: #{ bootstrap_ai.sqlserver.name }#
+spec:
+  replicas: #{ bootstrap_ai.sqlserver.replicaCount }#
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: #{ bootstrap_ai.sqlserver.name }#
+  template:
+    metadata:
+      labels:
+        app: #{ bootstrap_ai.sqlserver.name }#
+    spec:
+      terminationGracePeriodSeconds: 30
+      securityContext:
+        fsGroup: 1000
+      containers:
+        - name: #{ bootstrap_ai.sqlserver.name }#
+          image: "#{ bootstrap_ai.sqlserver.image.repository }#:#{ bootstrap_ai.sqlserver.image.tag }#"
+          imagePullPolicy: #{ bootstrap_ai.sqlserver.image.pullPolicy }#
+          env:
+          - name: MSSQL_PID
+            value: "Developer"
+          - name: ACCEPT_EULA
+            value: "Y"
+          - name: MSSQL_SA_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mssql-secret
+                key: SA_PASSWORD
+          volumeMounts:
+            - name: sqldata
+              mountPath: /var/opt/mssql
+          resources:
+            requests:
+              cpu: #{ bootstrap_ai.sqlserver.resources.requests.cpu }#
+              memory: #{ bootstrap_ai.sqlserver.resources.requests.memory }#
+            limits:
+              cpu: #{ bootstrap_ai.sqlserver.resources.limits.cpu }#
+              memory: #{ bootstrap_ai.sqlserver.resources.limits.memory }#
+      volumes:
+        - name: sqldata
+          persistentVolumeClaim:
+            claimName: mssql-data
+      #% if bootstrap_ai.sqlserver.nodeSelector is defined %#
+      nodeSelector:
+        #% for key, value in bootstrap_ai.sqlserver.nodeSelector.items() %#
+        #{ key }#: #{ value }#
+        #% endfor %#
+      #% endif %#
+      #% if bootstrap_ai.sqlserver.affinity is defined %#
+      affinity:
+        #{ bootstrap_ai.sqlserver.affinity }#
+      #% endif %#
+      #% if bootstrap_ai.sqlserver.tolerations is defined %#
+      tolerations:
+        #% for toleration in bootstrap_ai.sqlserver.tolerations %#
+        - #{ toleration }#
+        #% endfor %#
+      #% endif %#

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: #{ bootstrap_ai.sqlserver.fullname }#
+  namespace: #{ bootstrap_ai.namespace }#
+  labels:
+    app: #{ bootstrap_ai.sqlserver.name }#
+spec:
+  type: #{ bootstrap_ai.sqlserver.service.type }#
+  ports:
+    - port: #{ bootstrap_ai.sqlserver.service.port }#
+      targetPort: 1433
+      protocol: TCP
+  selector:
+    app: #{ bootstrap_ai.sqlserver.name }#

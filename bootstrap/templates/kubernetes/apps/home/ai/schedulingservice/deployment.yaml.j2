@@ -19,6 +19,12 @@ spec:
       #% for key, value in bootstrap_ai.schedulingservice.podAnnotations.items() %#
         #{ key }#: "#{ value }#"
       #% endfor %#
+      labels:
+        app: #{ bootstrap_ai.schedulingservice.fullname }#
+        app.kubernetes.io/name: #{ bootstrap_ai.schedulingservice.fullname }#
+        app.kubernetes.io/instance: #{ bootstrap_ai.schedulingservice.fullname }#
+        app.kubernetes.io/version: #{ bootstrap_ai.schedulingservice.image.tag }#
+        app.kubernetes.io/component: schedulingservice
     spec:
       #% if bootstrap_ai.schedulingservice.imagePullSecrets is defined %#
       imagePullSecrets:

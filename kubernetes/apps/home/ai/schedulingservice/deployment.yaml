@@ -18,6 +18,12 @@ spec:
         dapr.io/enabled: "true"
         dapr.io/metrics-port: "63895"
         dapr.io/unix-domain-socket-path: ""
+      labels:
+        app: schedulerservice
+        app.kubernetes.io/name: schedulerservice
+        app.kubernetes.io/instance: schedulerservice
+        app.kubernetes.io/version: 
+        app.kubernetes.io/component: schedulingservice
     spec:
       serviceAccountName: 
       securityContext:

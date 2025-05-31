@@ -6,5 +6,5 @@ metadata:
 data:
   SCHEDULE: "0 8 * * *"
   SCHEDULE_TRAIN_MODEL: "0 10 * * *"
-  SQL_SERVER: "mssql-deployment"
+  SQL_SERVER: "sqlserver"
   SQL_CONFIG: "Server=[SQL_SERVER]; Database=HomeAi; User Id=[SQL_USERNAME];Password=[SQL_PASSWORD];Encrypt=False"

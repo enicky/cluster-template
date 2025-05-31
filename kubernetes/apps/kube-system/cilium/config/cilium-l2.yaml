@@ -25,5 +25,5 @@ spec:
   allowFirstLastIPs: "No"
   blocks:
     #- cidr: "192.168.1.0/24"
-    - start: "192.168.1.23"
+    - start: "192.168.1.20"
       stop: "192.168.1.50"

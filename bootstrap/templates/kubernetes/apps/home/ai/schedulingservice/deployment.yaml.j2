@@ -1,0 +1,94 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: #{ bootstrap_ai.schedulingservice.fullname }#
+  namespace: #{ bootstrap_ai.namespace }#
+spec:
+  revisionHistoryLimit: 3
+  #% if not bootstrap_ai.schedulingservice.autoscaling.enabled %#
+  replicas: #{ bootstrap_ai.schedulingservice.replicaCount }#
+  #% endif %#
+  selector:
+    matchLabels:
+      #% for key, value in bootstrap_ai.schedulingservice.selectorLabels.items() %#
+        #{ key }#: #{ value }#
+      #% endfor %#
+  template:
+    metadata:
+      annotations:
+      #% for key, value in bootstrap_ai.schedulingservice.podAnnotations.items() %#
+        #{ key }#: "#{ value }#"
+      #% endfor %#
+    spec:
+      #% if bootstrap_ai.schedulingservice.imagePullSecrets is defined %#
+      imagePullSecrets:
+        #% for secret in bootstrap_ai.schedulingservice.imagePullSecrets %#
+        - name: #{ secret }#
+        #% endfor %#
+      #% endif %#
+      serviceAccountName: #{ bootstrap_ai.schedulingservice.serviceAccountName }#
+      securityContext:
+        #{ bootstrap_ai.schedulingservice.podSecurityContext }#
+      containers:
+        - name: #{ bootstrap_ai.schedulingservice.name }#
+          securityContext:
+            #{ bootstrap_ai.schedulingservice.securityContext }#
+          image: "#{ bootstrap_ai.schedulingservice.image.repository }#:#{ bootstrap_ai.schedulingservice.image.tag }#"
+          imagePullPolicy: #{ bootstrap_ai.schedulingservice.image.pullPolicy }#
+          ports:
+            - name: http
+              containerPort: #{ bootstrap_ai.schedulingservice.service.port }#
+              protocol: TCP
+          resources:
+            requests:
+              cpu: #{ bootstrap_ai.schedulingservice.resources.requests.cpu }#
+              memory: #{ bootstrap_ai.schedulingservice.resources.requests.memory }#
+            limits:
+              cpu: #{ bootstrap_ai.schedulingservice.resources.limits.cpu }#
+              memory: #{ bootstrap_ai.schedulingservice.resources.limits.memory }#
+          envFrom:
+            - configMapRef:
+                name: config-scheduler-env
+            - secretRef:
+                name: sql
+          #% if bootstrap_ai.schedulingservice.volumeMounts is defined %#
+          volumeMounts:
+            #% for mount in bootstrap_ai.schedulingservice.volumeMounts %#
+            - name: #{ mount.name }#
+              mountPath: #{ mount.mountPath }#
+              #% if mount.readOnly is defined %#
+              readOnly: #{ mount.readOnly | default(false) }#
+              #% endif %#
+            #% endfor %#
+          #% endif %#
+      #% if bootstrap_ai.schedulingservice.volumes is defined %#
+      volumes:
+        #% for volume in bootstrap_ai.schedulingservice.volumes %#
+        - name: #{ volume.name }#
+          configMap:
+            name: #{ volume.configMap.name }#
+        #% endfor %#
+      #% endif %#
+      #% if bootstrap_ai.schedulingservice.env is defined %#
+      env:
+        #% for key, value in bootstrap_ai.schedulingservice.env.items() %#
+        - name: #{ key }#
+          value: #{ value }#
+        #% endfor %#
+      #% endif %#
+      #% if bootstrap_ai.schedulingservice.nodeSelector is defined %#
+      nodeSelector:
+        #% for key, value in bootstrap_ai.schedulingservice.nodeSelector.items() %#
+        #{ key }#: #{ value }#
+        #% endfor %#
+      #% endif %#
+      #% if bootstrap_ai.schedulingservice.affinity is defined %#
+      affinity:
+        #{ bootstrap_ai.schedulingservice.affinity }#
+      #% endif %#
+      #% if bootstrap_ai.schedulingservice.tolerations is defined %#
+      tolerations:
+        #% for toleration in bootstrap_ai.schedulingservice.tolerations %#
+        - #{ toleration }#
+        #% endfor %#
+      #% endif %#

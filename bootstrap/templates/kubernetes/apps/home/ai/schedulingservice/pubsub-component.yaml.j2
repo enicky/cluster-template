@@ -1,0 +1,23 @@
+---
+#% for pubsub in bootstrap_ai.schedulingservice.pubsubs %#
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: #{ pubsub.name }#
+  namespace: #{ bootstrap_ai.namespace }#
+  #temp
+spec:
+  type: pubsub.redis
+  version: v1
+  metadata:
+    - name: redisHost
+      value: #{ pubsub.host }#
+    - name: redisPassword
+      secretKeyRef:
+        name: redis
+        key: redis-password
+---
+#% endfor %#
+
+
+

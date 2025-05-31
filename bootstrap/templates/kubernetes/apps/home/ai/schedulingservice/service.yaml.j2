@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: #{ bootstrap_ai.schedulingservice.fullname }#
+  namespace: #{ bootstrap_ai.namespace }#
+spec:
+  type: #{ bootstrap_ai.schedulingservice.service.type}#
+  ports:
+    - port: #{ bootstrap_ai.schedulingservice.service.port}#
+      targetPort: #{ bootstrap_ai.schedulingservice.service.port}#
+      protocol: TCP
+      name: tcp-8080
+

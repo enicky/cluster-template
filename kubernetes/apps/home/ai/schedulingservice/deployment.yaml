@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: schedulerservice
+  namespace: ai
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+        app.kubernetes.io/name: schedulerservice
+  template:
+    metadata:
+      annotations:
+        dapr.io/config: "appconfig"
+        dapr.io/app-id: "schedulerservice"
+        dapr.io/app-port: "8080"
+        dapr.io/enabled: "true"
+        dapr.io/metrics-port: "63895"
+        dapr.io/unix-domain-socket-path: ""
+    spec:
+      serviceAccountName: 
+      securityContext:
+        
+      containers:
+        - name: schedulerservice
+          securityContext:
+            
+          image: ":"
+          imagePullPolicy: 
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
+          envFrom:
+            - configMapRef:
+                name: config-scheduler-env
+            - secretRef:
+                name: sql

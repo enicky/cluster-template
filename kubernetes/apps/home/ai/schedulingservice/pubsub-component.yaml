@@ -1,0 +1,38 @@
+---
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: influx-data-pubsub
+  namespace: ai
+  #temp
+spec:
+  type: pubsub.redis
+  version: v1
+  metadata:
+    - name: redisHost
+      value: redis-server.redis-server.svc.cluster.local:6379
+    - name: redisPassword
+      secretKeyRef:
+        name: redis
+        key: redis-password
+---
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: ai-pubsub
+  namespace: ai
+  #temp
+spec:
+  type: pubsub.redis
+  version: v1
+  metadata:
+    - name: redisHost
+      value: redis-server.redis-server.svc.cluster.local:6379
+    - name: redisPassword
+      secretKeyRef:
+        name: redis
+        key: redis-password
+---
+
+
+

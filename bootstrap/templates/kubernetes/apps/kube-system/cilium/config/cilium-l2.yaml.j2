@@ -25,5 +25,7 @@ spec:
   #allowFirstLastIPs: "Yes"
   allowFirstLastIPs: "No"
   blocks:
-    - cidr: "#{ bootstrap_node_network }#"
+    #- cidr: "#{ bootstrap_node_network }#"
+    - start: "#{ bootstrap_node_network_2.start }#"
+      stop: "#{ bootstrap_node_network_2.end }#"
 #% endif %#

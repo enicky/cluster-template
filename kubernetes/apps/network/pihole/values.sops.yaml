@@ -100,7 +100,7 @@ ingress:
     # -- Annotations for the ingress
     annotations:
         cert-manager.io/cluster-issuer: letsencrypt-staging
-        external-dns.alpha.kubernetes.io/target: pihole.gitlab.be
+        external-dns.alpha.kubernetes.io/target: external.gitlab.be
         nginx.ingress.kubernetes.io/auth-url: https://$host/oauth2/auth
         nginx.ingress.kubernetes.io/auth-signin: https://$host/oauth2/start?rd=$escaped_request_uri
     path: /
@@ -331,14 +331,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBtY2U3TUFIQVFzWVhNQzhB
-            Wms5YjRaSFB5QnR3L2hRdmZsWUJaRkVGWGljCkVHbDBIUW84WTJDT3A5Z1ErYmRN
-            MGc5c2ZtUWd2b2RJdXVzSG1Ed0VnSEEKLS0tIFAxa1RyOTlzSVNVK1VaVHRHZjBC
-            L1Jhak9HM1dKbzZhcndWOU1RRFBJeTQKzIgTp8gKKyiqJv4iBFuqfsEjLkfJbUTZ
-            PieOurX0+le6nXmlMRe8Uu0DcNHrgDKAWUDJOyH45g6RzcJEkTO3lg==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBOMmhaWFgwOWlFbWZVSlhC
+            emU0VmJFdEtMckVIMmJpcG5rRE45Wk5hOER3CnZtV2hwMWlIUldianBOT0NzVGc2
+            K3QzL2VCN2NCZDdwdDF0OXNwcXdiTEkKLS0tIEpaQ3lrQ09GOXFHbEEyamM5YkJ5
+            OTU4OEl6MHRDUjB0WGVhOW5UMkZ0TmMKX9AX+3yioRU5EYihQlXMYunn8dmNEWRE
+            wPZCfXRoww9QzhSnO00HZZOqgsTsJn1UxsgEW+4wIzTWkbzF5ZxqTA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-06-21T05:47:14Z"
-    mac: ENC[AES256_GCM,data:isqH+Z/UoW6haXJTBKaxEtn3arKkc8U2CpgAGnFmag7CzhJ1Y9h3LYF31yW5HRvg6/tRc6HQ2Loc4DsQs7z5Z+4tgwZfyC3pTRhpAm+uUzJy+Yg92MWUgt5UiBAn+ky/dPXCKCSi8Gyub1w8CePK1mbdtr7CiSXWG1QnZzl4hKk=,iv:C2mWFiQRdXja52zq+2XI3VnMTu2Du/LEhKZJkjUvI40=,tag:ogi+g5zAVXwLGVZ/wwlC/g==,type:str]
+    lastmodified: "2025-06-21T05:54:03Z"
+    mac: ENC[AES256_GCM,data:DONL6hVX5Um9BLl3AVbP003pJFItwjVh+IoBo8LPvJdRIUSUJo7pnqeEtVTONULeRoTYEB4PVZo3189bS8YxLLcMM4Jkhozu511bZjIzZOCdasi+7jpNW636urUU6/dG3CR0huChQy2A5KaFk9REbxyFYQ0GgE2itLG1Lig9AHw=,iv:s7iFqlhxJ5d+AL66cqPkcVErK7Ak+CfNi1BP/vHfvgc=,tag:HC6OaIyejbu6wYDtnXy7gw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

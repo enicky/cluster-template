@@ -4,6 +4,7 @@ metadata:
   name: sprinkler-service-ingress
   namespace: home
   annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
     external-dns.alpha.kubernetes.io/target: "external.#{ bootstrap_cloudflare.domain }#"
     #nginx.ingress.kubernetes.io/rewrite-target: /
 spec:

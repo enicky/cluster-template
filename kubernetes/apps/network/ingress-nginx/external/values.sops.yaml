@@ -4,6 +4,7 @@ controller:
         annotations:
             external-dns.alpha.kubernetes.io/hostname: external.gitlab.be
             io.cilium/lb-ipam-ips: 192.168.1.23
+            nginx.ingress.kubernetes.io/proxy-connect-timeout: "600"
         externalTrafficPolicy: Cluster
     ingressClassResource:
         name: external
@@ -18,13 +19,13 @@ controller:
                     - external
     config:
         client-body-buffer-size: 100M
-        client-body-timeout: 120
-        client-header-timeout: 120
+        client-body-timeout: 220
+        client-header-timeout: 220
         enable-brotli: "true"
         enable-real-ip: "true"
         hsts-max-age: 31449600
         keep-alive-requests: 10000
-        keep-alive: 120
+        keep-alive: 220
         log-format-escape-json: "true"
         log-format-upstream: |
             {"time": "$time_iso8601", "remote_addr": "$proxy_protocol_addr", "x_forwarded_for": "$proxy_add_x_forwarded_for", "request_id": "$req_id", "remote_user": "$remote_user", "bytes_sent": $bytes_sent, "request_time": $request_time, "status": $status, "vhost": "$host", "request_proto": "$server_protocol", "path": "$uri", "request_query": "$args", "request_length": $request_length, "duration": $request_time, "method": "$request_method", "http_referrer": "$http_referer", "http_user_agent": "$http_user_agent"}
@@ -54,14 +55,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBUd1RydXErREJndnJKVHdv
-            aitROWQ3WFdaSXkvOU9YOWE0WmtXQTIyVGs4CjBDS21UZUp1SGtHTTRmV1lQUDk1
-            MEhjanRFVVdQNWt5VXNmanJpL1VIUWcKLS0tIEJPN1kwK1NvZkQ1bXRwZHlLdFZT
-            VUVyZ0JRM3Rtc3VtQzF0SDVTdWg5VU0K0E7PffU4eY8Eb64t+c4UZIkVrqERgjto
-            Qa+jIvYLIgzO2FE6EENVC/9+8zrKyaMCQxM/j1PE3cxQGoeMNDREpQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBHZGc2dGIrUUh5SkU3QTV0
+            RHNXYmRJSjdaWSs4YnRZQWk5aFVOSDZrWndJCkc3cWJQL3NYVjVuWWRlY2FqdkV6
+            RFBaelQ3c2x3NFR1VDNhV3JRak1hK3MKLS0tIEJJcmhYcXpDQjd1T0hrUGlzUjNo
+            Nmw3Wkk1UGRpVU9VSnVIQnUwZWV6dnMK1jgjr6YVOGjZ3Ls5oEYSPKDADhORt+mB
+            op1tAQiBM91A/j5gxKAYRynC1M/phqOKCpc6M7ZtQe0nU+WFHjQ24A==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-06-21T06:10:13Z"
-    mac: ENC[AES256_GCM,data:0XZce69EntHE7wLDUmgM6s2CEBcylTba7+j7ecNkUS9zoiVhE/f6gSFMhfaWZMxa1oL2Ux8mlj5bjURCuJ3/3jSyPFyS4VVcbye/YUy1HxCdaYYgfrHkLjtEg9Niwn3oVoFtOwgiTjzuQhEKBi65ByxmeAae3QsX/F/qdiZ1BOU=,iv:+xIrDJza8QIkD4ljAUObD3alyaj/UMsrYb5pFrXK3qU=,tag:geQK9pT6Ltqdcic89TY4Dg==,type:str]
+    lastmodified: "2025-06-21T06:21:03Z"
+    mac: ENC[AES256_GCM,data:z9ujWBi27g0nmcAVwzT8yNxsB9B21TsR4Xhe3Auk9jc6lsli42MKATWqk5juuhjdjY+2lc8W2+cbzxvgRUp42NAQuqhLDYALDS7ShV5F50qC6b5nt9JCvT/3bYWHwEsiu41ez3UuHJgnUdQ2N3K/0icD7Fg3DclyWu/P4qgpCss=,iv:6qd8PDeqEDkqt8ybZdDzz4FK0SxvCfoH3H1A72Q67Ck=,tag:pmMAPm9OAq4scFnQRSZxKQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

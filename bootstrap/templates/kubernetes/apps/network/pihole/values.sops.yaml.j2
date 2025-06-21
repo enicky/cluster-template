@@ -126,8 +126,8 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-staging
     external-dns.alpha.kubernetes.io/target: "external.#{ bootstrap_cloudflare.domain }#"
-    nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
-    nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
+    #nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
+    #nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
   path: /
   hosts:
     # virtualHost (default value is pi.hole) will be appended to the hosts

@@ -101,8 +101,8 @@ ingress:
     annotations:
         cert-manager.io/cluster-issuer: letsencrypt-staging
         external-dns.alpha.kubernetes.io/target: external.gitlab.be
-        nginx.ingress.kubernetes.io/auth-url: https://$host/oauth2/auth
-        nginx.ingress.kubernetes.io/auth-signin: https://$host/oauth2/start?rd=$escaped_request_uri
+        #nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
+        #nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
     path: /
     hosts:
         # virtualHost (default value is pi.hole) will be appended to the hosts
@@ -331,14 +331,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBOMmhaWFgwOWlFbWZVSlhC
-            emU0VmJFdEtMckVIMmJpcG5rRE45Wk5hOER3CnZtV2hwMWlIUldianBOT0NzVGc2
-            K3QzL2VCN2NCZDdwdDF0OXNwcXdiTEkKLS0tIEpaQ3lrQ09GOXFHbEEyamM5YkJ5
-            OTU4OEl6MHRDUjB0WGVhOW5UMkZ0TmMKX9AX+3yioRU5EYihQlXMYunn8dmNEWRE
-            wPZCfXRoww9QzhSnO00HZZOqgsTsJn1UxsgEW+4wIzTWkbzF5ZxqTA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBxcEFxUlYzZmpmTmw4NWN4
+            aDhhcDQ0NVVHRXZwbW1IbHloeDB0RTE2VWhRCmZUcE1uMkx6VHhvRE0wbThTNGVq
+            dnJMcElCNkhuVURnVG5ocVVxUzFJdmMKLS0tIEQrN3drTTZzNThBcHYreitSeG5s
+            TnhhTy9XU3I4R056YUo1c01ScEs2ekUKap1z35yKZ1FeR4SNoGb411yF9fJcrZjn
+            3BMHXRVQwbDk6awRa57r9LPPX3HcxtJ4gs3lQyqDN6lbxJkoBkk7+A==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-06-21T05:54:03Z"
-    mac: ENC[AES256_GCM,data:DONL6hVX5Um9BLl3AVbP003pJFItwjVh+IoBo8LPvJdRIUSUJo7pnqeEtVTONULeRoTYEB4PVZo3189bS8YxLLcMM4Jkhozu511bZjIzZOCdasi+7jpNW636urUU6/dG3CR0huChQy2A5KaFk9REbxyFYQ0GgE2itLG1Lig9AHw=,iv:s7iFqlhxJ5d+AL66cqPkcVErK7Ak+CfNi1BP/vHfvgc=,tag:HC6OaIyejbu6wYDtnXy7gw==,type:str]
+    lastmodified: "2025-06-21T06:04:58Z"
+    mac: ENC[AES256_GCM,data:7dTiLpf9L/EEoZvntFQfSPDWeFMVhKcGnFBP+ZsA8CSuOIC4/sWgUjLTvo/G4QcoZNJasqrgFZkqKCz/omQWos/L4i/G3GEXxD2eIwb7y7hg/LHol7FVdm/V4QjHa0r8JPil8CGW0dNCj1Yyynp4VEWWmLY84E6uWI13lPPEhjk=,iv:WLvywz7reh2q6yQbQsxqi1yzNLM2wJsu+cbqPQpu0nA=,tag:XLcee2y7DIfvJRd4rAPw7g==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

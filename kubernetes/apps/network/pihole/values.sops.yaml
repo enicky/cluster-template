@@ -93,16 +93,16 @@ ingress:
     # -- Generate a Ingress resource
     enabled: true
     # -- Specify an ingressClassName
-    ingressClassName: internal
+    ingressClassName: external
     pathType: Prefix
     #annotations:
     #  internal-dns.alpha.kubernetes.io/target: "internal.gitlab.be"
     # -- Annotations for the ingress
-    #annotations:
-    #cert-manager.io/cluster-issuer: letsencrypt-staging
-    #external-dns.alpha.kubernetes.io/target: home.terence.cloud
-    #nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
-    #nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
+    annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-staging
+        external-dns.alpha.kubernetes.io/target: pihole.gitlab.be
+        nginx.ingress.kubernetes.io/auth-url: https://$host/oauth2/auth
+        nginx.ingress.kubernetes.io/auth-signin: https://$host/oauth2/start?rd=$escaped_request_uri
     path: /
     hosts:
         # virtualHost (default value is pi.hole) will be appended to the hosts
@@ -331,14 +331,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBsdTJGbHc0aThOeXVLT3I2
-            Rzh1WTVHZXNvb09ncEpWUmc2SkhSWTFlUFRnCjBsempZaGJZckZwd25WaWRzNlpk
-            di92UkQwSWJGb05LS1JlUkZ2eW1GNGsKLS0tIENEOThmUHpUa3NHQ0k2SVhmYktp
-            RmhRTjhlQzEwTU5GSzNqZnJ6RzZnaFEKnKDR2gSiTotNuR/S9hlDqL6y7oJ707VR
-            mAlp+GFrDcSXhltRhkICdPITAipob1dZtU5xg4D4ZOqeSaThCN98FQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBtY2U3TUFIQVFzWVhNQzhB
+            Wms5YjRaSFB5QnR3L2hRdmZsWUJaRkVGWGljCkVHbDBIUW84WTJDT3A5Z1ErYmRN
+            MGc5c2ZtUWd2b2RJdXVzSG1Ed0VnSEEKLS0tIFAxa1RyOTlzSVNVK1VaVHRHZjBC
+            L1Jhak9HM1dKbzZhcndWOU1RRFBJeTQKzIgTp8gKKyiqJv4iBFuqfsEjLkfJbUTZ
+            PieOurX0+le6nXmlMRe8Uu0DcNHrgDKAWUDJOyH45g6RzcJEkTO3lg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-05-31T07:33:22Z"
-    mac: ENC[AES256_GCM,data:ojgdNhQl9JEmaZUWdPCjp0REA5BAK457EmktReffR8SuWN+juVJZzH3Yzn3DXNfG8RC71loAplX8KYdOu267YOQtCdahtlmgHdk9gbGrEDRyjpp/NNdK+5grX7bUyy1RcZ2EUrn7HbFLGl0ZQeyk4DEPnozHq0c+aepPRsII92I=,iv:5OSw92JDPoCAeF4By1SEWi3gr1rt32735iMxQ2D1L8U=,tag:n+PoNpVcP7kfvOCYRTUSfg==,type:str]
+    lastmodified: "2025-06-21T05:47:14Z"
+    mac: ENC[AES256_GCM,data:isqH+Z/UoW6haXJTBKaxEtn3arKkc8U2CpgAGnFmag7CzhJ1Y9h3LYF31yW5HRvg6/tRc6HQ2Loc4DsQs7z5Z+4tgwZfyC3pTRhpAm+uUzJy+Yg92MWUgt5UiBAn+ky/dPXCKCSi8Gyub1w8CePK1mbdtr7CiSXWG1QnZzl4hKk=,iv:C2mWFiQRdXja52zq+2XI3VnMTu2Du/LEhKZJkjUvI40=,tag:ogi+g5zAVXwLGVZ/wwlC/g==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

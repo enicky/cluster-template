@@ -118,16 +118,16 @@ ingress:
   enabled: true
 
   # -- Specify an ingressClassName
-  ingressClassName: internal
+  ingressClassName: external
   pathType: Prefix
   #annotations:
   #  internal-dns.alpha.kubernetes.io/target: "internal.#{ bootstrap_cloudflare.domain }#"
   # -- Annotations for the ingress
-  #annotations:
-    #cert-manager.io/cluster-issuer: letsencrypt-staging
-    #external-dns.alpha.kubernetes.io/target: home.terence.cloud
-    #nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
-    #nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    external-dns.alpha.kubernetes.io/target: pihole.gitlab.be
+    nginx.ingress.kubernetes.io/auth-url: "https://$host/oauth2/auth"
+    nginx.ingress.kubernetes.io/auth-signin: "https://$host/oauth2/start?rd=$escaped_request_uri"
   path: /
   hosts:
     # virtualHost (default value is pi.hole) will be appended to the hosts

@@ -9,3 +9,4 @@ subsets:
   ports:
   - port: 8080
     name: http
+    protocol: TCP

@@ -10,7 +10,7 @@ spec:
   version: v1
   metadata:
     - name: redisHost
-      value: redis-server.redis-server.svc.cluster.local:6379
+      value: redis-server.ai.svc.cluster.local:6379
     - name: redisPassword
       secretKeyRef:
         name: redis-server-auth
@@ -27,7 +27,7 @@ spec:
   version: v1
   metadata:
     - name: redisHost
-      value: redis-server.redis-server.svc.cluster.local:6379
+      value: redis-server.ai.svc.cluster.local:6379
     - name: redisPassword
       secretKeyRef:
         name: redis-server-auth

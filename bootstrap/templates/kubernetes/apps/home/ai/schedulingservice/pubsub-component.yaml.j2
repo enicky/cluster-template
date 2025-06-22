@@ -14,8 +14,8 @@ spec:
       value: #{ pubsub.host }#
     - name: redisPassword
       secretKeyRef:
-        name: redis
-        key: redis-password
+        name: redis-server-auth
+        key:  redis-password
 ---
 #% endfor %#
 

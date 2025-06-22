@@ -4,13 +4,15 @@ metadata:
   name: unifi-service-ingress
   namespace: home
   annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
     external-dns.alpha.kubernetes.io/target: "external.gitlab.be"
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    #nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   ingressClassName: external
   rules:
   - host: unifi.gitlab.be
+    # host: unifi.gitlab.be  # Uncomment if you want to use the domain from bootstrap_cloudflare
     http:
       paths:
       - path: /

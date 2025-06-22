@@ -34,6 +34,16 @@ spec:
           volumeMounts:
             - name: redis-data
               mountPath: /data
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis-secret
+                  key: password
+          args:
+            - "--requirepass"
+            - "$(REDIS_PASSWORD)"
       volumes:
         - name: redis-data
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: #{ bootstrap_ai.redis.fullname | default('redis') }#-data

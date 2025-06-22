@@ -39,7 +39,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: redis-server-auth
-                  key: password
+                  key: redis-password
           args:
             - "--requirepass"
             - "$(REDIS_PASSWORD)"

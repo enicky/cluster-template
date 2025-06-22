@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: redis-server`§
+        app: redis-server`
         app.kubernetes.io/name: redis-server
         app.kubernetes.io/component: redis
     spec:

@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: #{ bootstrap_ai.redis.fullname | default('redis') }#`§
+        app: #{ bootstrap_ai.redis.fullname | default('redis') }#`
         app.kubernetes.io/name: #{ bootstrap_ai.redis.fullname | default('redis') }#
         app.kubernetes.io/component: redis
     spec:

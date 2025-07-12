@@ -22,12 +22,12 @@ spec:
         app: home-model-trainer
         app.kubernetes.io/name: home-model-trainer
         app.kubernetes.io/instance: home-model-trainer
-        app.kubernetes.io/version: "14"
+        app.kubernetes.io/version: "16"
         app.kubernetes.io/component: home_model_trainer
     spec:
       containers:
         - name: home-model-trainer
-          image: "neichmann/aimodeltrainer:14"
+          image: "neichmann/aimodeltrainer:16"
           imagePullPolicy: Always
           ports:
             - name: http

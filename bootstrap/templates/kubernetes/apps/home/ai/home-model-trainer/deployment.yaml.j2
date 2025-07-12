@@ -1,0 +1,95 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: #{ bootstrap_ai.home_model_trainer.fullname }#
+  namespace: #{ bootstrap_ai.namespace }#
+spec:
+  revisionHistoryLimit: 1
+  #% if not bootstrap_ai.home_model_trainer.autoscaling.enabled %#
+  replicas: #{ bootstrap_ai.home_model_trainer.replicaCount }#
+  #% endif %#
+  selector:
+    matchLabels:
+      #% for key, value in bootstrap_ai.home_model_trainer.selectorLabels.items() %#
+        #{ key }#: #{ value }#
+      #% endfor %#
+  template:
+    metadata:
+      annotations:
+      #% for key, value in bootstrap_ai.home_model_trainer.podAnnotations.items() %#
+        #{ key }#: "#{ value }#"
+      #% endfor %#
+      labels:
+        app: #{ bootstrap_ai.home_model_trainer.fullname }#
+        app.kubernetes.io/name: #{ bootstrap_ai.home_model_trainer.fullname }#
+        app.kubernetes.io/instance: #{ bootstrap_ai.home_model_trainer.fullname }#
+        app.kubernetes.io/version: "#{ bootstrap_ai.home_model_trainer.image.tag }#"
+        app.kubernetes.io/component: home_model_trainer
+    spec:
+      #% if bootstrap_ai.home_model_trainer.imagePullSecrets is defined %#
+      imagePullSecrets:
+        #% for secret in bootstrap_ai.home_model_trainer.imagePullSecrets %#
+        - name: #{ secret }#
+        #% endfor %#
+      #% endif %#
+      containers:
+        - name: #{ bootstrap_ai.home_model_trainer.name }#
+          image: "#{ bootstrap_ai.home_model_trainer.image.repository }#:#{ bootstrap_ai.home_model_trainer.image.tag }#"
+          imagePullPolicy: #{ bootstrap_ai.home_model_trainer.image.pullPolicy }#
+          ports:
+            - name: http
+              containerPort: #{ bootstrap_ai.home_model_trainer.service.port }#
+              protocol: TCP
+          resources:
+            requests:
+              cpu: #{ bootstrap_ai.home_model_trainer.resources.requests.cpu }#
+              memory: #{ bootstrap_ai.home_model_trainer.resources.requests.memory }#
+            limits:
+              cpu: #{ bootstrap_ai.home_model_trainer.resources.limits.cpu }#
+              memory: #{ bootstrap_ai.home_model_trainer.resources.limits.memory }#
+          envFrom:
+            - configMapRef:
+                name: config-scheduler-env
+            - secretRef:
+                name: sql
+          #% if bootstrap_ai.home_model_trainer.volumeMounts is defined %#
+          volumeMounts:
+            #% for mount in bootstrap_ai.home_model_trainer.volumeMounts %#
+            - name: #{ mount.name }#
+              mountPath: #{ mount.mountPath }#
+              #% if mount.readOnly is defined %#
+              readOnly: #{ mount.readOnly | default(false) }#
+              #% endif %#
+            #% endfor %#
+          #% endif %#
+      #% if bootstrap_ai.home_model_trainer.volumes is defined %#
+      volumes:
+        #% for volume in bootstrap_ai.home_model_trainer.volumes %#
+        - name: #{ volume.name }#
+          configMap:
+            name: #{ volume.configMap.name }#
+        #% endfor %#
+      #% endif %#
+      #% if bootstrap_ai.home_model_trainer.env is defined %#
+      env:
+        #% for key, value in bootstrap_ai.home_model_trainer.env.items() %#
+        - name: #{ key }#
+          value: #{ value }#
+        #% endfor %#
+      #% endif %#
+      #% if bootstrap_ai.home_model_trainer.nodeSelector is defined %#
+      nodeSelector:
+        #% for key, value in bootstrap_ai.home_model_trainer.nodeSelector.items() %#
+        #{ key }#: #{ value }#
+        #% endfor %#
+      #% endif %#
+      #% if bootstrap_ai.home_model_trainer.affinity is defined %#
+      affinity:
+        #{ bootstrap_ai.home_model_trainer.affinity }#
+      #% endif %#
+      #% if bootstrap_ai.home_model_trainer.tolerations is defined %#
+      tolerations:
+        #% for toleration in bootstrap_ai.home_model_trainer.tolerations %#
+        - #{ toleration }#
+        #% endfor %#
+      #% endif %#

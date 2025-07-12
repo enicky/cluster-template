@@ -1,20 +1,19 @@
 ---
 # yaml-language-server: $schema=https://taskfile.dev/schema.json
-version: '3'
+version: "3"
 
 vars:
-  TALHELPER_CLUSTER_DIR: '{{.KUBERNETES_DIR}}/bootstrap/talos/clusterconfig'
-  TALHELPER_SECRET_FILE: '{{.KUBERNETES_DIR}}/bootstrap/talos/talsecret.sops.yaml'
-  TALHELPER_CONFIG_FILE: '{{.KUBERNETES_DIR}}/bootstrap/talos/talconfig.yaml'
+  TALHELPER_CLUSTER_DIR: "{{.KUBERNETES_DIR}}/bootstrap/talos/clusterconfig"
+  TALHELPER_SECRET_FILE: "{{.KUBERNETES_DIR}}/bootstrap/talos/talsecret.sops.yaml"
+  TALHELPER_CONFIG_FILE: "{{.KUBERNETES_DIR}}/bootstrap/talos/talconfig.yaml"
 
 env:
-  TALOSCONFIG: '{{.TALHELPER_CLUSTER_DIR}}/talosconfig'
+  TALOSCONFIG: "{{.TALHELPER_CLUSTER_DIR}}/talosconfig"
 
 tasks:
-
   talos:
     desc: Bootstrap the Talos cluster
-    dir: '{{.KUBERNETES_DIR}}/bootstrap/talos'
+    dir: "{{.KUBERNETES_DIR}}/bootstrap/talos"
     cmds:
       - '{{if eq .TALHELPER_SECRET_EXISTS "false"}}talhelper gensecret > {{.TALHELPER_SECRET_FILE}}{{end}}'
       - '{{if eq .TALHELPER_SECRET_EXISTS "false"}}sops --encrypt --in-place {{.TALHELPER_SECRET_FILE}}{{end}}'
@@ -49,7 +48,7 @@ tasks:
 
   apps:
     internal: true
-    dir: '{{.KUBERNETES_DIR}}/bootstrap/talos'
+    dir: "{{.KUBERNETES_DIR}}/bootstrap/talos"
     cmds:
       - until kubectl wait --for=condition=Ready=False nodes --all --timeout=600s; do sleep 10; done
       - helmfile --file {{.KUBERNETES_DIR}}/bootstrap/helmfile.yaml apply --skip-diff-on-install --suppress-diff
@@ -69,7 +68,7 @@ tasks:
 
   template:
     internal: true
-    cmd: 'makejinja'
+    cmd: "makejinja"
     preconditions:
       - test -f {{.BOOTSTRAP_CONFIG_FILE}}
       - test -f {{.BOOTSTRAP_DIR}}/scripts/plugin.py
@@ -92,6 +91,16 @@ tasks:
       - test -f {{.SOPS_CONFIG_FILE}}
       - which sops
 
+  set-tag-version:
+    internal: true
+    desc: Set the tag version for the home_model_trainer image in config.yaml
+    cmds:
+      - yq -i '.bootstrap_ai.home_model_trainer.image.tag = "{{.NEW_MODEL_TRAINER_TAG}}"' {{.BOOTSTRAP_CONFIG_FILE}}
+    vars:
+      NEW_MODEL_TRAINER_TAG:
+        sh: |
+          curl -s "https://hub.docker.com/v2/repositories/neichmann/aimodeltrainer/tags?page_size=1&page=1&ordering=last_updated" \
+          | jq -r '.results[0].name'
   clean:
     desc: Clean files and directories no longer needed after cluster bootstrap
     cmds:
@@ -106,7 +115,7 @@ tasks:
       # Update renovate.json5
       - sed -i {{if eq OS "darwin"}}''{{end}} 's/(..\.j2)\?//g' {{.ROOT_DIR}}/.github/renovate.json5
     vars:
-      TS: '{{now | unixEpoch}}'
+      TS: "{{now | unixEpoch}}"
     preconditions:
       - test -d {{.BOOTSTRAP_DIR}}
       - test -f {{.ROOT_DIR}}/.github/renovate.json5

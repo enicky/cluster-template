@@ -1,22 +1,22 @@
 ---
 # yaml-language-server: $schema=https://taskfile.dev/schema.json
-version: '3'
+version: "3"
 
 set: [pipefail]
 shopt: [globstar]
 
 vars:
-  BOOTSTRAP_DIR: '{{.ROOT_DIR}}/bootstrap'
-  KUBERNETES_DIR: '{{.ROOT_DIR}}/kubernetes'
-  SCRIPTS_DIR: '{{.ROOT_DIR}}/scripts'
-  BOOTSTRAP_CONFIG_FILE: '{{.ROOT_DIR}}/config.yaml'
-  MAKEJINJA_CONFIG_FILE: '{{.ROOT_DIR}}/makejinja.toml'
-  SOPS_CONFIG_FILE: '{{.ROOT_DIR}}/.sops.yaml'
+  BOOTSTRAP_DIR: "{{.ROOT_DIR}}/bootstrap"
+  KUBERNETES_DIR: "{{.ROOT_DIR}}/kubernetes"
+  SCRIPTS_DIR: "{{.ROOT_DIR}}/scripts"
+  BOOTSTRAP_CONFIG_FILE: "{{.ROOT_DIR}}/config.yaml"
+  MAKEJINJA_CONFIG_FILE: "{{.ROOT_DIR}}/makejinja.toml"
+  SOPS_CONFIG_FILE: "{{.ROOT_DIR}}/.sops.yaml"
 
 env:
-  KUBECONFIG: '{{.ROOT_DIR}}/kubeconfig'
-  SOPS_AGE_KEY_FILE: '{{.ROOT_DIR}}/age.key'
-  VIRTUAL_ENV: '{{.ROOT_DIR}}/.venv'
+  KUBECONFIG: "{{.ROOT_DIR}}/kubeconfig"
+  SOPS_AGE_KEY_FILE: "{{.ROOT_DIR}}/age.key"
+  VIRTUAL_ENV: "{{.ROOT_DIR}}/.venv"
 
 includes:
   bootstrap: .taskfiles/bootstrap
@@ -27,7 +27,6 @@ includes:
     optional: true
 
 tasks:
-
   default: task --list
 
   init:
@@ -40,6 +39,7 @@ tasks:
     desc: Render and validate configuration files
     prompt: Any conflicting files in the kubernetes directory will be overwritten... continue?
     cmds:
+      - task: bootstrap:set-tag-version
       - task: bootstrap:template
       - task: bootstrap:secrets
       - task: kubernetes:kubeconform

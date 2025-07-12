@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-modeltrainer-env
+  namespace: ai
+data:
+  DELETE_PROCESSED_BLOBS: "false"

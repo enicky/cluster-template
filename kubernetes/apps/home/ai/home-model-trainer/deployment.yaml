@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home-model-trainer
+  namespace: ai
+spec:
+  revisionHistoryLimit: 1
+  replicas: 1
+  selector:
+    matchLabels:
+        app.kubernetes.io/name: home-model-trainer
+  template:
+    metadata:
+      annotations:
+        dapr.io/config: "appconfig"
+        dapr.io/app-id: "home-model-trainer"
+        dapr.io/app-port: "8000"
+        dapr.io/enabled: "true"
+        dapr.io/metrics-port: "63895"
+        dapr.io/unix-domain-socket-path: ""
+      labels:
+        app: home-model-trainer
+        app.kubernetes.io/name: home-model-trainer
+        app.kubernetes.io/instance: home-model-trainer
+        app.kubernetes.io/version: "12"
+        app.kubernetes.io/component: home_model_trainer
+    spec:
+      containers:
+        - name: home-model-trainer
+          image: "neichmann/home-model-trainer:12"
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
+          envFrom:
+            - configMapRef:
+                name: config-scheduler-env
+            - secretRef:
+                name: sql

@@ -93,13 +93,23 @@ tasks:
 
   set-tag-version:
     internal: true
-    desc: Set the tag version for the home_model_trainer image in config.yaml
+    desc: Set the tag version for the custom images in config.yaml
     cmds:
       - yq -i '.bootstrap_ai.home_model_trainer.image.tag = "{{.NEW_MODEL_TRAINER_TAG}}"' {{.BOOTSTRAP_CONFIG_FILE}}
+      - yq -i '.bootstrap_ai.dataexporter.image.tag = "{{.NEW_DATAEXPORTER_TAG}}"' {{.BOOTSTRAP_CONFIG_FILE}}
+      - yq -i '.bootstrap_ai.schedulingservice.image.tag = "{{.NEW_SCHEDULER_TAG}}"' {{.BOOTSTRAP_CONFIG_FILE}}
     vars:
       NEW_MODEL_TRAINER_TAG:
         sh: |
           curl -s "https://hub.docker.com/v2/repositories/neichmann/aimodeltrainer/tags?page_size=1&page=1&ordering=last_updated" \
+          | jq -r '.results[0].name'
+      NEW_DATAEXPORTER_TAG:
+        sh: |
+          curl -s "https://hub.docker.com/v2/repositories/neichmann/dataexporter/tags?page_size=1&page=1&ordering=last_updated" \
+          | jq -r '.results[0].name'
+      NEW_SCHEDULER_TAG:
+        sh: |
+          curl -s "https://hub.docker.com/v2/repositories/neichmann/schedulerservice/tags?page_size=1&page=1&ordering=last_updated" \
           | jq -r '.results[0].name'
   clean:
     desc: Clean files and directories no longer needed after cluster bootstrap

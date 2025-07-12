@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: home-model-trainer
-          image: "neichmann/home-model-trainer:12"
+          image: "neichmann/aimodeltrainer:12"
           imagePullPolicy: Always
           ports:
             - name: http

@@ -49,9 +49,9 @@ spec:
               memory: #{ bootstrap_ai.home_model_trainer.resources.limits.memory }#
           envFrom:
             - configMapRef:
-                name: config-scheduler-env
+                name: config-modeltrainer-env
             - secretRef:
-                name: sql
+                name: secrets-modeltrainer-env
           #% if bootstrap_ai.home_model_trainer.volumeMounts is defined %#
           volumeMounts:
             #% for mount in bootstrap_ai.home_model_trainer.volumeMounts %#

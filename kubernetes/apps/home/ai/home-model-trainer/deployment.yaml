@@ -42,6 +42,6 @@ spec:
               memory: 256Mi
           envFrom:
             - configMapRef:
-                name: config-scheduler-env
+                name: config-modeltrainer-env
             - secretRef:
-                name: sql
+                name: secrets-modeltrainer-env

@@ -22,7 +22,7 @@ spec:
         app: schedulerservice
         app.kubernetes.io/name: schedulerservice
         app.kubernetes.io/instance: schedulerservice
-        app.kubernetes.io/version: app-55
+        app.kubernetes.io/version: app-56
         app.kubernetes.io/component: schedulingservice
     spec:
       serviceAccountName: 
@@ -32,7 +32,7 @@ spec:
         - name: schedulerservice
           securityContext:
             
-          image: "neichmann/schedulerservice:app-55"
+          image: "neichmann/schedulerservice:app-56"
           imagePullPolicy: Always
           ports:
             - name: http

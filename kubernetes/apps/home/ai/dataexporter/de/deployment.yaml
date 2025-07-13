@@ -22,12 +22,12 @@ spec:
         app: dataexporter
         app.kubernetes.io/name: dataexporter
         app.kubernetes.io/instance: dataexporter
-        app.kubernetes.io/version: app-86
+        app.kubernetes.io/version: app-87
         app.kubernetes.io/component: dataexporter
     spec:
       containers:
         - name: dataexporter
-          image: "neichmann/dataexporter:app-86"
+          image: "neichmann/dataexporter:app-87"
           imagePullPolicy: Always
           ports:
             - name: http

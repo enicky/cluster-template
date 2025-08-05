@@ -6,6 +6,7 @@ bgpControlPlane:
 #% endif %#
 bpf:
   masquerade: true # Required for Talos `.machine.features.hostDNS.forwardKubeDNSToHost`
+  hostLegacyRouting: true
 cgroup:
   automount:
     enabled: false

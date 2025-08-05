@@ -37,7 +37,7 @@ controller:
             namespaceSelector:
                 any: true
     extraArgs:
-        default-ssl-certificate: network/gitlab-be-production-tls
+        default-ssl-certificate: network/gitlab-be-staging-tls
     resources:
         requests:
             cpu: 100m
@@ -52,14 +52,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBWeTY4c1F3QWlzL0VQK0Nw
-            N0NDNGlPQzFzdzV1UUZycTNlWDZ3c0ZRMG1ZCmpSNlFiTFJFRXRyeXBIYXRueDZ2
-            cjlMM1VFNTQweDVRMi9CSEhPWVlzQ28KLS0tIFRrK1NWUk44SUJVbHdzdER5cmlq
-            VGNsQ01tQXJ2Z3JUdlk3aUxSUENkTEUKnqiFd4JwAmhD1KfmmIWEloZq5R0Qb60T
-            4i92MJ6dDsAgGGKCDkJffBABGJA36wx2EW89q/yWqG+LfuvbDwL/Kg==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzY2tJZW5KeXEvb29yaWEv
+            YllEN3pFQUFpandGc1FMbk5IYnJJU0NCVkdVCm1EdElxeVJHL0s2RmVjRFdRd3FB
+            U25QOWxKYjg0em9tb2tnZC9DYzJXclkKLS0tIC8vZU1SODJGdjZXUDVUeG9Xd2Rl
+            UFBTOWdyQjM3QU9QUHdxWVBvbjZoU00KdfQx7HqR0lhNm++MF8WBtRMKWWqr/8GX
+            uHnmm9lN8wHr5gTH5YIWaD66U5qywG2noS7qFfGAbZMyMnrZAKcfXg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-08-05T08:48:55Z"
-    mac: ENC[AES256_GCM,data:D66OZxi4cZphZUAIU0rlZmBxOoNi0vRMIAy4jP3FInBUyYtUdhyWp+VRlwKqswH/OZOSNBgAyJnz6g4AhSoRkt1F9VxiLQuzNAAH4+0ealLPzdi5HDYjbn4SfHRtvTLrhggHVOAH7j39rcTBjA2iP9WcU+/DE2UxVmq23if7cmQ=,iv:Qx+Uj8QdYBAX0Ghn2LZre8DOSPepo4rGnv43Bhx8Yvc=,tag:XJyyJ/54AldQT65O3HsJIw==,type:str]
+    lastmodified: "2025-08-05T09:17:55Z"
+    mac: ENC[AES256_GCM,data:g2deEa+GuxROiwKCzcpQxDnebnA5+LSTnqhb5qap5O8YAO6ASKC5JxrP6Q0CfoSN94/By5p26gOTJevUWSFXPTmXGEVKsmv+hjHmbNLWvM2hTbEdsog7W6Qfj8MOmyrRiUKzwwi8lGI7lFsDdLvBD7MpCsWCa6aXz1ko3qQYQqQ=,iv:Gs3PC2GZYwbfLAzRIIYAnxrNedOG3TtRZvitr3/bSeU=,tag:BrVdxA4P+MjSmPRMjNPyBw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

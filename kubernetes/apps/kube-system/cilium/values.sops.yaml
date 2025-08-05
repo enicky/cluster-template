@@ -2,6 +2,7 @@ autoDirectNodeRoutes: true
 bpf:
     # Required for Talos `.machine.features.hostDNS.forwardKubeDNSToHost`
     masquerade: true
+    hostLegacyRouting: true
 cgroup:
     automount:
         enabled: false
@@ -137,14 +138,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4cTVjbkRocnRPbGJSQzl6
-            ZG9wNldxWHQ0SzJ1QVQ5cHlHMFJhTkJ4dXhVCmJvV3BKVi9QampybUxIcWQyWVRm
-            NjZsRWROeEVvcDRCOUU2b1ZYRWdUQUEKLS0tIHA2aWZ2WXV6UE9uL2dhWHJiYWVr
-            MVdHMFlrYURxaDBYajdwWEtqNHlkcG8K6vJy/6ylY0ZGDRifHLArhtOf93ch1m/a
-            AtSEsMJzvaY6y2V+0et0BmY9WkMhAvDrnGCi2eAAOU+GOY/upjteEg==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAzSFV5Q3gyZXR2R2dqdmd1
+            NzhaWTBmTjI4R3ZTeWJIc0pvR3oxT2dlUWhVCnJKdjZQb01NNDg0QlFkQ21rSG5O
+            ck4wZWc2RDdGdjdQWUIxVS9yanpPdjgKLS0tIHNjQ2JmTEgvUjFYQXVnUW5WWFIw
+            ZjdXYTErc01XdWlHOVprbFNUYmp6U3cK8k24tdqj6U9/b6/bxbDxpakJ8v5Qv98p
+            pfjlwLeO65uE4aYaVS89VVvVus9qWt24Q+Uzy1/ireeGWfXmSCmMDw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-08-05T08:48:55Z"
-    mac: ENC[AES256_GCM,data:uAKI4+8t1b6R10uPz/h14nBlMFKN36R+L0O7tbKQ+9L7s/BhPIB4iAZzUkfw4SM/T/j9a57DTrrVdyyStgL9ielUp15AUct92xD2kfVKfiCB2RGIT+Bhoiq/Eax8IRsP9PcU8IgkDJDJxmvUfsmxrygWfGOygriEFvx1Iaxz7UU=,iv:+yCywwiuTem/MWNMLm1kLbCKRdPSzJXpdqLhMfKZqp4=,tag:t2XgUNXeV0lUAe9/UwmZYg==,type:str]
+    lastmodified: "2025-08-05T09:17:55Z"
+    mac: ENC[AES256_GCM,data:aT6ZMLKTELI/At8gcMiKUJCmiz+lRzD1yaZ8uLZapodzywMq5+iY8Cp+C45ihcJRNYtLpnqAql6sd7SMYncyzbUsL5aEk7yYPUZAmJyl2lt3u6EL618lSBeKcalsTh+QrMty1AMdPLMETqa93o0n5GYaDjx8C3+p1ApHsVlXyu0=,iv:PegHQAGBpF9loJdyv7hiAo0ic/u5XqUUjcpQ98PhHQ0=,tag:imSdKnRc86p2J6/PP3zOZQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

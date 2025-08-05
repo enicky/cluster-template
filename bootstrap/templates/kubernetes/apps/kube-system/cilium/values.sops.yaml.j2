@@ -5,7 +5,7 @@ bgpControlPlane:
   enabled: true
 #% endif %#
 bpf:
-  masquerade: false # Required for Talos `.machine.features.hostDNS.forwardKubeDNSToHost`
+  masquerade: true # Required for Talos `.machine.features.hostDNS.forwardKubeDNSToHost`
 cgroup:
   automount:
     enabled: false
@@ -23,7 +23,7 @@ externalIPs:
 endpointRoutes:
   enabled: true
 envoy:
-  enabled: false
+  enabled: true
 
 ipv4:
   enabled: true
@@ -57,12 +57,16 @@ l2announcements:
 #loadBalancer:
 #  algorithm: maglev
 #  mode: snat
+#loadBalancer:
+#  algorithm: maglev
+#  mode: hybrid
+#  dsrDispatch: opt
+#  acceleration: native
 loadBalancer:
-  algorithm: maglev
-  mode: hybrid
-  dsrDispatch: opt
+  algorithm: dsr
+  dsrDispatch: geneve
   acceleration: native
-tunnelProtocol: ""
+tunnelProtocol: "geneve"
 localRedirectPolicy: true
 rollOutCiliumPods: true
 routingMode: native

@@ -1,7 +1,7 @@
 autoDirectNodeRoutes: true
 bpf:
     # Required for Talos `.machine.features.hostDNS.forwardKubeDNSToHost`
-    masquerade: false
+    masquerade: true
 cgroup:
     automount:
         enabled: false
@@ -20,7 +20,7 @@ externalIPs:
 endpointRoutes:
     enabled: true
 envoy:
-    enabled: false
+    enabled: true
 ipv4:
     enabled: true
 ipv6:
@@ -43,12 +43,16 @@ l2announcements:
 #loadBalancer:
 #  algorithm: maglev
 #  mode: snat
+#loadBalancer:
+#  algorithm: maglev
+#  mode: hybrid
+#  dsrDispatch: opt
+#  acceleration: native
 loadBalancer:
-    algorithm: maglev
-    mode: hybrid
-    dsrDispatch: opt
+    algorithm: dsr
+    dsrDispatch: geneve
     acceleration: native
-tunnelProtocol: ""
+tunnelProtocol: geneve
 localRedirectPolicy: true
 rollOutCiliumPods: true
 routingMode: native
@@ -132,14 +136,14 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBvMGpacityN3hOaVBaVy9k
-            Z0JaRkRiTW5GTmxWelNYcVpzRjhRdWY2eEZJCmVsZXlNQUlicHQ4S3hkNGpuaG1i
-            aVdEYmZZQW04MWhpa29jOFJSTGUwWlEKLS0tIHJHbmdYcHE0cnVLWmdGUTF6ZmtG
-            eThqckE2UXRkZ0kxN0o2YkFaN1JhMkUKP5oVdGxztMpu5KgrjPe6mLDqpuhWwTdq
-            3FCHts90iwtqZdnj9aIABJMEt9d3lNhpRqAar1OYNfEDt7gVzsIosQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBOdnkyd2tWZ0M2Y3BEODdj
+            czdWazlEaDQ3T2hPdTcwVjI0SG5teXRBWDNFCmpCcXFRejhsYjJsSDJ6RDJMTzVy
+            bSs4MkZhNnhXV0RDa3NHUUtxbkd4TzAKLS0tIGZHbExuSGtEY3ZQMVZBNGdMSllu
+            WnBZdXpLOURCT3Y3TTBBYkRqTjVBSE0KLSnYYG5EJOkYGTAl99RgfPlllddMRfO5
+            kjWAjCiJNfry26BHMPv6+HyPhxzeKN2tC5qvjRRjT+cRFMbFvZ/bZw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-07-14T18:32:01Z"
-    mac: ENC[AES256_GCM,data:R0IiBB8vG5SQh9chLfYXXkdksPpNuq81Zrdk1yacDhGVkE65IH63EJLdRbWYASh/ovgS7rIj6d1nBXMa0mnYyLRgdvy+PFmUypLTHNzjN0kjN5b8Q99FP+kmzTHzNg0zEoK7eVe6wEjfYbAAWcsnVUEdeNVYxdotzdu9IWG81k0=,iv:zAtZ+iZtAmZ7BaO/ldrn7cwBbBEUyPu07Mk2PW0UY8U=,tag:l8NVgL8Tt02oC86SZR7AVw==,type:str]
+    lastmodified: "2025-08-05T06:13:06Z"
+    mac: ENC[AES256_GCM,data:IpZqK51lf8Mjz58rXhoTpQKNrdh2koks3+A9HYNQkFYdHRxk8LC8BRn1DzFTqOoU+U1sUrghPBF73/eH8HJPo0CucgvLlhn8pBMSoC/rO5mkTBPnPfCkJKz/j8cdMZXlReGnx54Zrf3r7QqTbPOx66OUNteces/V4lxSrmzgp4g=,iv:9jVe5XH3Q5YUzWqlPOQpKeiZr7iMdnMxpsPrPaFHB9c=,tag:RLv+gqGMUgF6Xxb9sZVzFA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.3

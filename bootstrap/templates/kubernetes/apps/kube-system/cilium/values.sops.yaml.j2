@@ -63,7 +63,8 @@ l2announcements:
 #  dsrDispatch: opt
 #  acceleration: native
 loadBalancer:
-  algorithm: dsr
+  algorithm: random
+  mode: dsr
   dsrDispatch: geneve
   acceleration: native
 tunnelProtocol: "geneve"

@@ -60,6 +60,8 @@ spec:
             initialDelaySeconds: #{ bootstrap_ai.home_model_trainer.readinessProbe.initialDelaySeconds }#
             periodSeconds: #{ bootstrap_ai.home_model_trainer.readinessProbe.periodSeconds }#
             failureThreshold: #{ bootstrap_ai.home_model_trainer.readinessProbe.failureThreshold }#
+            timeoutSeconds: #{ bootstrap_ai.home_model_trainer.readinessProbe.timeoutSeconds }#
+
           #% endif %#
           #% if bootstrap_ai.home_model_trainer.volumeMounts is defined %#
           volumeMounts:

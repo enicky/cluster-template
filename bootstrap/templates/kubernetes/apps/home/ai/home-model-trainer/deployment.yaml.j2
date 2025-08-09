@@ -52,6 +52,15 @@ spec:
                 name: config-modeltrainer-env
             - secretRef:
                 name: secrets-modeltrainer-env
+          #% if bootstrap_ai.home_model_trainer.readinessProbe is defined %#
+          readinessProbe:
+            httpGet:
+              path: #{ bootstrap_ai.home_model_trainer.readinessProbe.httpGet.path }#
+              port: #{ bootstrap_ai.home_model_trainer.readinessProbe.httpGet.port }#
+            initialDelaySeconds: #{ bootstrap_ai.home_model_trainer.readinessProbe.initialDelaySeconds }#
+            periodSeconds: #{ bootstrap_ai.home_model_trainer.readinessProbe.periodSeconds }#
+            failureThreshold: #{ bootstrap_ai.home_model_trainer.readinessProbe.failureThreshold }#
+          #% endif %#
           #% if bootstrap_ai.home_model_trainer.volumeMounts is defined %#
           volumeMounts:
             #% for mount in bootstrap_ai.home_model_trainer.volumeMounts %#

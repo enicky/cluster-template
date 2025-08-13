@@ -24,10 +24,10 @@ jobs:
       - name: Install Task (go-task)
         run: |
           curl https://mise.run | sh
-          /home/runner/.local/bin/mise trust
-          /home/runner/.local/bin/mise install
+          ARCH=arm64 /home/runner/.local/bin/mise trust
+          ARCH=arm64 /home/runner/.local/bin/mise install
 
-          /home/runner/.local/bin/mise run install
+          ARCH=arm64 /home/runner/.local/bin/mise run install
           sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
           pip install makejinja
 

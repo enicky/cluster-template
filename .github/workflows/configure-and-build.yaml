@@ -1,0 +1,27 @@
+name: Configure and Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  configure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download config.yaml from Azure Blob Storage
+        run: |
+          az storage blob download \
+            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
+            --container-name ${{ secrets.AZURE_STORAGE_CONTAINER }} \
+            --name config.yaml \
+            --file config.yaml \
+            --account-key ${{ secrets.AZURE_STORAGE_KEY }}
+
+      - name: Install Task (go-task)
+        run: |
+          sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
+
+      - name: Run task configure
+        run: ./bin/task configure -y

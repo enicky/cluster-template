@@ -30,7 +30,13 @@ jobs:
         run: |
           curl https://mise.run | sh
           export PATH="$HOME/.local/bin:$PATH"
+          echo "Show mise env variables"
           mise env
+          echo "----------------"
+          mise use -g http:my-tool[url=https://example.com/releases/my-tool-v1.0.0.tar.gz]@1.0.0
+          asdf plugin add ksops https://github.com/janpieper/asdf-ksops.git
+
+
           ARCH=arm64 /home/runner/.local/bin/mise trust
           ARCH=arm64 /home/runner/.local/bin/mise install
 

@@ -9,7 +9,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+      - name: Install Azure CLI
+        run: |
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
       - name: Download config.yaml from Azure Blob Storage
         run: |
           az storage blob download \

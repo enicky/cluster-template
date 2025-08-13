@@ -9,6 +9,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Some Debugging stuff
+        run: |
+          echo "Debugging information"
+          uname -a
+          arch
       - name: Install Azure CLI + mise
         run: |
           curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash

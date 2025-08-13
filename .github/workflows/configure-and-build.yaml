@@ -24,6 +24,8 @@ jobs:
       - name: Install Task (go-task)
         run: |
           curl https://mise.run | sh
+          export PATH="$HOME/.local/bin:$PATH"
+          mise env
           ARCH=arm64 /home/runner/.local/bin/mise trust
           ARCH=arm64 /home/runner/.local/bin/mise install
 

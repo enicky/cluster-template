@@ -34,7 +34,11 @@ jobs:
           mise env
           echo "----------------"
           curl -L https://github.com/asdf-vm/asdf/releases/download/v0.18.0/asdf-v0.18.0-linux-arm64.tar.gz -o /tmp/asdf.tar.gz
+
+          ls -la /tmp/
+
           tar -xzf /tmp/asdf.tar.gz -C $HOME/.local/bin --strip-components=1
+          ls -la $HOME/.local/bin
           export PATH="$HOME/.local/bin:$PATH"
 
           asdf plugin add ksops https://github.com/janpieper/asdf-ksops.git
@@ -49,7 +53,3 @@ jobs:
 
       - name: Run task configure
         run: ./bin/task configure -y
-
-      - name: Install asdf
-        run: |
-          mkdir -p $HOME/.local/bin

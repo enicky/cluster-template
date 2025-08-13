@@ -50,7 +50,11 @@ jobs:
           ARCH=arm64 /home/runner/.local/bin/mise install
 
           ARCH=arm64 /home/runner/.local/bin/mise run install
+          echo "mise run install finished"
+          echo "Start to install task"
           sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
+          echo "Task installation finished"
+          echo "start pip install makejinja"
           uv pip install makejinja
 
       - name: Run task configure

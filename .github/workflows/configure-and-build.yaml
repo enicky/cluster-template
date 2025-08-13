@@ -37,11 +37,13 @@ jobs:
 
           ls -la /tmp/
 
-          tar -xzf /tmp/asdf.tar.gz -C $HOME/.local/bin --strip-components=1
-          ls -la $HOME/.local/bin
+          tar -xvzf /tmp/asdf.tar.gz -C $HOME/.local/bin
+          ls -la $HOME/.local/bin/
           export PATH="$HOME/.local/bin:$PATH"
 
-          asdf plugin add ksops https://github.com/janpieper/asdf-ksops.git
+          which mise
+
+          #asdf plugin add ksops https://github.com/janpieper/asdf-ksops.git
 
 
           ARCH=arm64 /home/runner/.local/bin/mise trust

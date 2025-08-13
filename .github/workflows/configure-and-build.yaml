@@ -33,7 +33,10 @@ jobs:
           echo "Show mise env variables"
           mise env
           echo "----------------"
-          mise use -g http:my-tool[url=https://example.com/releases/my-tool-v1.0.0.tar.gz]@1.0.0
+          curl -L https://github.com/asdf-vm/asdf/releases/download/v0.18.0/asdf-v0.18.0-linux-arm64.tar.gz -o /tmp/asdf.tar.gz
+          tar -xzf /tmp/asdf.tar.gz -C $HOME/.local/bin --strip-components=1
+          export PATH="$HOME/.local/bin:$PATH"
+
           asdf plugin add ksops https://github.com/janpieper/asdf-ksops.git
 
 
@@ -46,3 +49,7 @@ jobs:
 
       - name: Run task configure
         run: ./bin/task configure -y
+
+      - name: Install asdf
+        run: |
+          mkdir -p $HOME/.local/bin

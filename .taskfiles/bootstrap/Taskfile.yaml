@@ -95,7 +95,7 @@ tasks:
     internal: true
     desc: Set the tag version for the custom images in config.yaml
     cmds:
-      - which yq && yq --version && yq && yq
+      - which yq && yq --version && yq && yq && source .venv/bin/activate && makejinja --help
       - yq e '.bootstrap_ai.home_model_trainer.image.tag = "{{.NEW_MODEL_TRAINER_TAG}}"' -i {{.BOOTSTRAP_CONFIG_FILE}}
       - yq e '.bootstrap_ai.dataexporter.image.tag = "{{.NEW_DATAEXPORTER_TAG}}"' -i {{.BOOTSTRAP_CONFIG_FILE}}
       - yq e '.bootstrap_ai.schedulingservice.image.tag = "{{.NEW_SCHEDULER_TAG}}"' -i {{.BOOTSTRAP_CONFIG_FILE}}

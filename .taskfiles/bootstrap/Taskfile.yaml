@@ -95,9 +95,9 @@ tasks:
     internal: true
     desc: Set the tag version for the custom images in config.yaml
     cmds:
-      - yq -i '.bootstrap_ai.home_model_trainer.image.tag = "{{.NEW_MODEL_TRAINER_TAG}}"' {{.BOOTSTRAP_CONFIG_FILE}}
-      - yq -i '.bootstrap_ai.dataexporter.image.tag = "{{.NEW_DATAEXPORTER_TAG}}"' {{.BOOTSTRAP_CONFIG_FILE}}
-      - yq -i '.bootstrap_ai.schedulingservice.image.tag = "{{.NEW_SCHEDULER_TAG}}"' {{.BOOTSTRAP_CONFIG_FILE}}
+      - yq w -i {{.BOOTSTRAP_CONFIG_FILE}} bootstrap_ai.home_model_trainer.image.tag "{{.NEW_MODEL_TRAINER_TAG}}"
+      - yq w -i {{.BOOTSTRAP_CONFIG_FILE}} bootstrap_ai.dataexporter.image.tag "{{.NEW_DATAEXPORTER_TAG}}"
+      - yq w -i {{.BOOTSTRAP_CONFIG_FILE}} bootstrap_ai.schedulingservice.image.tag "{{.NEW_SCHEDULER_TAG}}"
     vars:
       NEW_MODEL_TRAINER_TAG:
         sh: |

@@ -28,11 +28,32 @@ jobs:
 
       - name: Install Task (go-task)
         run: |
+          NOCOLOR='\033[0m'
+          RED='\033[0;31m'
+          GREEN='\033[0;32m'
+          ORANGE='\033[0;33m'
+          BLUE='\033[0;34m'
+          PURPLE='\033[0;35m'
+          CYAN='\033[0;36m'
+          LIGHTGRAY='\033[0;37m'
+          DARKGRAY='\033[1;30m'
+          LIGHTRED='\033[1;31m'
+          LIGHTGREEN='\033[1;32m'
+          YELLOW='\033[1;33m'
+          LIGHTBLUE='\033[1;34m'
+          LIGHTPURPLE='\033[1;35m'
+          LIGHTCYAN='\033[1;36m'
+          WHITE='\033[1;37m'
+
+          echo -e "${LIGHTBLUE}Installing mise...${NOCOLOR}"
           curl https://mise.run | sh
           export PATH="$HOME/.local/bin:$PATH"
-          echo "Show mise env variables"
+          echo -e "${LIGHTBLUE}mise installed successfully.${NOCOLOR}"
+          echo -e "${LIGHTBLUE}Show mise env variables:${NOCOLOR}"
+
           mise env
-          echo "----------------"
+          echo -e "${RED}----------------${NOCOLOR}"
+
           curl -L https://github.com/asdf-vm/asdf/releases/download/v0.18.0/asdf-v0.18.0-linux-arm64.tar.gz -o /tmp/asdf.tar.gz
 
           ls -la /tmp/
@@ -45,17 +66,22 @@ jobs:
 
           #asdf plugin add ksops https://github.com/janpieper/asdf-ksops.git
 
+          curl -s https://raw.githubusercontent.com/viaduct-ai/kustomize-sops/master/scripts/install-ksops-archive.sh | bash
 
           ARCH=arm64 /home/runner/.local/bin/mise trust
           ARCH=arm64 /home/runner/.local/bin/mise install
 
           ARCH=arm64 /home/runner/.local/bin/mise run install
-          echo "mise run install finished"
-          echo "Start to install task"
+          echo -e "${LIGHTBLUE}mise run install finished${NOCOLOR}"
+          echo -e "${LIGHTBLUE}Start to install task${NOCOLOR}"
           sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
-          echo "Task installation finished"
-          echo "start pip install makejinja"
+          echo -e "${LIGHTBLUE}Task installation finished${NOCOLOR}"
+          echo -e "${LIGHTBLUE}source .venv/bin/activate${NOCOLOR}"
+          source .venv/bin/activate
+
+          echo -e "${LIGHTBLUE}start pip install makejinja${NOCOLOR}"
           uv pip install makejinja
+          echo -e "${LIGHTBLUE}pip install makejinja finished${NOCOLOR}"
 
       - name: Run task configure
         run: ./bin/task configure -y

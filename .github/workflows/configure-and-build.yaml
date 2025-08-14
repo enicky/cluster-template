@@ -54,6 +54,13 @@ jobs:
           mise env
           echo -e "${RED}----------------${NOCOLOR}"
 
+          echo -e "${RED}----------------${NOCOLOR}"
+          echo -e "${LIGHTBLUE}Installing ksops...${NOCOLOR}"
+          sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d $HOME/.local/bin/
+          echo -e "${LIGHTBLUE}ksops installation finished${NOCOLOR}"
+          echo -e "${RED}----------------${NOCOLOR}"
+
+          echo -e "${LIGHTBLUE}Installing asdf...${NOCOLOR}"
           curl -L https://github.com/asdf-vm/asdf/releases/download/v0.18.0/asdf-v0.18.0-linux-arm64.tar.gz -o /tmp/asdf.tar.gz
 
           ls -la /tmp/
@@ -61,14 +68,13 @@ jobs:
           tar -xvzf /tmp/asdf.tar.gz -C $HOME/.local/bin
           ls -la $HOME/.local/bin/
           export PATH="$HOME/.local/bin:$PATH"
+          echo -e "${LIGHTBLUE}asdf installed successfully.${NOCOLOR}"
 
+
+          echo -e "${LIGHTBLUE}Start Mise install stuff${NOCOLOR}"
           which mise
 
           #asdf plugin add ksops https://github.com/janpieper/asdf-ksops.git
-          echo -e "${RED}----------------${NOCOLOR}"
-          echo -e "${LIGHTBLUE}Installing ksops...${NOCOLOR}"
-          sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d $HOME/.local/bin/
-          echo -e "${LIGHTBLUE}ksops installation finished${NOCOLOR}"
 
           ARCH=arm64 /home/runner/.local/bin/mise trust
           ARCH=arm64 /home/runner/.local/bin/mise install

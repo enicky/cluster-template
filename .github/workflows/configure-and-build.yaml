@@ -56,7 +56,7 @@ jobs:
 
           echo -e "${RED}----------------${NOCOLOR}"
           echo -e "${LIGHTBLUE}Installing ksops...${NOCOLOR}"
-          wget https://raw.githubusercontent.com/viaduct-ai/kustomize-sops/master/scripts/install-ksops-archive.sh
+          curl https://raw.githubusercontent.com/viaduct-ai/kustomize-sops/master/scripts/install-ksops-archive.sh -o install-ksops-archive.sh
           chmod +x install-ksops-archive.sh
           ./install-ksops-archive.sh $HOME/.local/bin/
           echo -e "${LIGHTBLUE}ksops installation finished${NOCOLOR}"

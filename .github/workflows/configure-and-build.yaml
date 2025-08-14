@@ -45,6 +45,10 @@ jobs:
           LIGHTCYAN='\033[1;36m'
           WHITE='\033[1;37m'
 
+          echo -e "${LIGHTBLUE}Installing UV ...${NOCOLOR}"
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+
+
           echo -e "${LIGHTBLUE}Installing mise...${NOCOLOR}"
           curl https://mise.run | sh
           export PATH="$HOME/.local/bin:$PATH"
@@ -78,9 +82,11 @@ jobs:
 
           #asdf plugin add ksops https://github.com/janpieper/asdf-ksops.git
 
+          echo -e "${LIGHTBLUE}Mise Trust ${NOCOLOR}"
           ARCH=arm64 /home/runner/.local/bin/mise trust
+          echo -e "${LIGHTBLUE}Mise install${NOCOLOR}"
           ARCH=arm64 /home/runner/.local/bin/mise install
-
+          echo -e "${LIGHTBLUE}Mise install finished. Start mise run install${NOCOLOR}"
           ARCH=arm64 /home/runner/.local/bin/mise run install
           echo -e "${LIGHTBLUE}mise run install finished${NOCOLOR}"
           echo -e "${LIGHTBLUE}Start to install task${NOCOLOR}"

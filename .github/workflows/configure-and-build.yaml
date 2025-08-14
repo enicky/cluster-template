@@ -65,8 +65,10 @@ jobs:
           which mise
 
           #asdf plugin add ksops https://github.com/janpieper/asdf-ksops.git
-
-          curl -s https://raw.githubusercontent.com/viaduct-ai/kustomize-sops/master/scripts/install-ksops-archive.sh $HOME/.local/bin/ | bash
+          echo -e "${RED}----------------${NOCOLOR}"
+          echo -e "${LIGHTBLUE}Installing ksops...${NOCOLOR}"
+          sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d $HOME/.local/bin/
+          echo -e "${LIGHTBLUE}ksops installation finished${NOCOLOR}"
 
           ARCH=arm64 /home/runner/.local/bin/mise trust
           ARCH=arm64 /home/runner/.local/bin/mise install

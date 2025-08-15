@@ -34,6 +34,13 @@ jobs:
             --file config.yaml \
             --account-key ${{ secrets.AZURE_STORAGE_KEY }}
 
+          az storage blob download \
+            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT }} \
+            --container-name ${{ secrets.AZURE_STORAGE_CONTAINER }} \
+            --name age.key \
+            --file age.key \
+            --account-key ${{ secrets.AZURE_STORAGE_KEY }}
+
       - name: Install Task (go-task)
         run: |
           NOCOLOR='\033[0m'

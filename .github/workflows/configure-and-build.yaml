@@ -100,6 +100,10 @@ jobs:
           echo -e "${LIGHTBLUE}Start to install task${NOCOLOR}"
           sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
           echo -e "${LIGHTBLUE}Task installation finished${NOCOLOR}"
+
+          echo -e "${LIGHTBLUE}Show content of activate${NOCOLOR}"
+          cat .venv/bin/activate
+
           echo -e "${LIGHTBLUE}source .venv/bin/activate${NOCOLOR}"
           source .venv/bin/activate
 

@@ -111,6 +111,4 @@ jobs:
           uv pip install makejinja
           which makejinja
           echo -e "${LIGHTBLUE}pip install makejinja finished${NOCOLOR}"
-
-      - name: Run task configure
-        run: ./bin/task configure -y
+          ./bin/task configure -y

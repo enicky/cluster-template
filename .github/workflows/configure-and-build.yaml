@@ -114,6 +114,12 @@ jobs:
           echo -e "${LIGHTBLUE}source .venv/bin/activate${NOCOLOR}"
           source .venv/bin/activate
 
+          echo -e "${LIGHTBLUE}Start installation of SOPS ${NOCOLOR}"
+          curl -LO https://github.com/getsops/sops/releases/download/v3.10.2/sops-v3.10.2.linux.arm64
+          mv sops-v3.10.2.linux.arm64 $HOME/.local/bin/sops
+          chmod +x $HOME/.local/bin/sops
+
+
           echo -e "${LIGHTBLUE}start pip install makejinja${NOCOLOR}"
           uv pip install makejinja
           which makejinja

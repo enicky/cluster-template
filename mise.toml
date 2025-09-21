@@ -1,6 +1,6 @@
 [settings]
 python.uv_venv_auto = true
-arch = arm
+arch = "arm"
 
 [env]
 _.python.venv = { path = "{{config_root}}/.venv", create = true }

@@ -121,6 +121,7 @@ jobs:
           chmod +x $HOME/.local/bin/sops
 
 
+
           echo -e "${LIGHTBLUE}start pip install makejinja${NOCOLOR}"
           uv pip install makejinja
           which makejinja

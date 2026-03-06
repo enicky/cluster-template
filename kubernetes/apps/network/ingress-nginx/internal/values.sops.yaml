@@ -48,13 +48,13 @@ sops:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBOVUVmK2ZBQnVTVDFPNXlw
-            Y3g1OTJVdDNJRzRMVlg1UmxKMnQ3MVBpMmowCkpmcXZ6a1o5Qm5pZjA5eXVtSnJD
-            SjJFVEtLVnFZeEV2OGcwVmNjS3VSckkKLS0tIG5KTFVQT3gyR3JaRll5OVdDbU1T
-            YkhHUkVJN2pWanFCQmkxWUE1R3YxUnMKxt2WZybfjurtSFYBcfVgWj+Nhl349NDh
-            WE8YPBaLh1ZGNQancSI2x2zZ3QOhHyHN+ZE9U9rpB0VUcylT5fQQXg==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBnMlJ4RGNrdWtXcG9oMTdC
+            WW44RVBrMDJDdWVNRUtUbVVUNmttc2J4UkY0CmRnY3BOdGNXTDlMdW11ejFZL2sv
+            TUp3UFJvbWYybWE4TFRaV1FYUGRJNWsKLS0tIGlycFJzWnRvckNtZFFIalRCNklB
+            SnZYeUE5blBacmROZkx1NUtWaldFdHMKto+867s36ydlhCsnLexA4liqKG9tisQg
+            ynulS3b6+RqLIfEeHIMOu8hJXiBmkgN7eFLiPj934Xfxe+sFO1xgmA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2026-03-06T07:20:45Z"
-    mac: ENC[AES256_GCM,data:n1RefCwPT+UxG+E3csiR/X1ETSXaMeL7sj+cmM1ANqnTfjFqK445AeSY5zzChPfkrV2+2qFlzNSSquTrIwP6JrsbBwCUp0ztfAmDJflkwtLC2LeJ6mRkmZ83yF19bMfr2O3SL70wDxFuhjM7qbf0yoe8/yjwWMDOXNboNbNNYjQ=,iv:q2MDb20NucG9yT+wltg4TSDeyLC8ANVuzXf37oL75Wc=,tag:V0znbac3OpgwX0ovSvoQ8g==,type:str]
+    lastmodified: "2026-03-06T09:10:12Z"
+    mac: ENC[AES256_GCM,data:ARiskc8mOHHADyTMH2J6bjpifCK3VKpKtEH4E4jG1f7JlZDQTb+UPVXlqKFqXnjYb4y+NAbHfYbgy+DLOO4VtOhVkOdKGdXyg7DCiHPi8mcqoGkdvVLkgaLJk+PgdgWQCV5tWCX6w2FesbY+4MKFqGtr3kf1En36GX35f0nJ/TE=,iv:OP5wwEYNqBSCU9bSJgK5PROSBs8v0bS4s52U3EBoKuc=,tag:sKOuKLJAR1ZC90wyjHEP+g==,type:str]
     encrypted_regex: ^(data|stringData)$
     version: 3.12.1

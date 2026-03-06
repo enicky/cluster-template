@@ -18,7 +18,7 @@ configs:
                 - "*"
     secret:
         argocdServerAdminPassword: null
-        argocdServerAdminPasswordMtime: 2025-09-27T07:41:13
+        argocdServerAdminPasswordMtime: 2026-03-06T08:15:52
         githubSecret: 0c93354bf836b2597298412f0f04e3ca
 controller:
     replicas: 2
@@ -146,22 +146,17 @@ repoServer:
             - mountPath: /custom-tools
               name: custom-tools
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
     age:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBSUnZNSG9VajJtYXJ3azUz
-            Q3pGNjBQVFJHbXVDTDIvNU1sa0VJRi8yUWt3ClN2VHBjMmxkV0orcXp5aG56eHZB
-            dGFHcTZtSWpON3Z2amxVVFVNSUpUamsKLS0tIGRsaHp2K3ZKYWlLcmV1dkRaejl4
-            Ymc5MHR0QS92Nyt3aDk4aWY4UVZJU1UKRINeQ5SoO7eESceAjBDROt/PdOM4Mg8M
-            cv4LJcfPbbLC2baIRy4v1RpvFH9RVOalxsHqlxxT9JxlSanP5IeZ7A==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBYUXArSEVsSWtZaTNEQmxz
+            b2p4UjRnNmJySURMTUlCbVFMK0JZVEQ5djNZCmdrV3dPYndFdmU3WG9SWUp0OXdT
+            djFjNWtjZjY4ZFFKQjAwblpsR3VzK1kKLS0tIGFEM2lkNUpZS1FFL3pPY051R21U
+            ZnpKNXpsWDJIV2h5dldFNDJvdkNTL2sKiPIpUrNz7ehk3eExSKly3bjyIxaRFsk9
+            4WxvSE36/T5CEvuumJcm8gVaX3kY+bIKLWBf+PONW3qhTfdUMAauiQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-09-27T05:41:15Z"
-    mac: ENC[AES256_GCM,data:NMzKS1h1MFz5eXqp5kNtNvgXDoI4HgPcxm5melaedDB0oocXP8GZz5nf22KWYku0RQ0uuav44uf4SlVmvLAbkdoNJNLygfgfUFAjVNMxMsqMKEyKPtxQnAKr+D1wyqHz0aJgBHBuV9H/a91QbwDscYM3vC5m8WbC3YWslCnT4ws=,iv:QVVyhnkDTHfcuz/RncB5f3TsyAHJ6ZrE6WmLs7GQMC0=,tag:Ry3EZ9V915CnhRY55hK52w==,type:str]
-    pgp: []
+    lastmodified: "2026-03-06T07:15:55Z"
+    mac: ENC[AES256_GCM,data:ZaPR/ljDsPJwyQeipbYvLdIv3jiIna5STbbAEwBUkjT4Beo/iUaXG9nexTb7ASeAfp3XGHz57k7fWMqpxGL9t6ZAzg7PCtl31gvmkNgELHXldCS6YosnyEXEPaB1+dr63ydeqB+L9J9ASFdIVJ9iKkEzD69IBnssvViMw53UAQc=,iv:SSQkx/prZrHldBQ6x3rjjMMw7pr+o4bI/17tzM1If4Y=,tag:JigLVrYJQjDoKmqM7PfpMw==,type:str]
     encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+    version: 3.12.1

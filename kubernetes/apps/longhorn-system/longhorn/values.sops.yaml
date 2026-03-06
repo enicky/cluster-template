@@ -8,22 +8,17 @@ service:
 defaultSettings:
     defaultDataPath: /var/mnt/storage
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
     age:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBQNEFzVFY1NWowSzVoYTVr
-            OUtncU04SEE4NWdaUmhLRlhrT1VmYnE3YmpVCkZ0VmJodkJFUHZycStRRGtYWWkx
-            dkhHNXdVNmo3eGlhMFJxcEYySnpVbkUKLS0tIExHWDVJTzNwTWhkMEcyVkEzOWtw
-            S1F0RElkOW5Uc3RRYXYyUU1mclNyREEKwomLoPG0+wretn6rW3yt20YtuhWAL38e
-            QQzXeihQyisB2aWl9FlYJvcmxy/3XsxKuiQpUZlvjYkA8Yh0uBoBhQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBQMU9DWDNERW9QQktvQWg1
+            UGdLVVZ2RmVQWEc0WDAwcUtwcDZUTVJxUVZrCmloRHQxcmhHQVBSMmxlS3EyNGtO
+            Y3ZIQnlWWHkvZE9rWTlnRGlBaWVBMGcKLS0tIFhFMTJUM3Y5TW1CR2prVkRGak9U
+            SkZaTVVHYzdDaGJYWHRyMDk0dUtTOFkKSkzWP/IYJ8EDqrOKCSXW06peIH5rG8fk
+            OFmE8AqaGDnO5VpZhIZkwUuP/pwV6tnpgtPZoS0LMGRYZh+H+MsO8Q==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-09-27T05:41:14Z"
-    mac: ENC[AES256_GCM,data:G4EGumaGHyXef7bH4FKDhoEyvW2imweSATCojFf7LS+/gW2xtaqqif+F7dI72j/518Nbw+u99OTa4XxuomRKmBSfYGTEnpjRe3tGh/zjQ78A0HvvtZMc/C/Xn8+qHygmJwr70aQFgjLeUi7kU2YiquF3WkxliuzKXJML2SbOmFw=,iv:vvsbBWmZSFTM5ITiU5KVZJQDsz0D8m+axYEYbrukb4U=,tag:/pVL4qjdBLORhdhhnoAG/g==,type:str]
-    pgp: []
+    lastmodified: "2026-03-06T07:15:53Z"
+    mac: ENC[AES256_GCM,data:Dru3J0YvVaR7eisEN1GoXtF9G6Gg+mHsLCN6tbJwHS7gD5zBiemFaBbeKT4jahTzORQvSjEEDNMqbUpVcNqY4FuakJ3QTWaGyQy1cPcRspzk7TEEdvotwooiEU09EzqpR21L/7GrvLxlk9jTl620XPU07yObSNygFG7p5/M2fOM=,iv:vTMK0Z68Ej8q40GdXlCTE/SR0u502jg5EYVjYfSwTnQ=,tag:YGeicN172k0YTj6aqSYsVg==,type:str]
     encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+    version: 3.12.1

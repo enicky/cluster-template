@@ -80,22 +80,17 @@ ingress:
                     identifier: app
                     port: http
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
     age:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBxbk4relVZTWtuUEd1MHFE
-            V2R6RC84d3VWdVNvRy81SWIwRUphWFhLQkhNCkNwb2JVMmExV3FiYnpwY1VPU2Ft
-            dURabGdNVkQyd0FqN2NZS3NqTGNzUDQKLS0tIHEvZFYxVkNWY0xIUit3YSsyQXBJ
-            ZUVFVnNGZDY0SU9tKzJOSGQ2VzQzUTQKnNlc/h9vG6x/J9awtc6mel3aoo+7CM2L
-            TFicjCVZbAL/DphdAvW7X1/Z8KUxPiKjkePti7AtyJjacSbYrz6seA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA5Uzg4QUVVTldwMmF1NHRq
+            am1sRG94a2ZoS3VYVHdQdHVCWVQ2RzFHT0NRCi9ITVdIY3M2L05HbW5WWGtJNmx2
+            Q2hWZUtDRmpOK1UwNkU2b0pMUDdaV3cKLS0tIC9aVFl0YVIvS2hoWnIvNFVmWkFZ
+            Sjh4LzFxZDg2ZERCZDdqeXBXL0NFTUEK/MMGIZDPjofdFWX8fUscONhtCD6Pcrei
+            706Q+FJi/IoaVnNTrFaxiUIAtlTCxhnmOdqcdTipXMY6nUI1nwaXUA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-09-27T05:41:14Z"
-    mac: ENC[AES256_GCM,data:jCiFBIodpPf1WHIiFevextAVekL220vU/LLoV27ih4jfIgJsCWpUT/K7UWMZOdsKr6kQ/x7cnt8bDBGnRgIIie3Pkf+T2CXNIjHW34TopE/Z0Eg5qlGeVxRdBMQ5th7sqySmHwkjoQR15gsgaut/vDtUnl09JyfVTYQYfMJmmTA=,iv:suX8b32GiHFyogVn27lzgx5WaXJOnY6QScjXUZG328A=,tag:fVAf3aCKSO1tJcbYy9RRxA==,type:str]
-    pgp: []
+    lastmodified: "2026-03-06T07:15:54Z"
+    mac: ENC[AES256_GCM,data:LYiWDQG2UpVH/1gZ7/9Mp3t+Cphq4pKNyE/hQb8czOlSVNMfzEeTbiZqwgqT/dN5KxZAx94w4LdyVmPevYsJh96FbTVsBByuJr/hd96rwd1H+A2HAZ9CF7CLopaU0JMGeJRrMpBkFRs7CHBp0dVjOUIVo62Pv8mFUnX+y/RVIxc=,iv:GcgrbUxiEOXZmSmOASqW/7+jDg6ekbXG+tHNvBlOJ+E=,tag:xcpWTIu+4BXRJfsQmHP0eA==,type:str]
     encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+    version: 3.12.1

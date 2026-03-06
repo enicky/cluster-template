@@ -18,25 +18,20 @@ spec:
                 dnsZones:
                     - gitlab.be
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
     age:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBjTlJIUGE1OG9YZTVJZGh1
-            TUhhcjBPMFZBQ3NXOVFjU04xczNhcG1rZmtzCkMvTFd6WWU2NlhNSnU2SWdGMVZz
-            Tm9pb1dPdnJSUW5NMVZ1ZTcwYitRNUkKLS0tIFgvNGVQUmlaTDdLaGkzeHNWUExv
-            alFKOENLcGMxWFZuQktSRjFLRDNod0kKGfAMeDII7/g4CnmNKd+HmuRxf2JdbIQR
-            ci8IHu1PU3pUiW5bogI9hgrPrCrpZIXKc3tbA9d8dphLE6uJ2D2nFw==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBxMldTcmc4V085TThHVzcv
+            RG5aNW5VYUVtTy8wbmhNaUNaWEVZUjN3eTF3CjMySyt0S1BZdzZocUtCUVhDVHc1
+            WkdRQzMwa0VVcC9NM2JHQVkwZTFhWU0KLS0tIERyQ3F3OEhCVmNQcnhrdVdzVitP
+            aExHSkxzY1A2ZkJHWmFrR3dHNVZ0U1EKiyTrANifJUOmrZBXwJ/VMe1GzUjDAhhn
+            hJk+1SUK5DX3/Zoh4n/BdECe6W4ZNX38O1kuRedZpIBC/0zR+i4Nnw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-09-27T05:41:14Z"
-    mac: ENC[AES256_GCM,data:wSkCPr9SdQxjBx+vkclrBxjTRgaNEQ4KV6LXN8tp4Q4IMuIIb4Vz03UW4THxsLehKWfXzSpmI3jycLz+xEETiSj6/9k1TOoFOuDgOnwkHtIZZVUJGLJLazOQgOXbMqm0qEAX/k1/fCzTPikfdQiDsqvPN8sKotg2N5je4oGXZe0=,iv:tsQxGwp8ATxzNSs7tJeZft45aFGONDXgvimk+p0p79w=,tag:ScSqXwBuUtmnkyq6oZ8VOg==,type:str]
-    pgp: []
+    lastmodified: "2026-03-06T07:15:53Z"
+    mac: ENC[AES256_GCM,data:XcwcZn+ysaUiddstuQLtX71GDNbN7ASgcmxqUn0ZI6++OWgW3AT9/IYkwjVxlgC2oK9cj1jzYMmp95YRGmIUChndxsERWjgvuOTL0AH+SXTQGjgCRj/j9ySCiFWr5dAdJoKv3P9JSnq2FlOrtMb5XZIwnRnJGAp3h1uEjqPa7dM=,iv:/8tMlYRT4/CZB7W05J6ukaM0uO6QqmfvsDZA3wUC1Lg=,tag:tEkaBBQP2x/9k4AF9zFXrw==,type:str]
     encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+    version: 3.12.1
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -58,22 +53,17 @@ spec:
                 dnsZones:
                     - gitlab.be
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
     age:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBjTlJIUGE1OG9YZTVJZGh1
-            TUhhcjBPMFZBQ3NXOVFjU04xczNhcG1rZmtzCkMvTFd6WWU2NlhNSnU2SWdGMVZz
-            Tm9pb1dPdnJSUW5NMVZ1ZTcwYitRNUkKLS0tIFgvNGVQUmlaTDdLaGkzeHNWUExv
-            alFKOENLcGMxWFZuQktSRjFLRDNod0kKGfAMeDII7/g4CnmNKd+HmuRxf2JdbIQR
-            ci8IHu1PU3pUiW5bogI9hgrPrCrpZIXKc3tbA9d8dphLE6uJ2D2nFw==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBxMldTcmc4V085TThHVzcv
+            RG5aNW5VYUVtTy8wbmhNaUNaWEVZUjN3eTF3CjMySyt0S1BZdzZocUtCUVhDVHc1
+            WkdRQzMwa0VVcC9NM2JHQVkwZTFhWU0KLS0tIERyQ3F3OEhCVmNQcnhrdVdzVitP
+            aExHSkxzY1A2ZkJHWmFrR3dHNVZ0U1EKiyTrANifJUOmrZBXwJ/VMe1GzUjDAhhn
+            hJk+1SUK5DX3/Zoh4n/BdECe6W4ZNX38O1kuRedZpIBC/0zR+i4Nnw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-09-27T05:41:14Z"
-    mac: ENC[AES256_GCM,data:wSkCPr9SdQxjBx+vkclrBxjTRgaNEQ4KV6LXN8tp4Q4IMuIIb4Vz03UW4THxsLehKWfXzSpmI3jycLz+xEETiSj6/9k1TOoFOuDgOnwkHtIZZVUJGLJLazOQgOXbMqm0qEAX/k1/fCzTPikfdQiDsqvPN8sKotg2N5je4oGXZe0=,iv:tsQxGwp8ATxzNSs7tJeZft45aFGONDXgvimk+p0p79w=,tag:ScSqXwBuUtmnkyq6oZ8VOg==,type:str]
-    pgp: []
+    lastmodified: "2026-03-06T07:15:53Z"
+    mac: ENC[AES256_GCM,data:XcwcZn+ysaUiddstuQLtX71GDNbN7ASgcmxqUn0ZI6++OWgW3AT9/IYkwjVxlgC2oK9cj1jzYMmp95YRGmIUChndxsERWjgvuOTL0AH+SXTQGjgCRj/j9ySCiFWr5dAdJoKv3P9JSnq2FlOrtMb5XZIwnRnJGAp3h1uEjqPa7dM=,iv:/8tMlYRT4/CZB7W05J6ukaM0uO6QqmfvsDZA3wUC1Lg=,tag:tEkaBBQP2x/9k4AF9zFXrw==,type:str]
     encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+    version: 3.12.1

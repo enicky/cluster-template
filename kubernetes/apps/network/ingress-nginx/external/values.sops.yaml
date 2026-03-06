@@ -47,22 +47,17 @@ controller:
         limits:
             memory: 500Mi
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
     age:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA0dmQ4bm9OMnZ5RTIvL3d0
-            QUZWTEo1S01tRi9iV28xdkFzMDRSY3B2YXk4Cnpyc2JoL3Z5bitoQkNnN3V0NGJD
-            RUdiSnFicGRZYnFoY3dCa1ZhcmVQamMKLS0tIEF0NTBnb0J4eTFSWWlFb1U3SGpZ
-            d0tXLzIwai8rWEVhb0dYOUk1QnBka00KDUXupZP/WwPISN0rR8EAJeqE6CdNkPAC
-            LesXJzGJrhDZKtb4OtyVxGx4/nY/q1I05tvjfF6VtMTxpglN2DCxQA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB0elJySnh1RFBSbkNpWVI4
+            TFc0T3liaDdaNVFJa0U5eGZucU54ejh1TWtRClIvbFRPbDdrblFrTWREOE80VWtu
+            eVlUWFV5ZDJVd0g0QWJ3SFF6azFzODgKLS0tIFJ1MFdzWUd3TUdhRG1VMGowT21J
+            UXhWUWNjbmpmakgveXlDcG5wQ05IZ00K/mbBeJie6ApnKwg2GRJJLZO/X9eKPP7Z
+            8pskjVNuTjM11bf/o3qoVrMWqHWcxwempZkqbzo+e72zenjSgoI7ng==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-09-27T05:41:15Z"
-    mac: ENC[AES256_GCM,data:1pwuYEBohQD3JBZBY919Lk2b3m0dAeuaKzs1e01t8b78wvkxxQSysezuorzaEcY0bLjvJQRREQ1X1G4C3WAcjsphg1CYM2W28uO94vO38MlGHJzZjIE1Ndcg+MgMLPT4sOl0g9wvNolBb0EFr8fOngqd8mH9YJzLlOUsWS/lDxQ=,iv:W6SyMeCKTlF6P5U6RXwAYMRu/EBNVkkR/CJ4/Nj9he0=,tag:IrVnkcKwCO6/LMNQ9oDYVw==,type:str]
-    pgp: []
+    lastmodified: "2026-03-06T07:15:55Z"
+    mac: ENC[AES256_GCM,data:Mo2O2Jn3++g4+Cv9fDVcfWby2HIamwK5wz7wV3ddzCTEMptidohb+UqR32eN7PpH5H3AlBocI5oVXj5kjwyeIiNNU8cypNekHA5fp6oUQ+QVMmuJNWeLrG/qWjI9eiHejBJ9mpXcYnF5I2lenZbnnDKjp+C6Ykw5dRCa6LafuVQ=,iv:9ig82K8OKTe+/w827XGnPPfifZWAsOa7tlaponRnnd8=,tag:dP70QwTL9E2zaIDfwCiNYQ==,type:str]
     encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+    version: 3.12.1

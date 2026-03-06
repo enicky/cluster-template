@@ -11,22 +11,17 @@ watchedResources:
     - Ingress
     - Service
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
     age:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4ZTBrL1R0U08zTm5VdjhL
-            SHdlN1lhYncwTThrdktOZGVuamIwNDY0aFdFCmFFNE51a3dwUnlxdGxKOFBLT2x6
-            aE04ZGIwYkZTZjdqdjJXdHUwZ1Z1d00KLS0tIGJmUEwrYUdxZStrVzVmNUVpZjVM
-            N3NvdDlBZmM5bUlRMnNUdlNFSDQ3K3MKu0eSEHBNmTcS4ZuMB4aGNk3gv3cMdmsR
-            W49lSdkACIVM6L9WN50qrecgj3yoReWmErcs+Qow32LmCXEI9Y8sYQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4dXlOSWFpejJKK1pXbndu
+            UFY3Q2pucmhncGpOWXlyUU1NQU5VZWh5MEVBCk1KUVNCbWdORkJ5U2xTbVRzK3pH
+            cGhxdzc4VStEck1wakc4aHVtMTNmVmcKLS0tIGUxWERzSnRLVERaMEZlUktRSDNH
+            TmxNcmNkYmd3STVNbkJiMEZGV1Y5SHcKXvVI27sllBul4EOqIxeYvGuVHAvUAjfx
+            Y6lNximdMXc8iXW67VAEI69gQfA0S0xqG8mdKiqUw1fZHnRHvyljZQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-09-27T05:41:14Z"
-    mac: ENC[AES256_GCM,data:6q8tWIAUVb5L6a4Fa7eexxGHzXNFO1rSKWAVX8MgLBRLBD+EoyAI7PCHNPc1bE82fV5T7DiHXOvf8UCrGpuBzo9t/TNPBGulQB4lbKi0gNqzcIy23MYW8TJfuu3F1q3K6XdnpofSIlHA0xwMJNHD4dWvqFPde4ucFKZynFYtG18=,iv:UfaF+v06WzDGcNIAOPwxn9Syv8uvANCUOIFwtVbJN0U=,tag:ZbjhnmdGn2cGOiAnCTf/sg==,type:str]
-    pgp: []
+    lastmodified: "2026-03-06T07:15:54Z"
+    mac: ENC[AES256_GCM,data:IyF8ist+Rhkls4aQL/d6UHoQVHoAIEgNcdvHagnUK6zc+MuN1UTWDxoH333VRpONxX7h6vZtNvRDb9xRQh6xio/jyf0+aGtr3d/uvLRc/OyQvU5WnE7AcrUTdokGwaZqeKPjvLIV6F7lIi5L5IrxpDIbMoID89CsRM5Tvdomovo=,iv:aSJDP2QmBR8/pPVBULjezVhe0J4RtBoSXK678F4Cjh0=,tag:0J2ObC/LbbVo0z7Vh2Ka0A==,type:str]
     encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+    version: 3.12.1

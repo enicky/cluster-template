@@ -12,22 +12,17 @@ spec:
         - gitlab.be
         - '*.gitlab.be'
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
     age:
         - recipient: age1fyc7uux0krx5h9hxsvc4qvh4hyxut9zk6zvxf9g4tc2388ut6d9spqh370
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBpK2NxWi9QWFpRbk9HUzNR
-            TzY5SW1Idm5VZ2xtdjdGT2ZydmxlRjlTOVZvCmM0NjVwU05zTVZZWUdNSzNpUUF1
-            b2V0dWNyRjRQYnp2YWZ2eTgzcXpmSG8KLS0tIHpZZ0JQVTNiSlR4cm95VUNyMG94
-            K0d0SG1kM05XazIyek5sK3pRYzByRlkKSNxxHRZxzI8wcrTLTk9dW3coEG7Arexg
-            wv4FlzhLh8jJZ05l+sg8bcq59vfJv0hEE1nYz/iq+YFc8/tJ6ngFYQ==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBGZUhxRThMVklNcFlVaThV
+            MzRMcGV5VHlTTzN1c0ZBc3RDSWNSNlFpM1RjClZYVFlnVXhDTXpHbkVDaFdOV0JP
+            RUhmU2IrNGM1MS84dktrbTg3TUVLOXcKLS0tIEUvVGNsaDVMZ2xvQlAzQVR6djNy
+            TnZoZDRSM0RVWGxaby91K2pHWW40UlUKZhunWCZJFY6G6AOTc8SaNFy6QngQ45VC
+            qmfdvrf7Tpv9jc5NLAgq3D6GMmy4ye/K3bkyym5p3TrV/2UMt1F3rg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-09-27T05:41:15Z"
-    mac: ENC[AES256_GCM,data:1fqP7u+79WvA9qdaQiEGu85I5Hppwrs7mUXt+9awsKZA8XT05ngOS0Z6JClwT79Qc4pKZAgtq5BPUWVZi06eewtYme8icbd9YTx2yw/dj82QjsFUy9a0a6QNeOmDs7jDGozXFrtpLxm7DQ9VVF5ElRi0iiKSHf+WgBVkNj8zImY=,iv:eHtsKV7YMSyNtcLDSBKhFc33pTbA/H2p42u8ALq7FQE=,tag:KZGnFF74d2zDHlE0ZBOdTw==,type:str]
-    pgp: []
+    lastmodified: "2026-03-06T07:15:55Z"
+    mac: ENC[AES256_GCM,data:fTKTHZH0GQEDdEDktLJozvB083FBpNugERrK/YLlPOzVNpacX9Pb+qKiPawYUFiU5YDoWAEEmM2uLKEqb2q13QHoSJFpzUMyXcQkBxtw8JaUn/oxTJ55cfHMMvpfsDl418KvhlM8pFDhCsK3BDjtapWYjyguzt7tMyi6KXw2BWY=,iv:inyixadNt4+yQxo/IWJR4tYThvI61qMsQO991nuHRZ4=,tag:AndFsT9Li/9qmiRGrZDl5g==,type:str]
     encrypted_regex: ^(data|stringData)$
-    version: 3.9.3
+    version: 3.12.1
